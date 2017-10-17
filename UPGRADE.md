@@ -25,3 +25,7 @@ Don't go any further. Read [Unbricking](UNBRICKING.md) so you know what you're g
 6.) Wait patiently as Raspbian updates to the latest version: Stretch. Grab a sandwich, pull up Netflix. This is gonna take a while but will need a little babysitting.
 
 7.) Whenever it asks whether you want to keep your existing file of something, say yes (just press enter, it's the default)
+
+Things to add:
+- Compile new adapter module
+- Clear out apt cache folder 
