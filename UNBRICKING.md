@@ -12,6 +12,8 @@ Back up your SD card. refer to [The Harder Way](#The Harder Way) for more inform
 
 There's plenty of tools you can use to back up an SD card, though don't just copy everything in explorer. `dd` is the recommended tool to use though isn't available on Windows by default, and you can find more about how to backup a Raspberry Pi SD card [here](https://thepihut.com/blogs/raspberry-pi-tutorials/17789160-backing-up-and-restoring-your-raspberry-pis-sd-card).
 
+# Unbricking Solutions
+
 ## The Easy Way
 
 Buy a USB to Ethernet adapter, plug it into the USB port you'd usually plug the headset into. This will let you make a wired connection to your network for debugging, and you can then SSH into the device again to fix whatever broke.
