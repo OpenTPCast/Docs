@@ -10,4 +10,16 @@ Don't go any further. Read [Unbricking](UNBRICKING.md) so you know what you're g
 
 ## Upgrading
 
-To be continued.
+1.) SSH into your TPCast. If you don't know how to do that, check out the [SSH](SSH.md) guide.
+
+2.) Open `/etc/apt/sources.list` in your preferred text editor (`vim`,`nano`, etc) and replace all instances of `jessie` with `stretch`
+
+3.) Do the same in `etc/apt/sources.list.d/raspi.lis`
+
+4.) Run `sudo apt-get update`
+
+5.) Run `sudo apt-get dist-upgrade -y`
+
+6.) Wait patiently as Raspbian updates to the latest version: Stretch. Grab a sandwich, pull up Netflix. This is gonna take a while but will need a little babysitting.
+
+7.) Whenever it asks whether you want to keep your existing file of something, say yes (just press enter, it's the default)
