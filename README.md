@@ -12,3 +12,7 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 - [Upgrading Raspbian and the Linux Kernel (INCOMPLETE)](UPGRADE.md)
 - [VirtualHere](VIRTUALHERE.md)
 - [Unbricking your TPCast](UNBRICKING.md)
+
+## Misc
+
+- [Contributing](CONTRIBUTING.md)
