@@ -5,8 +5,10 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 ## Information and Specs
 
 - [Specs](SPECS.md)
+- [Software](SOFTWARE.md)
 
 ## Tinkering
 
-- [Upgrading Raspbian and the Linux Kernel](UPGRADE.md)
+- [Upgrading Raspbian and the Linux Kernel (INCOMPLETE)](UPGRADE.md)
 - [VirtualHere](VIRTUALHERE.md)
+- [Unbricking your TPCast](UNBRICKING.md)
