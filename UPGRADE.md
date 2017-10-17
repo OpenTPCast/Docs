@@ -10,6 +10,8 @@ Don't go any further. Read [Unbricking](UNBRICKING.md) so you know what you're g
 
 ## Upgrading
 
+**THESE INSTRUCTIONS ARE CURRENTLY IN DRAFT AND SHOULD NOT BE FOLLOWED**
+
 1.) SSH into your TPCast. If you don't know how to do that, check out the [SSH](SSH.md) guide.
 
 2.) Open `/etc/apt/sources.list` in your preferred text editor (`vim`,`nano`, etc) and replace all instances of `jessie` with `stretch`
