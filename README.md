@@ -16,3 +16,4 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 ## Misc
 
 - [Contributing](CONTRIBUTING.md)
+- [Community Discord](https://discord.gg/kAbqRGC)
