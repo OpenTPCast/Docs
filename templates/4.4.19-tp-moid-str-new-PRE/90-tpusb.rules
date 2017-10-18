@@ -1,0 +1,10 @@
+# USB Network Gate "tpusb" rules
+
+# This file should be copied to /lib/udev/rules.d.
+# In any conflict, the last rule wins.
+
+# 'libusb' device nodes, see 50-udev-default.rules
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", OWNER="tpusb"
+
+# tpusb.ko module
+KERNEL=="tpusb", OWNER="tpusb"
