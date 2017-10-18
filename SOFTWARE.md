@@ -12,7 +12,7 @@ TPCast have a custom version of [USB Network Gate](https://www.eltima.com/produc
 
 How do we know it's USBNG? Download their client, open it, run the TPCast software and connect to the brick and watch as the USBNG software detects your connected devices as remote devices.
 
-![USB Network Gate giving the game away](img/usbng.png)
+![USB Network Gate giving the game away](img/usbng.PNG)
 
 ### Kernel Issues
 

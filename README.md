@@ -9,9 +9,9 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 
 ## Tinkering
 
-- [Upgrading Raspbian and the Linux Kernel (INCOMPLETE)](UPGRADE.md)
-- [VirtualHere](VIRTUALHERE.md)
-- [Unbricking your TPCast](UNBRICKING.md)
+- [Upgrading Raspbian and the Linux Kernel (INCOMPLETE)](guides/UPGRADE.md)
+- [VirtualHere](guides/VIRTUALHERE.md)
+- [Unbricking your TPCast](guides/UNBRICKING.md)
 
 ## Misc
 
