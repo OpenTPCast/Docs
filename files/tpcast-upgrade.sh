@@ -99,7 +99,7 @@ sudo update-rc.d wlan-load.sh defaults
 
 # Configure VirtualHere USB Server for TPCast devices
 # HMD camera has custom event handler onReset.$VENDOR_ID$.$PRODUCT_ID$=
-echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\n$(cat config.ini | grep 'License=')" | sudo tee config.ini > /dev/null
+echo -e "ServerName=TPCast\nonReset.0bb4.2c87=" | sudo tee config.ini > /dev/null
 
 # Remove proxy server settings
 if [ -f /etc/apt/apt.conf.d/10proxy ]; then
