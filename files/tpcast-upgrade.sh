@@ -4,13 +4,27 @@
 # Stop on errors
 set -e
 
-if [[ $# -eq 0 ]] ; then
+if [[ $# -eq 0 ]]; then
 	echo 'No host proxy server IP address was provided, assume internet connection is available.'
 else
 	HOST_PROXY_IP=$1
 
 	# Configure TPCast to download updates via proxy server
-	echo -e "Acquire::http::Proxy \"http://$HOST_PROXY_IP:3128/\";" | sudo tee -a /etc/apt/apt.conf.d/10proxy > /dev/null
+	if [ -f /etc/apt/apt.conf.d/10proxy ]; then
+		sudo rm /etc/apt/apt.conf.d/10proxy
+		echo -e "Acquire::http::Proxy \"http://$HOST_PROXY_IP:3128/\";" | sudo tee -a /etc/apt/apt.conf.d/10proxy > /dev/null
+	fi
+
+	if [ ! -f /etc/wgetrc.bak ]; then
+		sudo cp /etc/wgetrc /etc/wgetrc.bak
+		echo -e "use_proxy = on\nhttp_proxy = http://$HOST_PROXY_IP:3128\nhttps_proxy = https://$HOST_PROXY_IP:3128" | sudo tee -a /etc/wgetrc > /dev/null
+	fi
+
+	if [ ! -f /etc/environment.bak ]; then
+		sudo cp /etc/environment /etc/environment.bak
+		echo -e "http_proxy=http://$HOST_PROXY_IP:3128\nhttps_proxy=https://$HOST_PROXY_IP:3128\nexport http_proxy https_proxy" | sudo tee -a /etc/environment > /dev/null
+	fi
+
 	export http_proxy=http://$HOST_PROXY_IP:3128
 	export https_proxy=https://$HOST_PROXY_IP:3128
 fi
@@ -35,14 +49,16 @@ sudo apt-get --force-yes -o Dpkg::Options::="--force-confold" --force-yes -o Dpk
 sudo sed -i 's/kernel=kernel_new_defcfg.img/kernel=kernel7.img/g' /boot/config.txt
 
 # Optimize for faster boot time
-sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
+if ! grep -q "rootwait quiet" /boot/cmdline.txt then
+	sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
+fi
 
 # Upgrade TPCast Wi-Fi driver
-sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw.bin
-sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw_wol.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw_wol.bin
-sudo wget -O /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko https://rawgit.com/OpenTPCast/Docs/master/files/8192du-$(ls -1 /lib/modules | tail -1)-stretch.ko
+sudo wget --no-check-certificate -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw.bin
+sudo wget --no-check-certificate -O /lib/firmware/rtlwifi/rtl8192dufw_wol.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw_wol.bin
+sudo wget --no-check-certificate -O /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko https://rawgit.com/OpenTPCast/Docs/master/files/8192du-$(ls -1 /lib/modules | tail -1)-stretch.ko
 echo '8192du' | sudo tee -a /etc/modules > /dev/null
-sudo insmod /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko
+#sudo insmod /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko
 sudo depmod -a
 
 # Disable tpusbd service and old driver insertion script
@@ -74,8 +90,8 @@ wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?
 
 
 # Install VirtualHere USB Server (Server licence must be purchased from https://virtualhere.com to use)
-wget https://virtualhere.com/sites/default/files/usbserver/vhusbdarmpi3
-chmod +x ./vhusbdarmpi3
+wget --no-check-certificate -O /home/pi/vhusbdarmpi3 https://virtualhere.com/sites/default/files/usbserver/vhusbdarmpi3
+chmod +x /home/pi/vhusbdarmpi3
 sudo sed -i -e 's|#sudo /home/pi/vhusbdarmpi2 -b|sudo /home/pi/vhusbdarmpi3 -b -c /home/pi/config.ini|g' /etc/init.d/wlan-load.sh
 sudo update-rc.d wlan-load.sh defaults
 
@@ -84,7 +100,17 @@ sudo update-rc.d wlan-load.sh defaults
 echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\n$(cat config.ini | grep 'License=')" | sudo tee config.ini > /dev/null
 
 # Remove proxy server settings
-sudo rm /etc/apt/apt.conf.d/10proxy
+if [ -f /etc/apt/apt.conf.d/10proxy ]; then
+	sudo rm /etc/apt/apt.conf.d/10proxy
+fi
+
+if [ -f /etc/wgetrc.bak ]; then
+	sudo mv /etc/wgetrc.bak /etc/wgetrc
+fi
+
+if [ -f /etc/environment.bak ]; then
+	sudo mv /etc/environment.bak /etc/environment
+fi
 
 # Reboot for changes to take effect
 sudo reboot now
