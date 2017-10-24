@@ -1,6 +1,9 @@
 #!/bin/bash
 # TPCast Upgrade Script
 
+# chmod +x ./tpcast-upgrade.sh
+# ./tpcast-upgrade.sh 192.168.144.100
+
 # Stop on errors
 set -e
 
@@ -12,8 +15,9 @@ else
 	# Configure TPCast to download updates via proxy server
 	if [ -f /etc/apt/apt.conf.d/10proxy ]; then
 		sudo rm /etc/apt/apt.conf.d/10proxy
-		echo -e "Acquire::http::Proxy \"http://$HOST_PROXY_IP:3128/\";" | sudo tee -a /etc/apt/apt.conf.d/10proxy > /dev/null
 	fi
+
+	echo -e "Acquire::http::Proxy \"http://$HOST_PROXY_IP:3128/\";" | sudo tee -a /etc/apt/apt.conf.d/10proxy > /dev/null
 
 	if [ ! -f /etc/wgetrc.bak ]; then
 		sudo cp /etc/wgetrc /etc/wgetrc.bak
@@ -49,9 +53,7 @@ sudo apt-get --force-yes -o Dpkg::Options::="--force-confold" --force-yes -o Dpk
 sudo sed -i 's/kernel=kernel_new_defcfg.img/kernel=kernel7.img/g' /boot/config.txt
 
 # Optimize for faster boot time
-if ! grep -q "rootwait quiet" /boot/cmdline.txt then
-	sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
-fi
+sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
 
 # Upgrade TPCast Wi-Fi driver
 sudo wget --no-check-certificate -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw.bin
