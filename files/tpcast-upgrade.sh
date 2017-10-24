@@ -10,7 +10,7 @@ else
 	HOST_PROXY_IP=$1
 
 	# Configure TPCast to download updates via proxy server
-	echo -e 'Acquire::http::Proxy "http://$HOST_PROXY_IP:3128/";' | sudo tee -a /etc/apt/apt.conf.d/10proxy > /dev/null
+	echo -e "Acquire::http::Proxy \"http://$HOST_PROXY_IP:3128/\";" | sudo tee -a /etc/apt/apt.conf.d/10proxy > /dev/null
 	export http_proxy=http://$HOST_PROXY_IP:3128
 	export https_proxy=https://$HOST_PROXY_IP:3128
 fi
