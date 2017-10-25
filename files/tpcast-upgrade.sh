@@ -1,8 +1,10 @@
 #!/bin/bash
 # TPCast Upgrade Script
 
-# chmod +x ./tpcast-upgrade.sh
-# ./tpcast-upgrade.sh 192.168.144.100
+# Usage:
+# sudo wget -e check_certificate=off -e use_proxy=yes -e https_proxy=https://192.168.144.100:3128 https://rawgit.com/NGenesis/Docs/master/tpcast-upgrade.sh
+# sudo chmod +x ./tpcast-upgrade.sh
+# sudo ./tpcast-upgrade.sh 192.168.144.100
 
 # Stop on errors
 set -e
