@@ -74,7 +74,7 @@ wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?
 echo -e "interface wlan0\nstatic ip_address=192.168.144.88/24\nstatic routers=192.168.144.1\nstatic domain_name_servers=192.168.144.1" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 
 # Create script to initialize WLAN driver on first boot
-echo -e "#\0041/bin/bash\nsudo insmod /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko\nsudo depmod -a\nrm \$0\nsudo update-rc.d -f 8192du-init.sh remove" | sudo tee -a /etc/init.d/8192du-init.sh > /dev/null
+echo -e "#\0041/bin/bash\n### BEGIN INIT INFO\n# Provides:          8192du-init.sh\n# Required-Start:    $all\n# Required-Stop:     $all\n# Default-Start:     2 3 4 5\n# Default-Stop:      0 1 6\n# Short-Description: Initialize 8192du WLAN kernel module on first boot\n# Description:       Initialize 8192du WLAN kernel module on first boot\n### END INIT INFO\nsudo insmod /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko\nsudo depmod -a > /dev/null\nrm \$0\nsudo update-rc.d -f 8192du-init.sh remove" | sudo tee -a /etc/init.d/8192du-init.sh > /dev/null
 sudo chmod +x /etc/init.d/8192du-init.sh
 sudo update-rc.d 8192du-init.sh defaults
 
@@ -90,7 +90,7 @@ sudo update-rc.d vhusbdpin defaults
 
 # Configure VirtualHere USB Server for TPCast devices
 # HMD camera has custom event handler onReset.$VENDOR_ID$.$PRODUCT_ID$=
-echo -e "ServerName=TPCast\nonReset.0bb4.2c87=" | sudo tee /root/config.ini > /dev/null
+echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=VIVE Camera,0bb4,2c87,1122" | sudo tee /root/config.ini > /dev/null
 
 # Remove proxy server settings
 if [ -f /etc/apt/apt.conf.d/10proxy ]; then
