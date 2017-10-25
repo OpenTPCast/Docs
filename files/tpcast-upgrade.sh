@@ -39,9 +39,9 @@ fi
 find /etc/apt -name "*.list" | sudo xargs sed -i -r '/^#*deb/s/jessie/stretch/g'
 
 # Disable prompts during anattended upgrade
-sudo apt-get remove apt-listchanges --assume-yes --force-yes && 
 export DEBIAN_FRONTEND=noninteractive && export APT_LISTCHANGES_FRONTEND=none && export DEBIAN_PRIORITY=critical && 
-echo 'libc6 libraries/restart-without-asking boolean true' | sudo debconf-set-selections
+sudo apt-get remove apt-listchanges --assume-yes --force-yes && 
+echo 'libc6 libraries/restart-without-asking boolean true' | sudo debconf-set-selections && 
 
 # Upgrade Rapsian distro
 sudo apt-get --force-yes -fuy autoremove && 
@@ -90,7 +90,7 @@ sudo update-rc.d vhusbdpin defaults
 
 # Configure VirtualHere USB Server for TPCast devices
 # HMD camera has custom event handler onReset.$VENDOR_ID$.$PRODUCT_ID$=
-echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=VIVE Camera,0bb4,2c87,1122" | sudo tee /root/config.ini > /dev/null
+echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=Vive Camera,0bb4,2c87,1122" | sudo tee /root/config.ini > /dev/null
 
 # Remove proxy server settings
 if [ -f /etc/apt/apt.conf.d/10proxy ]; then
