@@ -60,6 +60,7 @@ sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
 
 # Disable tpusbd service and old driver insertion boot script
 sudo rm /etc/init.d/wlan-load.sh
+sudo update-rc.d -f wlan-load.sh remove
 
 # Upgrade WLAN driver
 sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw.bin
@@ -73,7 +74,7 @@ wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?
 echo -e "interface wlan0\nstatic ip_address=192.168.144.88/24\nstatic routers=192.168.144.1\nstatic domain_name_servers=192.168.144.1" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 
 # Create script to initialize WLAN driver on first boot
-echo -e "#!/bin/bash\nsudo insmod /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko\nsudo depmod -a\nrm $0" | sudo tee -a /etc/init.d/8192du-init.sh > /dev/null
+echo -e "#\0041/bin/bash\nsudo insmod /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko\nsudo depmod -a\nrm \$0\nsudo update-rc.d -f 8192du-init.sh remove" | sudo tee -a /etc/init.d/8192du-init.sh > /dev/null
 sudo chmod +x /etc/init.d/8192du-init.sh
 sudo update-rc.d 8192du-init.sh defaults
 
