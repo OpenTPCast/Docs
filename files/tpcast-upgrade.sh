@@ -59,7 +59,7 @@ sudo sed -i 's/kernel=kernel_new_defcfg.img/kernel=kernel7.img/g' /boot/config.t
 # Optimize for faster boot time
 sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
 
-# Disable tpusbd service and old driver insertion script (to be removed from script when wlan-load.sh is removed)
+# Disable tpusbd service and old driver insertion boot script
 sudo rm /etc/init.d/wlan-load.sh
 
 # Upgrade WLAN driver
