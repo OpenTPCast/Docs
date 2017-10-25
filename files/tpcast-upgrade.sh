@@ -36,7 +36,6 @@ else
 fi
 
 # Upgrade Raspian distro repositories (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)
-echo '[]'
 find /etc/apt -name "*.list" | sudo xargs sed -i -r '/^#*deb/s/jessie/stretch/g'
 
 # Disable prompts during anattended upgrade
