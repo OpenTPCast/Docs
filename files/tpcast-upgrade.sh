@@ -74,7 +74,7 @@ wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?
 echo -e "interface wlan0\nstatic ip_address=192.168.144.88/24\nstatic routers=192.168.144.1\nstatic domain_name_servers=192.168.144.1" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 
 # Create script to initialize WLAN driver on first boot
-echo -e "#\0041/bin/bash\n### BEGIN INIT INFO\n# Provides:          8192du-init.sh\n# Required-Start:    $all\n# Required-Stop:     $all\n# Default-Start:     2 3 4 5\n# Default-Stop:      0 1 6\n# Short-Description: Initialize 8192du WLAN kernel module on first boot\n# Description:       Initialize 8192du WLAN kernel module on first boot\n### END INIT INFO\nsudo depmod -a > /dev/nullsudo modprobe 8192du > /dev/null\nrm \$0\nsudo update-rc.d -f 8192du-init.sh remove" | sudo tee -a /etc/init.d/8192du-init.sh > /dev/null
+echo -e "#\0041/bin/bash\n### BEGIN INIT INFO\n# Provides:          8192du-init.sh\n# Required-Start:    $all\n# Required-Stop:     $all\n# Default-Start:     2 3 4 5\n# Default-Stop:      0 1 6\n# Short-Description: Initialize 8192du WLAN kernel module on first boot\n# Description:       Initialize 8192du WLAN kernel module on first boot\n### END INIT INFO\nsudo insmod /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko\nsudo depmod -a > /dev/null\nrm \$0\nsudo update-rc.d -f 8192du-init.sh remove" | sudo tee -a /etc/init.d/8192du-init.sh > /dev/null
 sudo chmod +x /etc/init.d/8192du-init.sh
 sudo update-rc.d 8192du-init.sh defaults
 
