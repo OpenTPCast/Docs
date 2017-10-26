@@ -39,7 +39,7 @@ fi
 find /etc/apt -name "*.list" | sudo xargs sed -i -r '/^#*deb/s/jessie/stretch/g'
 
 # Disable prompts during anattended upgrade
-export DEBIAN_FRONTEND=noninteractive && export APT_LISTCHANGES_FRONTEND=none && export DEBIAN_PRIORITY=critical && 
+unset UCF_FORCE_CONFFNEW && export UCF_FORCE_CONFFOLD=YES && export DEBIAN_FRONTEND=noninteractive && export APT_LISTCHANGES_FRONTEND=none && export DEBIAN_PRIORITY=critical && 
 sudo apt-get remove apt-listchanges --assume-yes --force-yes && 
 echo 'libc6 libraries/restart-without-asking boolean true' | sudo debconf-set-selections && 
 
