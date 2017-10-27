@@ -7,6 +7,9 @@
 # |                                                       |
 # ---------------------------------------------------------
 
+# Overview:
+# This guide provides instructions on how to upgrade a TPCast to Raspbian Stretch with Kernel 4.9+ and VirtualHere, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
+
 # Preparation:
 # Ensure that any TPCast software is NOT RUNNING on your local machine during the upgrade.
 # Ensure TPCast power box battery is FULLY CHARGED and POWERED ON before attempting the upgrade.
