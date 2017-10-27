@@ -16,7 +16,7 @@
 # Ensure TPCast power box battery is FULLY CHARGED and POWERED ON before attempting the upgrade.
 # Download & install Squid (http://squid.diladele.com/ for Windows, check https://wiki.squid-cache.org/SquidFaq/BinaryPackages for other platforms) on your local machine.
 # Download & install Putty SSH client (http://www.putty.org/ for Windows, use ssh command in other platforms) on your local machine.
-# Download & install VirtualHere USB Client (https://virtualhere.com/usb_client_software).  Note that an unlimited licence key must be purchased to use with Virtual USB Server after the upgrade.
+# Download & install VirtualHere USB Client (https://virtualhere.com/usb_client_software).  Note that an unlimited licence key must be purchased to use with VirtualHere USB Server after the upgrade.
 # If you are a TPCast PRE user, you must replace all references to [ 192.168.144. ] with [ 192.168.0. ] in the upgrade script and any steps mentioned during this guide before attempting the upgrade.
 
 # Installation:
@@ -31,7 +31,7 @@
 # sudo chmod +x ./tpcast-upgrade.sh
 # sudo ./tpcast-upgrade.sh 192.168.144.XXX
 
-# After the upgrade has completed, launch VirtualHere USB Client on your local machine and wait a few minutes following the reboot notification.  If your VirtualHere client does not detect the TPCast after 5 minutes following the reboot, remove and reinsert the battery to the power box and wait a further 5 minutes.
+# After the upgrade has finished (in approximately 1-2 hours), launch VirtualHere USB Client on your local machine and wait a few minutes following the reboot notification.  If your VirtualHere client does not detect the TPCast after 5 minutes following the reboot, remove and reinsert the battery to the power box and wait a further 5 minutes.
 
 # Configuring VirtualHere for TPCast:
 # Purchase and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by selecting Licence, Enter Licence(s) and copy your licence key from the email received following purchase.
@@ -90,7 +90,7 @@ echo "|                   TPCast Upgrade                   |"
 echo "|                 Beginning Upgrade...               |"
 echo "|                                                    |"
 echo "------------------------------------------------------"
-echo -e "Please wait while the TPCast is upgraded, this process is will take approximately 1-2 hours depending on your internet connection speed."
+echo "Please wait while the TPCast is upgraded, this process is will take approximately 1-2 hours depending on your internet connection speed."
 
 # Upgrade Raspian distro repositories (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)
 logger "Upgrading Raspian distro repositories to Stretch (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)"
