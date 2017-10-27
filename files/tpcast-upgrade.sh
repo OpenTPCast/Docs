@@ -11,6 +11,7 @@
 # This guide provides instructions on how to upgrade a TPCast to Raspbian Stretch with Kernel 4.9+ and VirtualHere, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
 
 # Preparation:
+# This upgrade is not reversible, so it is HIGHLY RECOMMENDED that you BACKUP the MicroSD card of your TPCast power box so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.  This requires removing the plastic covering of the TPCast power box (remove the 4 screws from the battery facing side and pry the grated plastic side off), removing the MicroSD and backing it up using a MicroSD card reader and cloning software such as Win32DiskImager (https://sourceforge.net/projects/win32diskimager/).
 # Ensure that any TPCast software is NOT RUNNING on your local machine during the upgrade.
 # Ensure TPCast power box battery is FULLY CHARGED and POWERED ON before attempting the upgrade.
 # Download & install Squid (http://squid.diladele.com/ for Windows, check https://wiki.squid-cache.org/SquidFaq/BinaryPackages for other platforms) on your local machine.
