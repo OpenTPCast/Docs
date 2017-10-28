@@ -11,13 +11,14 @@
 # This guide provides instructions on how to upgrade a TPCast to Raspbian Stretch with Kernel 4.9+ and VirtualHere, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
 
 # Preparation:
-# This upgrade is not reversible, so it is HIGHLY RECOMMENDED that you BACKUP the MicroSD card of your TPCast power box so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.  This requires removing the plastic covering of the TPCast power box (remove the 4 screws from the battery facing side and pry the grated plastic side off), removing the MicroSD and backing it up using a MicroSD card reader and cloning software such as Win32DiskImager (https://sourceforge.net/projects/win32diskimager/).
+# This upgrade is not reversible, so it is STRONGLY RECOMMENDED that you BACKUP the MicroSD card of your TPCast power box so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.  This requires removing the plastic covering of the TPCast power box (remove the 4 screws from the battery facing side and pry the grated plastic side off), removing the MicroSD and backing it up using a MicroSD card reader and cloning software such as Win32DiskImager (https://sourceforge.net/projects/win32diskimager/).
 # Ensure that any TPCast software is NOT RUNNING on your local machine during the upgrade.
-# Ensure TPCast power box battery is FULLY CHARGED and POWERED ON before attempting the upgrade.
+# Ensure that your TPCast power box battery is FULLY CHARGED and POWERED ON before attempting the upgrade.  Depending on your connection speed, it may be nessecary to disconnect the USB/power cables from the TPCast power box during the upgrade to further extend battery life.
 # Download & install Squid (http://squid.diladele.com/ for Windows, check https://wiki.squid-cache.org/SquidFaq/BinaryPackages for other platforms) on your local machine.
 # Download & install Putty SSH client (http://www.putty.org/ for Windows, use ssh command in other platforms) on your local machine.
 # Download & install VirtualHere USB Client (https://virtualhere.com/usb_client_software).  Note that an unlimited licence key must be purchased to use with VirtualHere USB Server after the upgrade.
-# If you are a TPCast PRE user, you must replace all references to [ 192.168.144. ] with [ 192.168.0. ] in the upgrade script and any steps mentioned during this guide before attempting the upgrade.
+# If you are a TPCast PRE user, you must replace all references to [ 192.168.144. ] with [ 192.168.1. ] in the upgrade script and any steps mentioned during this guide before attempting the upgrade.
+# If you own a USB to Ethernet adapter, you may alternatively skip installation of Squid Proxy Server and plug in a USB to Ethernet adapter to the USB port of the TPCast power box, and connect it to your own internet-enabled router, which will greatly improve download speeds during the upgrade.
 
 # Installation:
 # Launch your SSH client and connect with the following details:
@@ -26,16 +27,17 @@
 # Username: pi
 # Password: 1qaz2wsx3edc4rfv
 
-# In your SSH client, run the following commands, substituting [ 192.168.144.XXX ] with the IP address of your local machine that is connected to the TPCast Router:
-# sudo wget -e check_certificate=off -e use_proxy=yes -e https_proxy=https://192.168.144.XXX:3128 https://rawgit.com/NGenesis/Docs/master/files/tpcast-upgrade.sh
-# sudo chmod +x ./tpcast-upgrade.sh
-# sudo ./tpcast-upgrade.sh 192.168.144.XXX
+# In your SSH client, run the following command, substituting all references to [ 192.168.144.XXX ] with the IP address of your local machine that is connected to the TPCast router:
+# sudo wget -e check_certificate=off -e use_proxy=yes -e https_proxy=https://192.168.144.XXX:3128 https://rawgit.com/NGenesis/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh 192.168.144.XXX
+
+# If you are using a USB to Ethernet adapter in place of Squid Proxy Server, run the following command instead:
+# sudo wget https://rawgit.com/NGenesis/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh
 
 # After the upgrade has finished (in approximately 1-2 hours), launch VirtualHere USB Client on your local machine and wait a few minutes following the reboot notification.  If your VirtualHere client does not detect the TPCast after 5 minutes following the reboot, remove and reinsert the battery to the power box and wait a further 5 minutes.
 
 # Configuring VirtualHere for TPCast:
 # Purchase and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by selecting Licence, Enter Licence(s) and copy your licence key from the email received following purchase.
-# In VirtualHere USB Client, select TPCast, then right click and select "Auto-Use Device/Port" for each of the following devices:
+# In VirtualHere USB Client, expand USB Hubs, expand TPCast, then right click and select "Auto-Use Device/Port" for each of the following devices:
 # - HTC Vive
 # - Lighthouse FPGA RX
 # - Watchman Dongle
@@ -49,6 +51,19 @@
 # Clean Up:
 # Any TPCast software should be left disabled or uninstalled while using VirtualHere USB Client.
 # Squid and Putty are no longer needed once everything is confirmed as working correctly and can be safely uninstalled from your local machine.
+
+# Performance Optimizations:
+# If you experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
+# Connect to the router at http://192.168.144.1 (CE) or http://192.168.1.1 (PRE)
+# Username: tproot (if prompted)
+# Password: 8427531 (CE) or 12345678 (PRE)
+# Navigate to WLAN Settings > Basic Settings > 5G and change Network Mode from "11vht AC/AN/A" to "11a only".
+# Click Save to apply the changes.
+
+# If you continue to experience tracking issues, you may have to select a different Channel by navigating to WLAN Settings > Basic Settings > 5G, and change Channel from "AutoSelect" to a different option.  The channel you select will vary based on region, outside interference and network configuration so try each channel until one works well for your setup.
+
+# Alternatively, using a more reliable router to overcome poor connection or bandwidth issues exhibited by the stock TPCast router may be an option.  The following routers have been tested with the TPCast upgrade and have shown to provide substantial improvements to tracking reliability over the stock TPCast router:
+# - Asus RT-AC68U
 
 # ---------------------------------------------------------
 
@@ -126,8 +141,10 @@ sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
 
 # Disable tpusbd service and old driver insertion boot script
 logger "Disabling tpusbd service and old driver insertion boot script"
-sudo rm /etc/init.d/wlan-load.sh
-sudo update-rc.d -f wlan-load.sh remove
+if [ -f /etc/init.d/wlan-load.sh ]; then
+	sudo rm /etc/init.d/wlan-load.sh > /dev/null 2>&1 || true
+	sudo update-rc.d -f wlan-load.sh remove > /dev/null 2>&1 || true
+fi
 
 # Upgrade WLAN driver
 logger "Upgrading WLAN driver and firmware for rtl8192du"
@@ -141,12 +158,7 @@ logger "Configuring WLAN interface wlan0"
 sudo sed -i '/country=GB/d' /etc/wpa_supplicant/wpa_supplicant.conf
 wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?<=PWD=)([a-zA-Z0-9]+)$' key.txt)" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
 echo -e "interface wlan0\nstatic ip_address=192.168.144.88/24\nstatic routers=192.168.144.1\nstatic domain_name_servers=192.168.144.1" | sudo tee -a /etc/dhcpcd.conf > /dev/null
-
-# Create script to initialize WLAN driver on first boot
-logger "Creating script to initialize WLAN driver on first boot"
-echo -e "#\0041/bin/bash\n### BEGIN INIT INFO\n# Provides:          8192du-init.sh\n# Required-Start:    $all\n# Required-Stop:     $all\n# Default-Start:     2 3 4 5\n# Default-Stop:      0 1 6\n# Short-Description: Initialize 8192du WLAN kernel module on first boot\n# Description:       Initialize 8192du WLAN kernel module on first boot\n### END INIT INFO\nlogger \"Finalizing Wi-Fi driver installation...\"\nsudo insmod /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko\nsudo depmod -a\nsudo modprobe 8192du\nrm \$0\nsudo update-rc.d -f 8192du-init.sh remove\nlogger \"Wi-Fi driver installation complete.\"" | sudo tee -a /etc/init.d/8192du-init.sh > /dev/null
-sudo chmod +x /etc/init.d/8192du-init.sh
-sudo update-rc.d 8192du-init.sh defaults
+sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
 # Install VirtualHere USB Server (Server licence must be purchased from https://virtualhere.com to use)
 logger "Installing VirtualHere USB Server"
@@ -156,8 +168,8 @@ sudo mv vhusbdarmpi3 /usr/sbin
 sudo wget http://www.virtualhere.com/sites/default/files/usbserver/scripts/vhusbdpin
 sudo chmod +x ./vhusbdpin
 sudo sed -i 's/vhusbdarm/vhusbdarmpi3/g' ./vhusbdpin
-sudo mv vhusbdpin /etc/init.d
-sudo update-rc.d vhusbdpin defaults
+sudo mv vhusbdpin /etc/init.d > /dev/null 2>&1 || true
+sudo update-rc.d vhusbdpin defaults > /dev/null 2>&1 || true
 
 # Configure VirtualHere USB Server for TPCast devices
 # HMD camera has custom event handler onReset.$VENDOR_ID$.$PRODUCT_ID$=
