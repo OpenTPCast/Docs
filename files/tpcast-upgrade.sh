@@ -162,12 +162,12 @@ sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
 # Install VirtualHere USB Server (Server licence must be purchased from https://virtualhere.com to use)
 logger "Installing VirtualHere USB Server"
-sudo wget https://www.virtualhere.com/sites/default/files/usbserver/vhusbdarmpi3
-sudo chmod +x ./vhusbdarmpi3
-sudo mv vhusbdarmpi3 /usr/sbin
+sudo wget https://www.virtualhere.com/sites/default/files/usbserver/vhusbdtpcast
+sudo chmod +x ./vhusbdtpcast
+sudo mv vhusbdtpcast /usr/sbin
 sudo wget http://www.virtualhere.com/sites/default/files/usbserver/scripts/vhusbdpin
 sudo chmod +x ./vhusbdpin
-sudo sed -i 's/vhusbdarm/vhusbdarmpi3/g' ./vhusbdpin
+sudo sed -i 's/vhusbdarm/vhusbdtpcast/g' ./vhusbdpin
 sudo mv vhusbdpin /etc/init.d > /dev/null 2>&1 || true
 sudo update-rc.d vhusbdpin defaults > /dev/null 2>&1 || true
 
