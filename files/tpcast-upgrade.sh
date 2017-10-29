@@ -146,18 +146,18 @@ if [ -f /etc/init.d/wlan-load.sh ]; then
 	sudo update-rc.d -f wlan-load.sh remove > /dev/null 2>&1 || true
 fi
 
+# Configure WLAN interface
+logger "Configuring WLAN interface wlan0"
+sudo sed -i '/country=GB/d' /etc/wpa_supplicant/wpa_supplicant.conf
+wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?<=PWD=)([a-zA-Z0-9]+)$' key.txt)" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
+echo -e "interface wlan0\nstatic ip_address=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $7 }')/24\nstatic routers=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $3 }')\nstatic domain_name_servers=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $3 }')" | sudo tee -a /etc/dhcpcd.conf > /dev/null
+
 # Upgrade WLAN driver
 logger "Upgrading WLAN driver and firmware for rtl8192du"
 sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw.bin
 sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw_wol.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw_wol.bin
 sudo wget -O /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko https://rawgit.com/OpenTPCast/Docs/master/files/8192du-$(ls -1 /lib/modules | tail -1)-stretch.ko
 echo '8192du' | sudo tee -a /etc/modules > /dev/null
-
-# Configure WLAN interface
-logger "Configuring WLAN interface wlan0"
-sudo sed -i '/country=GB/d' /etc/wpa_supplicant/wpa_supplicant.conf
-wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?<=PWD=)([a-zA-Z0-9]+)$' key.txt)" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
-echo -e "interface wlan0\nstatic ip_address=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $7 }')/24\nstatic routers=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $3 }')\nstatic domain_name_servers=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $3 }')" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
 # Install VirtualHere USB Server (Server licence must be purchased from https://virtualhere.com to use)
