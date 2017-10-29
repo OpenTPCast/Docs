@@ -16,7 +16,7 @@
 # Ensure that your TPCast power box battery is FULLY CHARGED and POWERED ON before attempting the upgrade.  Depending on your connection speed, it may be nessecary to disconnect the USB/power cables from the TPCast power box during the upgrade to further extend battery life.
 # Download & install Squid (http://squid.diladele.com/ for Windows, check https://wiki.squid-cache.org/SquidFaq/BinaryPackages for other platforms) on your local machine.
 # Download & install Putty SSH client (http://www.putty.org/ for Windows, use ssh command in other platforms) on your local machine.
-# Download & install VirtualHere USB Client (https://virtualhere.com/usb_client_software).  Note that an unlimited licence key must be purchased to use with VirtualHere USB Server after the upgrade.
+# Download & install VirtualHere USB Client (https://virtualhere.com/usb_client_software).  Note that a TPCast-optimized licence key must be purchased to use with VirtualHere USB Server after the upgrade (https://www.virtualhere.com/tpcast_purchase).
 # If you are a TPCast PRE user, you must replace all references to [ 192.168.144. ] with [ 192.168.1. ] in any steps mentioned during this guide.
 # If you own a USB to Ethernet adapter, you may alternatively skip installation of Squid Proxy Server and plug in a USB to Ethernet adapter to the USB port of the TPCast power box, and connect it to your own internet-enabled router, which will greatly improve download speeds during the upgrade.
 
@@ -160,7 +160,7 @@ sudo wget -O /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wir
 echo '8192du' | sudo tee -a /etc/modules > /dev/null
 sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
-# Install VirtualHere USB Server (Server licence must be purchased from https://virtualhere.com to use)
+# Install VirtualHere USB Server (Server licence must be purchased from https://www.virtualhere.com/tpcast_purchase to use)
 logger "Installing VirtualHere USB Server"
 sudo wget https://www.virtualhere.com/sites/default/files/usbserver/vhusbdtpcast
 sudo chmod +x ./vhusbdtpcast
