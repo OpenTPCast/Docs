@@ -17,20 +17,20 @@
 # Download & install Squid (http://squid.diladele.com/ for Windows, check https://wiki.squid-cache.org/SquidFaq/BinaryPackages for other platforms) on your local machine.
 # Download & install Putty SSH client (http://www.putty.org/ for Windows, use ssh command in other platforms) on your local machine.
 # Download & install VirtualHere USB Client (https://virtualhere.com/usb_client_software).  Note that an unlimited licence key must be purchased to use with VirtualHere USB Server after the upgrade.
-# If you are a TPCast PRE user, you must replace all references to [ 192.168.144. ] with [ 192.168.1. ] in the upgrade script and any steps mentioned during this guide before attempting the upgrade.
+# If you are a TPCast PRE user, you must replace all references to [ 192.168.144. ] with [ 192.168.1. ] in any steps mentioned during this guide.
 # If you own a USB to Ethernet adapter, you may alternatively skip installation of Squid Proxy Server and plug in a USB to Ethernet adapter to the USB port of the TPCast power box, and connect it to your own internet-enabled router, which will greatly improve download speeds during the upgrade.
 
 # Installation:
 # Launch your SSH client and connect with the following details:
-# Hostname: 192.168.144.88
+# Hostname: 192.168.144.88 (CE) or http://192.168.1.88 (PRE)
 # Port: 22
 # Username: pi
 # Password: 1qaz2wsx3edc4rfv
 
-# In your SSH client, run the following command, substituting all references to [ 192.168.144.XXX ] with the IP address of your local machine that is connected to the TPCast router:
-# sudo wget -e check_certificate=off -e use_proxy=yes -e https_proxy=https://192.168.144.XXX:3128 https://rawgit.com/NGenesis/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh 192.168.144.XXX
+# In your SSH client, run the following command if you opted to install Squid Proxy Server:
+# sudo wget -e check_certificate=off -e use_proxy=yes -e https_proxy=https://$(echo $SSH_CONNECTION | awk '{print $1}'):3128 https://rawgit.com/NGenesis/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh $(echo $SSH_CONNECTION | awk '{print $1}')
 
-# If you are using a USB to Ethernet adapter in place of Squid Proxy Server, run the following command instead:
+# In your SSH client, run the following command if you opted to use a USB to Ethernet adapter in place of Squid Proxy Server:
 # sudo wget https://rawgit.com/NGenesis/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh
 
 # After the upgrade has finished (in approximately 1-2 hours), launch VirtualHere USB Client on your local machine and wait a few minutes following the reboot notification.  If your VirtualHere client does not detect the TPCast after 5 minutes following the reboot, remove and reinsert the battery to the power box and wait a further 5 minutes.
@@ -157,7 +157,7 @@ echo '8192du' | sudo tee -a /etc/modules > /dev/null
 logger "Configuring WLAN interface wlan0"
 sudo sed -i '/country=GB/d' /etc/wpa_supplicant/wpa_supplicant.conf
 wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?<=PWD=)([a-zA-Z0-9]+)$' key.txt)" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
-echo -e "interface wlan0\nstatic ip_address=192.168.144.88/24\nstatic routers=192.168.144.1\nstatic domain_name_servers=192.168.144.1" | sudo tee -a /etc/dhcpcd.conf > /dev/null
+echo -e "interface wlan0\nstatic ip_address=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $7 }')/24\nstatic routers=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $3 }')\nstatic domain_name_servers=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $3 }')" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
 # Install VirtualHere USB Server (Server licence must be purchased from https://virtualhere.com to use)
