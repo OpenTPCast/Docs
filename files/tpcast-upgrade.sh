@@ -21,6 +21,7 @@
 # If you own a USB to Ethernet adapter, you may alternatively skip installation of Squid Proxy Server and plug in a USB to Ethernet adapter to the USB port of the TPCast power box, and connect it to your own internet-enabled router, which will greatly improve download speeds during the upgrade.
 
 # Installation:
+# Power up the TPCast power box by plugging in the battery and wait a few minutes.
 # Launch your SSH client and connect with the following details:
 # Hostname: 192.168.144.88 (CE) or http://192.168.1.88 (PRE)
 # Port: 22
@@ -150,7 +151,7 @@ fi
 logger "Configuring WLAN interface wlan0"
 sudo sed -i '/country=GB/d' /etc/wpa_supplicant/wpa_supplicant.conf
 wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?<=PWD=)([a-zA-Z0-9]+)$' key.txt)" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
-echo -e "interface wlan0\nstatic ip_address=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $7 }')/24\nstatic routers=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $3 }')\nstatic domain_name_servers=$(ip route show | grep -i 'default via.*wlan0'| awk '{print $3 }')" | sudo tee -a /etc/dhcpcd.conf > /dev/null
+echo -e "interface wlan0\nstatic ip_address=$(ifconfig wlan0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')/24\nstatic routers=$(route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' ')\nstatic domain_name_servers=$(route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' ')" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 
 # Upgrade WLAN driver
 logger "Upgrading WLAN driver and firmware for rtl8192du"
