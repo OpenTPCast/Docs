@@ -155,9 +155,20 @@ echo -e "interface wlan0\nstatic ip_address=$(ifconfig wlan0 | grep -Eo 'inet (a
 
 # Upgrade WLAN driver
 logger "Upgrading WLAN driver and firmware for rtl8192du"
-sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw.bin
-sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw_wol.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw_wol.bin
-sudo wget -O /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko https://rawgit.com/OpenTPCast/Docs/master/files/8192du-$(ls -1 /lib/modules | tail -1)-stretch.ko
+if sudo wget -q -O /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko https://rawgit.com/OpenTPCast/Docs/master/files/8192du-$(ls -1 /lib/modules | tail -1)-stretch.ko; then
+	logger "Downloading WLAN kernel module and firmware..."
+	sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw.bin
+	sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw_wol.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw_wol.bin
+else
+	logger "No precompiled kernel module available from repository, compiling WLAN kernel module..."
+	sudo apt-get install -y raspberrypi-kernel-headers git
+	git clone https://github.com/lwfinger/rtl8192du.git
+	sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
+	make -C ./rtl8192du
+	sudo cp rtl8192du/8192du.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless && sudo cp rtl8192du/rtl8192dufw.bin /lib/firmware/rtlwifi/rtl8192dufw.bin && sudo cp rtl8192du/rtl8192dufw_wol.bin /lib/firmware/rtlwifi/rtl8192dufw_wol.bin
+	sudo rm -rf rtl8192du
+fi
+
 echo '8192du' | sudo tee -a /etc/modules > /dev/null
 sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
@@ -174,7 +185,8 @@ sudo update-rc.d vhusbdpin defaults > /dev/null 2>&1 || true
 
 # Configure VirtualHere USB Server for TPCast devices
 # HMD camera has custom event handler onReset.$VENDOR_ID$.$PRODUCT_ID$=
-echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=Vive Camera,0bb4,2c87,1122" | sudo tee /root/config.ini > /dev/null
+# WLAN & VH debugging devices are hidden from client
+echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=Vive Camera,0bb4,2c87,1122\nIgnoredDevices=424/ec00,bda/8194" | sudo tee /root/config.ini > /dev/null
 
 # Restore proxy server and unattended install overrides to defaults
 logger "Restoring proxy server and unattended install overrides to defaults"
