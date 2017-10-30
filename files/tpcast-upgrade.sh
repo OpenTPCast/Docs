@@ -29,10 +29,10 @@
 # Password: 1qaz2wsx3edc4rfv
 
 # In your SSH client, run the following command if you opted to install Squid Proxy Server:
-# sudo wget -e check_certificate=off -e use_proxy=yes -e https_proxy=https://$(echo $SSH_CONNECTION | awk '{print $1}'):3128 https://rawgit.com/NGenesis/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh $(echo $SSH_CONNECTION | awk '{print $1}')
+# sudo wget -e check_certificate=off -e use_proxy=yes -e https_proxy=https://$(echo $SSH_CONNECTION | awk '{print $1}'):3128 https://rawgit.com/OpenTPCast/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh $(echo $SSH_CONNECTION | awk '{print $1}')
 
 # In your SSH client, run the following command if you opted to use a USB to Ethernet adapter in place of Squid Proxy Server:
-# sudo wget https://rawgit.com/NGenesis/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh
+# sudo wget https://rawgit.com/OpenTPCast/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh
 
 # After the upgrade has finished (in approximately 1-2 hours), launch VirtualHere USB Client on your local machine and wait a few minutes following the reboot notification.  If your VirtualHere client does not detect the TPCast after 5 minutes following the reboot, remove and reinsert the battery to the power box and wait a further 5 minutes.
 
@@ -164,7 +164,7 @@ else
 	sudo apt-get install -y raspberrypi-kernel-headers git
 	git clone https://github.com/lwfinger/rtl8192du.git
 	sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
-	make -C ./rtl8192du
+	sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8192du
 	sudo cp rtl8192du/8192du.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless && sudo cp rtl8192du/rtl8192dufw.bin /lib/firmware/rtlwifi/rtl8192dufw.bin && sudo cp rtl8192du/rtl8192dufw_wol.bin /lib/firmware/rtlwifi/rtl8192dufw_wol.bin
 	sudo rm -rf rtl8192du
 fi
