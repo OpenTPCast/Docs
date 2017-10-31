@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# OpenTPCast upgrade script for Raspian Stretch and VirtualHere.
+# OpenTPCast upgrade script for Raspbian Stretch and VirtualHere.
 # An installation guide on how to use this script can be found at https://github.com/OpenTPCast/Docs/blob/master/guides/UPGRADE.md
 
 # Author: Genesis (https://github.com/NGenesis)
@@ -48,8 +48,8 @@ echo "|                                                    |"
 echo "------------------------------------------------------"
 echo "Please wait while the TPCast is upgraded, this process is will take approximately 1-2 hours depending on your internet connection speed."
 
-# Upgrade Raspian distro repositories (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)
-logger "Upgrading Raspian distro repositories to Stretch (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)"
+# Upgrade Raspbian distro repositories (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)
+logger "Upgrading Raspbian distro repositories to Stretch (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)"
 find /etc/apt -name "*.list" | sudo xargs sed -i -r '/^#*deb/s/jessie/stretch/g'
 
 # Disable prompts during anattended upgrade
