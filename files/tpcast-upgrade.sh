@@ -143,17 +143,13 @@ sudo sed -i 's/kernel=kernel_new_defcfg.img/kernel=kernel7.img/g' /boot/config.t
 logger "Optimizing for faster boot time"
 sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
 
-# Disable tpusbd service and old WLAN driver insertion boot script
+# Clean up old tpusbd service and wlan driver files
 logger "Disabling tpusbd service and old driver insertion boot script"
 if [ -f /etc/init.d/wlan-load.sh ]; then
 	sudo rm /etc/init.d/wlan-load.sh > /dev/null 2>&1 || true
 	sudo update-rc.d -f wlan-load.sh remove > /dev/null 2>&1 || true
 fi
 
-# Regenerate SSID & passphrase to match hardware
-sudo ./ssidpwd &> /dev/null
-
-# Clean up old tpusbd service files
 sudo rm -rf /usr/lib/libtpusb.so* /home/pi/4.4.19-tp-moid-str-new /home/pi/checknet /home/pi/oldver.conf /home/pi/rtwpriv /home/pi/server /home/pi/tpusb_startup.sh /home/pi/updated /home/pi/watchdog /home/pi/wlan-connect.sh /home/pi/wlan.ko
 
 # Configure WLAN interface
