@@ -2,7 +2,7 @@
 
 ## Known Issues
 - The HTC Vive camera currently does not function with VirtualHere.
-- The US/EU version of the TPCast is known to have hardware and software differences which are currently not supported by this upgrade process.  **Do not attempt to upgrade a US/EU version of the TPCast or you will brick your install!**
+- The US/EU version of the TPCast is known to have hardware and software differences which are currently not supported by this upgrade process.  **Do not attempt to upgrade a US/EU version of the TPCast or you will brick your device!**
 
 ## Overview
 This guide provides instructions on how to upgrade a TPCast to Raspbian Stretch with Kernel 4.9+ and [VirtualHere](VIRTUALHERE.md), which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
