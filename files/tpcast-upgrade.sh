@@ -99,6 +99,9 @@ else
 	export https_proxy=https://$HOST_PROXY_IP:3128
 fi
 
+WLAN_IP_ADDRESS = `ifconfig wlan0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
+WLAN_GATEWAY = `route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' '`
+
 logger "TPCast upgrade is starting..."
 echo "------------------------------------------------------"
 echo "|                                                    |"
@@ -151,7 +154,7 @@ fi
 logger "Configuring WLAN interface wlan0"
 sudo sed -i '/country=GB/d' /etc/wpa_supplicant/wpa_supplicant.conf
 wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?<=PWD=)([a-zA-Z0-9]+)$' key.txt)" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
-echo -e "interface wlan0\nstatic ip_address=$(ifconfig wlan0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')/24\nstatic routers=$(route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' ')\nstatic domain_name_servers=$(route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' ')" | sudo tee -a /etc/dhcpcd.conf > /dev/null
+echo -e "interface wlan0\nstatic ip_address=$WLAN_IP_ADDRESS/24\nstatic routers=$WLAN_GATEWAY\nstatic domain_name_servers=$WLAN_GATEWAY" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 
 # Upgrade WLAN driver
 logger "Upgrading WLAN driver and firmware for rtl8192du"
