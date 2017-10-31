@@ -218,5 +218,8 @@ echo "|                                                    |"
 echo "------------------------------------------------------"
 echo -e "TPCast upgrade has finished, please wait while the TPCast power box reboots automatically to finalize the upgrade...\nYou can now launch VirtualHere USB Client on your local machine if you have not already done so.  If VirtualHere USB Client does not detect the TPCast after 5 minutes following the reboot, please remove and reinsert the battery to the power box and wait a further 5 minutes."
 
+# Remove this script once done
+rm -- "$0"
+
 # Reboot for changes to take effect
 sudo reboot now
