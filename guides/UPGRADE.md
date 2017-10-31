@@ -1,31 +1,75 @@
-# Upgrading Rasbian and the Kernel
+# Upgrading TPCast For Raspbian Stretch & VirtualHere
 
-**NOTE: This is done at you own risk. We (the collective group contributing to this repository) take no responsibility for any harm done to your TPCast.**
+## Overview
+This guide provides instructions on how to upgrade a TPCast to Raspbian Stretch with Kernel 4.9+ and [VirtualHere](VIRTUALHERE.md), which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
 
-If you brick it, check out [Unbricking](UNBRICKING.md).
+## Disclaimer
+**This upgrade is performed at you own risk! OpenTPCast and its contributers will not be held responsible for any physical damage or data loss incurred due to modifications or tampering of your TPCast hardware or software.**
 
-# STOP
+If the upgrade fails and leaves your device inoperable, please refer to [Unbricking](UNBRICKING.md) for more information on how to restore your device to its original factory state.  We do not recommend attempting this upgrade if you are unable to, or are unwilling to open up your TPCast power box to remove and back up the internal MicroSD card.
 
-Don't go any further. Read [Unbricking](UNBRICKING.md) so you know what you're getting into. If you don't think you can fix things if you break something, don't read on, don't pass GO, don't collect £200. Be happy with what you have right now and continue using it.
+## Preparation
+### Prepare Your TPCast
+- Ensure that you have a **BACKUP** of your TPCast power box MicroSD card.  This upgrade is not reversible, so it is strongly recommended that you back up the MicroSD card of your TPCast power box so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.
+    - This requires removing the plastic covering of the TPCast power box (remove the 4 screws from the battery facing side and pry the grated plastic side off), removing the MicroSD and backing it up using a MicroSD card reader and cloning software such as [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/).
+- Ensure that any TPCast software is **NOT RUNNING** on your local machine during the upgrade.
+- Ensure that your TPCast power box battery is **FULLY CHARGED** and **POWERED ON** before attempting the upgrade.  Depending on your connection speed, it may be nessecary to disconnect the USB/power cables from the TPCast power box during the upgrade to further extend battery life.
 
-## Upgrading
+### Prerequisite Software
+- Download & install [Squid](http://squid.diladele.com/) on your local machine, which will act as a proxy server allowing your TPCast power box to temporarily connect to the internet to download updates and files needed to perform the upgrade.
+- Download & install [Putty SSH client](http://www.putty.org/) on your local machine, which will be used to connect to your TPCast power box.
+- Download & install [VirtualHere USB Client](https://virtualhere.com/usb_client_software) on your local machine, which will be used to forward the HTC Vive's USB devices over your local network.  Note that a TPCast-optimized licence key must be [purchased](https://www.virtualhere.com/tpcast_purchase) to use with VirtualHere USB Server after the upgrade.
 
-**THESE INSTRUCTIONS ARE CURRENTLY IN DRAFT AND SHOULD NOT BE FOLLOWED**
+### Other Steps To Consider
+- If you own a USB to Ethernet adapter, you may alternatively skip installation of Squid Proxy Server and plug in a USB to Ethernet adapter to the USB port of the TPCast power box or auxiliary USB port inside the HTC Vive headset, and connect it to your own internet-enabled router, which can greatly improve download speeds during the upgrade.
 
-1.) SSH into your TPCast. If you don't know how to do that, check out the [SSH](SSH.md) guide.
+## Installation
+### Connecting To The TPCast Power Box
+Power up the TPCast power box by plugging in the battery and wait a few minutes, then launch your SSH client and connect with the following details:
+  - Hostname: 192.168.144.88 (CE) or 192.168.1.88 (PRE)
+  - Port: 22
+  - Username: pi
+  - Password: 1qaz2wsx3edc4rfv
 
-2.) Open `/etc/apt/sources.list` in your preferred text editor (`vim`,`nano`, etc) and replace all instances of `jessie` with `stretch`
+### Begin The Upgrade Process
+- In your SSH client, run the following command if you opted to install Squid Proxy Server:
+```bash
+sudo wget -e check_certificate=off -e use_proxy=yes -e https_proxy=https://$(echo $SSH_CONNECTION | awk '{print $1}'):3128 https://rawgit.com/OpenTPCast/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh $(echo $SSH_CONNECTION | awk '{print $1}')
+```
 
-3.) Do the same in `etc/apt/sources.list.d/raspi.lis`
+- In your SSH client, run the following command if you opted to use a USB to Ethernet adapter in place of Squid Proxy Server:
+```bash
+sudo wget https://rawgit.com/OpenTPCast/Docs/master/files/tpcast-upgrade.sh && sudo chmod +x ./tpcast-upgrade.sh && sudo ./tpcast-upgrade.sh
+```
 
-4.) Run `sudo apt-get update`
+Once the upgrade has finished (in approximately 1-2 hours), launch VirtualHere USB Client on your local machine and wait a few minutes following the reboot notification.  If your VirtualHere client does not detect the TPCast after 5 minutes following the reboot, remove and reinsert the battery to the power box and wait a further 5 minutes.
 
-5.) Run `sudo apt-get dist-upgrade -y`
+## Configuring VirtualHere For TPCast
+1. Purchase and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by selecting Licence, Enter Licence(s) and copy your licence key from the email received following purchase.
+1. In VirtualHere USB Client, expand USB Hubs, expand TPCast, then right click and select "Auto-Use Device/Port" for each of the following devices:
+    - HTC Vive
+    - Lighthouse FPGA RX
+    - Watchman Dongle
+    - Watchman Dongle
+    - USB Audio Device
+1. Right click on USB Hubs then select Install Client Service.
 
-6.) Wait patiently as Raspbian updates to the latest version: Stretch. Grab a sandwich, pull up Netflix. This is gonna take a while but will need a little babysitting.
+## Using Your TPCast After Upgrading
+To load up your TPCast on future play sessions, plug in the TPCast, wait a few minutes (checking VirtualHere USB Client if nessecary to see if the TPCast is ready), then launch SteamVR.
 
-7.) Whenever it asks whether you want to keep your existing file of something, say yes (just press enter, it's the default)
+## Cleaning Up After Upgrading
+Any TPCast software should be left disabled or uninstalled while using VirtualHere USB Client.
+Squid and Putty are no longer needed once everything is confirmed as working correctly and can be safely uninstalled from your local machine.
 
-Things to add:
-- Compile new adapter module
-- Clear out apt cache folder 
+## Optimizing Your TPCast Router For Tracking Performance:
+If you experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
+1. Connect to the router at http://192.168.144.1 (CE) or http://192.168.1.1 (PRE)
+    - Username: tproot (if prompted)
+    - Password: 8427531 (CE) or 12345678 (PRE)
+1. Navigate to WLAN Settings > Basic Settings > 5G and change Network Mode from "11vht AC/AN/A" to "11a only".
+1. Click Save to apply the changes.
+
+If you continue to experience tracking issues, you may have to select a different Channel by navigating to WLAN Settings > Basic Settings > 5G, and change Channel from "AutoSelect" to a different option.  The channel you select will vary based on region, outside interference and network configuration so try each channel until one works well for your setup.
+
+Alternatively, using a more reliable router to overcome poor connection or bandwidth issues exhibited by the stock TPCast router may be an option.  The following routers have been tested with the TPCast upgrade and have shown to provide substantial improvements to tracking reliability over the stock TPCast router:
+- Asus RT-AC68U
