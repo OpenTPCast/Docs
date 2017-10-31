@@ -15,7 +15,10 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 - :x: Camera not working
 
 #### Consumer Release (US/EU)
-- :x: Untested.
+- :white_check_mark: Upgradable to Kernel 4.9
+- :white_check_mark: Working with VirtualHere
+- :white_check_mark: Microphone Working (please disable the camera in SteamVR first)
+- :x: Camera not working
 
 # Table of Contents
 
