@@ -26,7 +26,7 @@ If the upgrade fails and leaves your device inoperable, please refer to [Unbrick
 ## Installation
 ### Connecting To The TPCast Power Box
 Power up the TPCast power box by plugging in the battery and wait a few minutes, then launch your SSH client and connect with the following details:
-  - Hostname: 192.168.144.88 (CE) or http://192.168.1.88 (PRE)
+  - Hostname: 192.168.144.88 (CE) or 192.168.1.88 (PRE)
   - Port: 22
   - Username: pi
   - Password: 1qaz2wsx3edc4rfv
