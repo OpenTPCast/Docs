@@ -9,7 +9,7 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 
 ## Tinkering
 
-- [Upgrading TPCast For Raspian Stretch & VirtualHere](guides/UPGRADE.md)
+- [Upgrading TPCast For Raspbian Stretch & VirtualHere](guides/UPGRADE.md)
 - [VirtualHere](guides/VIRTUALHERE.md)
 - [Unbricking your TPCast](guides/UNBRICKING.md)
 
