@@ -6,7 +6,7 @@ This guide provides instructions on how to upgrade a TPCast to Raspbian Stretch 
 ## Disclaimer
 **This upgrade is performed at you own risk! OpenTPCast and its contributers will not be held responsible for any physical damage or data loss incurred due to modifications or tampering of your TPCast hardware or software.**
 
-If the upgrade fails and leaves your device inoperable, please refer to [Unbricking](UNBRICKING.md) for more information on how to restore your device to its original factory state.  We do not recommend attempting this upgrade if you are unable to, or are unwilling to open up your TPCast power box to remove and back up the internal MicroSD card.
+If the upgrade fails and leaves your device inoperable, please refer to [Unbricking](UNBRICKING.md) for more information on how to restore your device to its original factory state.  We do not recommend attempting this upgrade if you are unable to, or are unwilling to open up your TPCast power box to remove and [back up the internal MicroSD card](SDCARD.md).
 
 ## Known Issues
 - The HTC Vive camera currently does not function correctly with VirtualHere.
@@ -14,8 +14,7 @@ If the upgrade fails and leaves your device inoperable, please refer to [Unbrick
 
 ## Preparation
 ### Prepare Your TPCast
-- Ensure that you have a **BACKUP** of your TPCast power box MicroSD card.  This upgrade is not reversible, so it is strongly recommended that you back up the MicroSD card of your TPCast power box so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.
-    - This requires removing the plastic covering of the TPCast power box (remove the 4 screws from the battery facing side and pry the grated plastic side off), removing the MicroSD and backing it up using a MicroSD card reader and cloning software such as [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/).
+- Ensure that you have a **BACKUP** of your TPCast power box MicroSD card.  This upgrade is not reversible, so it is strongly recommended that you [back up the MicroSD card of your TPCast power box](SDCARD.md) so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.
 - Ensure that any TPCast software is **NOT RUNNING** on your local machine during the upgrade.
 - Ensure that your TPCast power box battery is **FULLY CHARGED** and **POWERED ON** before attempting the upgrade.  Depending on your connection speed, it may be nessecary to disconnect the USB/power cables from the TPCast power box during the upgrade to further extend battery life.
 
@@ -56,6 +55,9 @@ Once the upgrade has finished (in approximately 1-2 hours), launch VirtualHere U
     - Watchman Dongle
     - Watchman Dongle
     - USB Audio Device
+        - This should be used if available to enable microphone support for older revisions of HTC Vive.
+    - Vive Camera
+        - This should only be used when "USB Audio Device" is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled while running SteamVR to avoid stability issues.
 1. Right click on USB Hubs then select Install Client Service.
 
 ## Using Your TPCast After Upgrading
