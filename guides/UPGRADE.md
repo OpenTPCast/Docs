@@ -10,7 +10,8 @@ If the upgrade fails and leaves your device inoperable, please refer to [Unbrick
 
 ## Preparation
 ### Prepare Your TPCast
-- Ensure that you have a **BACKUP** of your TPCast power box MicroSD card.  This upgrade is not reversible, so it is strongly recommended that you back up the MicroSD card of your TPCast power box so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.  This requires removing the plastic covering of the TPCast power box (remove the 4 screws from the battery facing side and pry the grated plastic side off), removing the MicroSD and backing it up using a MicroSD card reader and cloning software such as [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/).
+- Ensure that you have a **BACKUP** of your TPCast power box MicroSD card.  This upgrade is not reversible, so it is strongly recommended that you back up the MicroSD card of your TPCast power box so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.
+    - This requires removing the plastic covering of the TPCast power box (remove the 4 screws from the battery facing side and pry the grated plastic side off), removing the MicroSD and backing it up using a MicroSD card reader and cloning software such as [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/).
 - Ensure that any TPCast software is **NOT RUNNING** on your local machine during the upgrade.
 - Ensure that your TPCast power box battery is **FULLY CHARGED** and **POWERED ON** before attempting the upgrade.  Depending on your connection speed, it may be nessecary to disconnect the USB/power cables from the TPCast power box during the upgrade to further extend battery life.
 
