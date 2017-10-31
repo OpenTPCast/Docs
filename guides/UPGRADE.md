@@ -6,7 +6,7 @@ This guide provides instructions on how to upgrade a TPCast to Raspbian Stretch 
 ## Disclaimer
 **This upgrade is performed at you own risk! OpenTPCast and its contributers will not be held responsible for any physical damage or data loss incurred due to modifications or tampering of your TPCast hardware or software.**
 
-If the upgrade fails and leaves your device inoperable, please refer to [Unbricking](UNBRICKING.md) for more information on how to restore your device to its original factory state.  We do not recommend attempting this upgrade if you are unable to, or are unwilling to open up your TPCast power box to remove and back up the internal MicroSD card.
+If the upgrade fails and leaves your device inoperable, please refer to [Unbricking](UNBRICKING.md) for more information on how to restore your device to its original factory state.  We do not recommend attempting this upgrade if you are unable to, or are unwilling to open up your TPCast power box to remove and [back up the internal MicroSD card](SDCARD.md).
 
 ## Known Issues
 - The HTC Vive camera currently does not function correctly with VirtualHere.
