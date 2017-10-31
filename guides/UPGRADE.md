@@ -25,10 +25,10 @@ If the upgrade fails and leaves your device inoperable, please refer to [Unbrick
 ## Installation
 ### Connecting To The TPCast Power Box
 Power up the TPCast power box by plugging in the battery and wait a few minutes, then launch your SSH client and connect with the following details:
-> Hostname: 192.168.144.88 (CE) or http://192.168.1.88 (PRE)
-> Port: 22
-> sername: pi
-> Password: 1qaz2wsx3edc4rfv
+  - Hostname: 192.168.144.88 (CE) or http://192.168.1.88 (PRE)
+  - Port: 22
+  - Username: pi
+  - Password: 1qaz2wsx3edc4rfv
 
 ### Begin The Upgrade Process
 - In your SSH client, run the following command if you opted to install Squid Proxy Server:
@@ -46,11 +46,11 @@ Once the upgrade has finished (in approximately 1-2 hours), launch VirtualHere U
 ## Configuring VirtualHere for TPCast
 1. Purchase and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by selecting Licence, Enter Licence(s) and copy your licence key from the email received following purchase.
 1. In VirtualHere USB Client, expand USB Hubs, expand TPCast, then right click and select "Auto-Use Device/Port" for each of the following devices:
-> HTC Vive
-> Lighthouse FPGA RX
-> Watchman Dongle
-> Watchman Dongle
-> USB Audio Device
+    - HTC Vive
+    - Lighthouse FPGA RX
+    - Watchman Dongle
+    - Watchman Dongle
+    - USB Audio Device
 1. Right click on USB Hubs then select Install Client Service.
 
 ## Using Your TPCast After Upgrading
@@ -63,8 +63,8 @@ Squid and Putty are no longer needed once everything is confirmed as working cor
 ## Optimizing Your TPCast Router For Tracking Performance:
 If you experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
 1. Connect to the router at http://192.168.144.1 (CE) or http://192.168.1.1 (PRE)
-> Username: tproot (if prompted)
-> Password: 8427531 (CE) or 12345678 (PRE)
+    - Username: tproot (if prompted)
+    - Password: 8427531 (CE) or 12345678 (PRE)
 1. Navigate to WLAN Settings > Basic Settings > 5G and change Network Mode from "11vht AC/AN/A" to "11a only".
 1. Click Save to apply the changes.
 
