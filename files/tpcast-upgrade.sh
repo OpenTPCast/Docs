@@ -36,8 +36,8 @@ else
 	export https_proxy=https://$HOST_PROXY_IP:3128
 fi
 
-WLAN_IP_ADDRESS=`ifconfig wlan0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
-WLAN_GATEWAY=`route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' '`
+WLAN_IP_ADDRESS=$(ifconfig wlan0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
+WLAN_GATEWAY=$(route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' ')
 
 logger "TPCast upgrade is starting..."
 echo "------------------------------------------------------"
@@ -87,7 +87,7 @@ if [ -f /etc/init.d/wlan-load.sh ]; then
 	sudo update-rc.d -f wlan-load.sh remove > /dev/null 2>&1 || true
 fi
 
-sudo rm -rf /usr/lib/libtpusb.so* /home/pi/4.4.19-tp-moid-str-new /home/pi/checknet /home/pi/oldver.conf /home/pi/rtwpriv /home/pi/server /home/pi/tpusb_startup.sh /home/pi/updated /home/pi/watchdog /home/pi/wlan-connect.sh /home/pi/wlan.ko
+sudo rm -rf /usr/lib/libtpusb.so* /home/pi/4.4.19-tp-moid-str-new /home/pi/checknet /home/pi/oldver.conf /home/pi/rtwpriv /home/pi/server /home/pi/tpusb_startup.sh /home/pi/updated /home/pi/watchdog /home/pi/ssidpwd /home/pi/wlan-connect.sh /home/pi/wlan.ko
 
 # Configure WLAN interface
 logger "Configuring WLAN interface wlan0"
