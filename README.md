@@ -6,16 +6,16 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 - :white_check_mark: Upgradable to Kernel 4.9
 - :white_check_mark: Working with VirtualHere
 - :white_check_mark: Microphone Working
-- :x: Camera Working
+- :x: Camera not working
 
 #### Consumer Release (China)
 - :white_check_mark: Upgradable to Kernel 4.9
 - :white_check_mark: Working with VirtualHere
 - :white_check_mark: Microphone Working
-- :x: Camera Working
+- :x: Camera not working
 
 #### Consumer Release (US/EU)
-- Untested.
+- :x: Untested.
 
 # Table of Contents
 
