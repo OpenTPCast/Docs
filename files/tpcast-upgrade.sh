@@ -99,8 +99,8 @@ else
 	export https_proxy=https://$HOST_PROXY_IP:3128
 fi
 
-WLAN_IP_ADDRESS = `ifconfig wlan0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
-WLAN_GATEWAY = `route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' '`
+WLAN_IP_ADDRESS=`ifconfig wlan0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
+WLAN_GATEWAY=`route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' '`
 
 logger "TPCast upgrade is starting..."
 echo "------------------------------------------------------"
