@@ -143,25 +143,32 @@ sudo sed -i 's/kernel=kernel_new_defcfg.img/kernel=kernel7.img/g' /boot/config.t
 logger "Optimizing for faster boot time"
 sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
 
-# Disable tpusbd service and old driver insertion boot script
+# Disable tpusbd service and old WLAN driver insertion boot script
 logger "Disabling tpusbd service and old driver insertion boot script"
 if [ -f /etc/init.d/wlan-load.sh ]; then
 	sudo rm /etc/init.d/wlan-load.sh > /dev/null 2>&1 || true
 	sudo update-rc.d -f wlan-load.sh remove > /dev/null 2>&1 || true
 fi
 
+# Regenerate SSID & passphrase to match hardware
+sudo ./ssidpwd &> /dev/null
+
+# Clean up old tpusbd service files
+sudo rm -rf /usr/lib/libtpusb.so* /home/pi/4.4.19-tp-moid-str-new /home/pi/checknet /home/pi/oldver.conf /home/pi/rtwpriv /home/pi/server /home/pi/tpusb_startup.sh /home/pi/updated /home/pi/watchdog /home/pi/wlan-connect.sh /home/pi/wlan.ko
+
 # Configure WLAN interface
 logger "Configuring WLAN interface wlan0"
 sudo sed -i '/country=GB/d' /etc/wpa_supplicant/wpa_supplicant.conf
 wpa_passphrase "$(grep -oP '(?<=SSID=)([a-zA-Z0-9]+)$' key.txt)" "$(grep -oP '(?<=PWD=)([a-zA-Z0-9]+)$' key.txt)" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
+sudo sed -i 's/network={/network={\n\tscan_ssid=1/g' /etc/wpa_supplicant/wpa_supplicant.conf
 echo -e "interface wlan0\nstatic ip_address=$WLAN_IP_ADDRESS/24\nstatic routers=$WLAN_GATEWAY\nstatic domain_name_servers=$WLAN_GATEWAY" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 
 # Upgrade WLAN driver
 logger "Upgrading WLAN driver and firmware for rtl8192du"
 if sudo wget -q -O /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8192du.ko https://rawgit.com/OpenTPCast/Docs/master/files/8192du-$(ls -1 /lib/modules | tail -1)-stretch.ko; then
 	logger "Downloading WLAN kernel module and firmware..."
-	sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw.bin
-	sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw_wol.bin https://rawgit.com/lwfinger/rtl8192du/master/rtl8192dufw_wol.bin
+	sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw.bin https://rawgit.com/OpenTPCast/Docs/master/files/rtl8192dufw.bin
+	sudo wget -O /lib/firmware/rtlwifi/rtl8192dufw_wol.bin https://rawgit.com/OpenTPCast/Docs/master/files/rtl8192dufw_wol.bin
 else
 	logger "No precompiled kernel module available from repository, compiling WLAN kernel module..."
 	sudo apt-get install -y raspberrypi-kernel-headers git
