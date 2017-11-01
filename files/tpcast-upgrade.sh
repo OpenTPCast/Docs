@@ -42,11 +42,11 @@ WLAN_GATEWAY=$(route -n | grep '^0.0.0.0.*wlan0' | tr -s ' ' | cut -f2 -d' ')
 logger "TPCast upgrade is starting..."
 echo "------------------------------------------------------"
 echo "|                                                    |"
-echo "|                   TPCast Upgrade                   |"
+echo "|                 OpenTPCast Upgrade                 |"
 echo "|                 Beginning Upgrade...               |"
 echo "|                                                    |"
 echo "------------------------------------------------------"
-echo "Please wait while the TPCast is upgraded, this process is will take approximately 1-2 hours depending on your internet connection speed."
+echo "Please wait while the TPCast is upgraded, this process will take approximately 1-2 hours depending on your internet connection speed."
 
 # Upgrade Raspbian distro repositories (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)
 logger "Upgrading Raspbian distro repositories to Stretch (/etc/apt/sources.list /etc/apt/sources.list.d/raspi.list)"
@@ -87,7 +87,12 @@ if [ -f /etc/init.d/wlan-load.sh ]; then
 	sudo update-rc.d -f wlan-load.sh remove > /dev/null 2>&1 || true
 fi
 
-sudo rm -rf /usr/lib/libtpusb.so* /home/pi/4.4.19-tp-moid-str-new /home/pi/checknet /home/pi/oldver.conf /home/pi/rtwpriv /home/pi/server /home/pi/tpusb_startup.sh /home/pi/updated /home/pi/watchdog /home/pi/ssidpwd /home/pi/wlan-connect.sh /home/pi/wlan.ko
+# Generate Wi-Fi credentials file for TPCast PRE devices
+if [ ! -f /home/pi/key.txt ]; then
+	echo -e "SSID=TPCast_AP\nPWD=12345678" | sudo tee -a /home/pi/key.txt > /dev/null
+fi
+
+sudo rm -rf /home/pi/4.4.19-tp-moid-str-new /home/pi/checknet /home/pi/watchdog /home/pi/wlan-connect.sh /usr/lib/libtpusb.so* /home/pi/oldver.conf /home/pi/rtwpriv /home/pi/server /home/pi/tpusb_startup.sh /home/pi/updated /home/pi/ssidpwd /home/pi/wlan.ko /home/pi/8192du.ko
 
 # Configure WLAN interface
 logger "Configuring WLAN interface wlan0"
@@ -152,7 +157,7 @@ fi
 logger "TPCast upgrade has finished, rebooting to finalize..."
 echo "------------------------------------------------------"
 echo "|                                                    |"
-echo "|                   TPCast Upgrade                   |"
+echo "|                 OpenTPCast Upgrade                 |"
 echo "|            Upgrade Finished, Rebooting...          |"
 echo "|                                                    |"
 echo "------------------------------------------------------"
