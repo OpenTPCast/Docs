@@ -5,20 +5,22 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 #### Pre-Release Units
 - :white_check_mark: Upgradable to Kernel 4.9
 - :white_check_mark: Working with VirtualHere
-- :white_check_mark: Microphone Working (not working on revised Vive model)
-- :x: Camera not working
+- :white_check_mark: Microphone Working
+- :x: Camera not working<sup>[[1]](#f1)</sup>
 
 #### Consumer Release (China)
 - :white_check_mark: Upgradable to Kernel 4.9
 - :white_check_mark: Working with VirtualHere
-- :white_check_mark: Microphone Working (not working on revised Vive model)
-- :x: Camera not working
+- :white_check_mark: Microphone Working
+- :x: Camera not working<sup>[[1]](#f1)</sup>
 
 #### Consumer Release (US/EU)
 - :white_check_mark: Upgradable to Kernel 4.9
 - :white_check_mark: Working with VirtualHere
 - :white_check_mark: Microphone Working (please disable the camera in SteamVR first)
-- :x: Camera not working
+- :x: Camera not working<sup>[[1]](#f1)</sup>
+
+<sup><a name="f1">[1]</a></sup> *Progress has been made in getting camera support to work with newer revisions of the HTC Vive with an experimental setup, but for now it should be considered as not working.*
 
 # Table of Contents
 
