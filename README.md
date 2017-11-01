@@ -5,22 +5,24 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 #### Pre-Release Units
 - :white_check_mark: Upgradable to Kernel 4.9
 - :white_check_mark: Working with VirtualHere
-- :white_check_mark: Microphone Working
-- :x: Camera not working<sup>[[1]](#f1)</sup>
+- :white_check_mark: Microphone Working<sup>[[1]](#f1)</sup>
+- :x: Camera not working<sup>[[2]](#f2)</sup>
 
 #### Consumer Release (China)
 - :white_check_mark: Upgradable to Kernel 4.9
 - :white_check_mark: Working with VirtualHere
-- :white_check_mark: Microphone Working
-- :x: Camera not working<sup>[[1]](#f1)</sup>
+- :white_check_mark: Microphone Working<sup>[[1]](#f1)</sup>
+- :x: Camera not working<sup>[[2]](#f2)</sup>
 
 #### Consumer Release (US/EU)
 - :white_check_mark: Upgradable to Kernel 4.9
 - :white_check_mark: Working with VirtualHere
-- :white_check_mark: Microphone Working (please disable the camera in SteamVR first)
-- :x: Camera not working<sup>[[1]](#f1)</sup>
+- :white_check_mark: Microphone Working<sup>[[1]](#f1)</sup>
+- :x: Camera not working<sup>[[2]](#f2)</sup>
 
-<sup><a name="f1">[1]</a></sup> *Progress has been made in getting camera support to work with newer revisions of the HTC Vive with an experimental setup, but for now it should be considered as not working.*
+<sup><a name="f1">[1]</a></sup> *Newer revisions of the HTC Vive should disable the camera in SteamVR first, and use the device "Vive Camera" in VirtualHere to enable microphone support.  Older revisions should use the device "USB Audio Device" in VirtualHere to enable microphone support.*
+
+<sup><a name="f2">[2]</a></sup> *Progress has been made in getting camera support to work with newer revisions of the HTC Vive with an experimental setup, but for now it should be considered as not working.*
 
 # Table of Contents
 
