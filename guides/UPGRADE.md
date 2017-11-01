@@ -67,7 +67,7 @@ To load up your TPCast on future play sessions, plug in the TPCast, wait a few m
 Any TPCast software should be left disabled or uninstalled while using VirtualHere USB Client.
 Squid and Putty are no longer needed once everything is confirmed as working correctly and can be safely uninstalled from your local machine.
 
-## Optimizing Your TPCast Router For Tracking Performance:
+## Optimizing Your TPCast Router For Tracking Performance
 If you experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
 1. Connect to the router at http://192.168.144.1 (CE) or http://192.168.1.1 (PRE)
     - Username: tproot (if prompted)
