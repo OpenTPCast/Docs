@@ -58,7 +58,7 @@ sudo make -C ./opentpcast_wpa_supplicant
 sudo cp opentpcast_wpa_supplicant/opentpcast_wpa_supplicant /usr/sbin
 sudo rm -rf opentpcast_wpa_supplicant
 
-sudo wget -q -O /etc/init.d/opentpcast-initwlan https://rawgit.com/OpenTPCast/Docs/files/prepareimage/opentpcast-initwlan && sudo chmod +x /etc/init.d/opentpcast-initwlan
+sudo wget -q -O /etc/init.d/opentpcast-initwlan https://rawgit.com/OpenTPCast/Docs/master/files/prepareimage/opentpcast-initwlan && sudo chmod +x /etc/init.d/opentpcast-initwlan
 sudo update-rc.d opentpcast-initwlan defaults > /dev/null 2>&1 || true
 
 # Upgrade WLAN driver
@@ -110,7 +110,7 @@ echo "pi:1qaz2wsx3edc4rfv" | sudo chpasswd
 
 # Create default configuration files
 logger "Creating default configuration files"
-sudo wget -q -O /boot/opentpcast.txt https://rawgit.com/OpenTPCast/Docs/files/prepareimage/opentpcast.txt
+sudo wget -q -O /boot/opentpcast.txt https://rawgit.com/OpenTPCast/Docs/master/files/prepareimage/opentpcast.txt
 sudo touch /boot/initwlan
 
 logger "OpenTPCast image preparation has finished, rebooting to finalize changes..."
