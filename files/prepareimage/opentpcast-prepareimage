@@ -58,7 +58,7 @@ sudo make -C ./opentpcast_wpa_supplicant
 sudo cp opentpcast_wpa_supplicant/opentpcast_wpa_supplicant /usr/sbin
 sudo rm -rf opentpcast_wpa_supplicant
 
-sudo wget -q -O /etc/init.d/opentpcast-initwlan https://rawgit.com/OpenTPCast/Docs/master/files/prepareimage/opentpcast-initwlan && sudo chmod +x /etc/init.d/opentpcast-initwlan
+sudo wget -q -e check_certificate=off -O /etc/init.d/opentpcast-initwlan https://rawgit.com/OpenTPCast/Docs/master/files/prepareimage/opentpcast-initwlan && sudo chmod +x /etc/init.d/opentpcast-initwlan
 sudo update-rc.d opentpcast-initwlan defaults > /dev/null 2>&1 || true
 
 # Upgrade WLAN driver
@@ -88,8 +88,8 @@ fi
 
 # Install VirtualHere USB Server (Server licence must be purchased from https://www.virtualhere.com/tpcast_purchase to use)
 logger "Installing VirtualHere USB Server"
-sudo wget -q -O /usr/sbin/vhusbdtpcast https://www.virtualhere.com/sites/default/files/usbserver/vhusbdtpcast && sudo chmod +x /usr/sbin/vhusbdtpcast
-sudo wget -q -O /etc/init.d/vhusbdpin https://www.virtualhere.com/sites/default/files/usbserver/scripts/vhusbdpin && sudo chmod +x /etc/init.d/vhusbdpin
+sudo wget -e check_certificate=off -q -O /usr/sbin/vhusbdtpcast https://www.virtualhere.com/sites/default/files/usbserver/vhusbdtpcast && sudo chmod +x /usr/sbin/vhusbdtpcast
+sudo wget -e check_certificate=off -q -O /etc/init.d/vhusbdpin https://www.virtualhere.com/sites/default/files/usbserver/scripts/vhusbdpin && sudo chmod +x /etc/init.d/vhusbdpin
 sudo sed -i 's/vhusbdarm/vhusbdtpcast/g' /etc/init.d/vhusbdpin
 sudo update-rc.d vhusbdpin defaults > /dev/null 2>&1 || true
 
@@ -98,20 +98,19 @@ sudo update-rc.d vhusbdpin defaults > /dev/null 2>&1 || true
 # WLAN & VH debugging devices are hidden from client
 echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=Vive Camera,0bb4,2c87,1122\nIgnoredDevices=424/ec00,bda/8194" | sudo tee /root/config.ini > /dev/null
 
+# Create default configuration files
+logger "Creating default configuration files"
+sudo wget -e check_certificate=off -q -O /boot/opentpcast.txt https://rawgit.com/OpenTPCast/Docs/master/files/prepareimage/opentpcast.txt
+sudo touch /boot/initwlan
+
 # Update hostname
 logger "Updating hostname"
 sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hosts
 sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hostname
-sudo hostname tpcast
 
 # Update password
 logger "Updating password"
 echo "pi:1qaz2wsx3edc4rfv" | sudo chpasswd
-
-# Create default configuration files
-logger "Creating default configuration files"
-sudo wget -q -O /boot/opentpcast.txt https://rawgit.com/OpenTPCast/Docs/master/files/prepareimage/opentpcast.txt
-sudo touch /boot/initwlan
 
 logger "OpenTPCast image preparation has finished, rebooting to finalize changes..."
 echo "----------------------------------------------------------------------------------"
