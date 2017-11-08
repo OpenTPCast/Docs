@@ -108,16 +108,16 @@ sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hostname
 logger "Updating password"
 echo "pi:1qaz2wsx3edc4rfv" | sudo chpasswd
 
-logger "OpenTPCast image preparation has finished, rebooting to finalize changes..."
-echo "----------------------------------------------------------------------------------"
-echo "|                                                                                |"
-echo "|                 OpenTPCast - Image preparation done, rebooting...              |"
-echo "|                                                                                |"
-echo "----------------------------------------------------------------------------------"
-echo -e "OpenTPCast image preparation has finished, please wait while the TPCast power box reboots automatically to finalize changes...\nAfter rebooting has finished and the image is confirmed as working without issues, recreate an empty file called /boot/initwlan, shut down the TPCast and back up the MicroSD card to an image file for distribution to end users."
+logger "OpenTPCast image preparation has finished, shutting down to finalize changes..."
+echo "--------------------------------------------------------------------------------------"
+echo "|                                                                                    |"
+echo "|                 OpenTPCast - Image preparation done, shutting down...              |"
+echo "|                                                                                    |"
+echo "--------------------------------------------------------------------------------------"
+echo -e "OpenTPCast image preparation has finished, please wait a few seconds while the TPCast power box shuts down to finalize changes...\nThe MicroSD card can now be backed up to an image file for distribution to end users."
 
 # Remove this script once done
 rm -- "$0"
 
 # Reboot for changes to take effect
-sudo reboot now
+sudo shutdown now
