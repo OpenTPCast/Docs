@@ -77,7 +77,7 @@ echo "Installing WLAN driver and firmware for rtl8812au"
 git clone https://github.com/NGenesis/rtl8812AU_8821AU_linux.git rtl8812au
 sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
 sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8812au
-sudo cp rtl8812au/8812au.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
+sudo cp rtl8812au/rtl8812au.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless/8812au.ko
 sudo rm -rf rtl8812au
 echo '8812au' | sudo tee -a /etc/modules > /dev/null
 sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
