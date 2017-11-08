@@ -1,0 +1,5 @@
+# Specifies which network to connect the TPCast to.  If left blank, the default configuration will be used.
+# ssid=tpcastXXXX
+# passphrase=12345678
+ssid=
+passphrase=

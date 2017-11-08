@@ -1,0 +1,25 @@
+#! /bin/bash
+### BEGIN INIT INFO
+# Provides:          opentpcast-initwlan
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Initialize WLAN Wi-Fi configuration on boot when /boot/initwlan is present
+### END INIT INFO
+
+# Stop on errors
+set -e
+
+if [ -f /boot/initwlan ]; then
+	# Regenerate Wi-Fi configuration
+	sudo rm /etc/wpa_supplicant/wpa_supplicant.conf
+	echo -e "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\nupdate_config=1" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
+	sudo opentpcast_wpa_supplicant | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null
+
+	# Remove to prevent script from running again until initwlan is next created
+	sudo rm /boot/initwlan > /dev/null 2>&1 || true
+
+	# Restart DHCP Client
+	sudo systemctl daemon-reload && sudo systemctl restart dhcpcd
+fi

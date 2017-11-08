@@ -1,0 +1,128 @@
+#!/bin/bash
+
+# Prepares a clean Raspbian install with nessecary software and optimizations for OpenTPCast.  Note that this script is intended only for use by OpenTPCast image maintainers.
+# An installation guide on how to use this script can be found at https://github.com/OpenTPCast/Docs/blob/master/guides/PREPAREIMAGE.md
+
+# Author: Genesis (https://github.com/NGenesis), OpenTPCast (https://github.com/OpenTPCast)
+
+# Stop on errors
+set -e
+
+logger "OpenTPCast image preparation is starting..."
+echo "-------------------------------------------------------------------"
+echo "|                                                                 |"
+echo "|                 OpenTPCast - Preparing image...                 |"
+echo "|                                                                 |"
+echo "-------------------------------------------------------------------"
+
+# Disable prompts during anattended upgrade
+logger "Disabling prompts during anattended upgrade"
+if [ ! -f /etc/ucf.conf.bak ]; then
+	sudo cp /etc/ucf.conf /etc/ucf.conf.bak
+	echo 'conf_force_conffold=YES' | sudo tee -a /etc/ucf.conf > /dev/null
+fi
+
+logger "Downloading and installing Raspbian updates"
+unset UCF_FORCE_CONFFNEW && export UCF_FORCE_CONFFOLD=YES && export DEBIAN_FRONTEND=noninteractive && export APT_LISTCHANGES_FRONTEND=none && export DEBIAN_PRIORITY=critical && 
+sudo apt-get remove apt-listchanges --assume-yes --force-yes && 
+echo 'libc6 libraries/restart-without-asking boolean true' | sudo debconf-set-selections && 
+
+# Upgrade Rapsian distro
+sudo apt-get --force-yes -fuy autoremove && 
+sudo apt-get --force-yes clean && 
+sudo apt-get update && 
+sudo apt-get --force-yes -o Dpkg::Options::="--force-confold" --force-yes -o Dpkg::Options::="--force-confdef" -fuy dist-upgrade && 
+sudo apt-get install -y raspberrypi-kernel-headers git && 
+sudo apt-get --force-yes -o Dpkg::Options::="--force-confold" --force-yes -o Dpkg::Options::="--force-confdef" --purge -fuy autoremove && 
+sudo apt-get --force-yes clean
+
+# Restore unattended install overrides to defaults
+logger "Restoring unattended install overrides to defaults"
+if [ -f /etc/ucf.conf.bak ]; then
+	sudo mv /etc/ucf.conf.bak /etc/ucf.conf
+fi
+
+# Upgrade kernel
+logger "Disabling unused components"
+sudo sed -i 's/dtparam=audio=on/dtparam=audio=off/g' /boot/config.txt
+echo "dtoverlay=pi3-disable-bt" | sudo tee -a /boot/config.txt > /dev/null
+
+# Optimize for faster boot time
+logger "Optimizing for faster boot time"
+sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
+
+# Configure WLAN interface
+logger "Configuring WLAN interface"
+git clone https://github.com/NGenesis/opentpcast_wpa_supplicant.git
+sudo make -C ./opentpcast_wpa_supplicant
+sudo cp opentpcast_wpa_supplicant/opentpcast_wpa_supplicant /usr/sbin
+sudo rm -rf opentpcast_wpa_supplicant
+
+sudo wget -q -O /etc/init.d/opentpcast-initwlan https://rawgit.com/OpenTPCast/Docs/files/prepareimage/opentpcast-initwlan && sudo chmod +x /etc/init.d/opentpcast-initwlan
+sudo update-rc.d opentpcast-initwlan defaults > /dev/null 2>&1 || true
+
+# Upgrade WLAN driver
+if sudo lsusb | grep 'ID 0bda:8194'; then
+	logger "Installing WLAN driver and firmware for rtl8192du"
+	echo "Installing WLAN driver and firmware for rtl8192du"
+	git clone https://github.com/NGenesis/rtl8192du.git rtl8192du
+	sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
+	sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8192du
+	sudo cp rtl8192du/8192du.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
+	sudo rm -rf rtl8192du
+	echo '8192du' | sudo tee -a /etc/modules > /dev/null
+	sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
+elif sudo lsusb | grep 'ID 0bda:0811'; then
+	logger "Installing WLAN driver and firmware for rtl8812au"
+	echo "Installing WLAN driver and firmware for rtl8812au"
+	git clone https://github.com/NGenesis/rtl8812AU_8821AU_linux.git rtl8812au
+	sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
+	sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8812au
+	sudo cp rtl8812au/8812au.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
+	sudo rm -rf rtl8812au
+	echo '8812au' | sudo tee -a /etc/modules > /dev/null
+	sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
+else
+	exit 0;
+fi
+
+# Install VirtualHere USB Server (Server licence must be purchased from https://www.virtualhere.com/tpcast_purchase to use)
+logger "Installing VirtualHere USB Server"
+sudo wget -q -O /usr/sbin/vhusbdtpcast https://www.virtualhere.com/sites/default/files/usbserver/vhusbdtpcast && sudo chmod +x /usr/sbin/vhusbdtpcast
+sudo wget -q -O /etc/init.d/vhusbdpin https://www.virtualhere.com/sites/default/files/usbserver/scripts/vhusbdpin && sudo chmod +x /etc/init.d/vhusbdpin
+sudo sed -i 's/vhusbdarm/vhusbdtpcast/g' /etc/init.d/vhusbdpin
+sudo update-rc.d vhusbdpin defaults > /dev/null 2>&1 || true
+
+# Configure VirtualHere USB Server for TPCast devices
+# HMD camera has custom event handler onReset.$VENDOR_ID$.$PRODUCT_ID$=
+# WLAN & VH debugging devices are hidden from client
+echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=Vive Camera,0bb4,2c87,1122\nIgnoredDevices=424/ec00,bda/8194" | sudo tee /root/config.ini > /dev/null
+
+# Update hostname
+logger "Updating hostname"
+sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hostname
+sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hosts
+sudo hostname tpcast
+
+# Update password
+logger "Updating password"
+echo "pi:1qaz2wsx3edc4rfv" | sudo chpasswd
+
+# Create default configuration files
+logger "Creating default configuration files"
+sudo wget -q -O /boot/opentpcast.txt https://rawgit.com/OpenTPCast/Docs/files/prepareimage/opentpcast.txt
+sudo touch /boot/initwlan
+
+logger "OpenTPCast image preparation has finished, rebooting to finalize changes..."
+echo "----------------------------------------------------------------------------------"
+echo "|                                                                                |"
+echo "|                 OpenTPCast - Image preparation done, rebooting...              |"
+echo "|                                                                                |"
+echo "----------------------------------------------------------------------------------"
+echo -e "OpenTPCast image preparation has finished, please wait while the TPCast power box reboots automatically to finalize changes...\nAfter rebooting has finished and the image is confirmed as working without issues, recreate an empty file called /boot/initwlan, shut down the TPCast and back up the MicroSD card to an image file for distribution to end users."
+
+# Remove this script once done
+rm -- "$0"
+
+# Reboot for changes to take effect
+sudo reboot now
