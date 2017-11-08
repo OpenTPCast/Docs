@@ -62,29 +62,25 @@ sudo wget -q -e check_certificate=off -O /etc/init.d/opentpcast-initwlan https:/
 sudo update-rc.d opentpcast-initwlan defaults > /dev/null 2>&1 || true
 
 # Upgrade WLAN driver
-if sudo lsusb | grep 'ID 0bda:8194'; then
-	logger "Installing WLAN driver and firmware for rtl8192du"
-	echo "Installing WLAN driver and firmware for rtl8192du"
-	git clone https://github.com/NGenesis/rtl8192du.git rtl8192du
-	sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
-	sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8192du
-	sudo cp rtl8192du/8192du.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
-	sudo rm -rf rtl8192du
-	echo '8192du' | sudo tee -a /etc/modules > /dev/null
-	sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
-elif sudo lsusb | grep 'ID 0bda:0811'; then
-	logger "Installing WLAN driver and firmware for rtl8812au"
-	echo "Installing WLAN driver and firmware for rtl8812au"
-	git clone https://github.com/NGenesis/rtl8812AU_8821AU_linux.git rtl8812au
-	sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
-	sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8812au
-	sudo cp rtl8812au/8812au.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
-	sudo rm -rf rtl8812au
-	echo '8812au' | sudo tee -a /etc/modules > /dev/null
-	sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
-else
-	exit 0;
-fi
+logger "Installing WLAN driver and firmware for rtl8192du"
+echo "Installing WLAN driver and firmware for rtl8192du"
+git clone https://github.com/NGenesis/rtl8192du.git rtl8192du
+sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
+sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8192du
+sudo cp rtl8192du/8192du.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
+sudo rm -rf rtl8192du
+echo '8192du' | sudo tee -a /etc/modules > /dev/null
+sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
+
+logger "Installing WLAN driver and firmware for rtl8812au"
+echo "Installing WLAN driver and firmware for rtl8812au"
+git clone https://github.com/NGenesis/rtl8812AU_8821AU_linux.git rtl8812au
+sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
+sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8812au
+sudo cp rtl8812au/8812au.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
+sudo rm -rf rtl8812au
+echo '8812au' | sudo tee -a /etc/modules > /dev/null
+sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
 # Install VirtualHere USB Server (Server licence must be purchased from https://www.virtualhere.com/tpcast_purchase to use)
 logger "Installing VirtualHere USB Server"
