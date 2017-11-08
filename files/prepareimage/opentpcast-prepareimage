@@ -100,8 +100,8 @@ echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=Vive Camera,0bb4
 
 # Update hostname
 logger "Updating hostname"
-sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hostname
 sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hosts
+sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hostname
 sudo hostname tpcast
 
 # Update password
