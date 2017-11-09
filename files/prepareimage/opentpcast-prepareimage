@@ -92,7 +92,7 @@ sudo update-rc.d vhusbdpin defaults > /dev/null 2>&1 || true
 # Configure VirtualHere USB Server for TPCast devices
 # HMD camera has custom event handler onReset.$VENDOR_ID$.$PRODUCT_ID$=
 # WLAN & VH debugging devices are hidden from client
-echo -e "ServerName=TPCast\nonReset.0bb4.2c87=\nDeviceNicknames=Vive Camera,0bb4,2c87,1122\nIgnoredDevices=424/ec00,bda/8194" | sudo tee /root/config.ini > /dev/null
+echo -e "ServerName=TPCast\nonDeviceIgnore=return 0\nonChangeNickname=return 1\nonReset.0bb4.2c87=\nDeviceNicknames=Vive Camera,0bb4,2c87,1122\nIgnoredDevices=424/ec00,bda/8194,bda/811" | sudo tee /root/config.ini > /dev/null
 
 # Create default configuration files
 logger "Creating default configuration files"
