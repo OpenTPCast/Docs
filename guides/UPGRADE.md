@@ -1,15 +1,12 @@
-# Upgrading TPCast For Raspbian Stretch & VirtualHere
-
-# DO NOT ATTEMPT TO USE THIS GUIDE
-# This guide is currently being rewritten and contains incorrect instructions that will brick your device if followed!  An updated guide will be available soon.
+# Upgrading The TPCast To OpenTPCast
 
 ## Overview
-This guide provides instructions on how to upgrade a stock TPCast to OpenTPCast using Raspbian Stretch and [VirtualHere](VIRTUALHERE.md), which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
+This guide provides instructions on how to upgrade a stock TPCast device to OpenTPCast, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution running on Raspbian Stretch, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
 
 ## Disclaimer
-**This upgrade is performed at you own risk! OpenTPCast and its contributers will not be held responsible for any physical damage, data loss or voided manufacturer warranties incurred due to modifications or tampering of your TPCast hardware or software.**
+**This upgrade is performed at you own risk! OpenTPCast and its contributers will not be held responsible for any physical damage, data loss or voided manufacturer warranties incurred due to modification or tampering of your TPCast hardware or software.**
 
-This upgrade requires opening up your TPCast power box to remove and flash the internal MicroSD card with an OpenTPCast image.  We do not recommend performing this upgrade without first [backing up the MicroSD card of your TPCast power box](SDCARD.md) to ensure that your TPCast device can be restored back to factory settings in the event of software compatibility issues during or after the upgrade.
+This upgrade requires opening up your TPCast power box to remove and flash the internal MicroSD card with an OpenTPCast image.  We do not recommend performing this upgrade without [backing up the MicroSD card of your TPCast power box](SDCARD.md) to ensure that your TPCast device can be restored back to factory settings in the event of software compatibility issues during or after the upgrade.
 
 If the upgrade fails and leaves your TPCast device inoperable, please refer to [Unbricking](UNBRICKING.md) for more information on how to restore your device to its original factory state.
 
@@ -17,25 +14,48 @@ If the upgrade fails and leaves your TPCast device inoperable, please refer to [
 - The HTC Vive camera currently does not function correctly with VirtualHere.
 
 ## Preparation
-### Prepare Your TPCast
-- Ensure that you have taken a **BACKUP** of your TPCast power box MicroSD card.  This upgrade is not trivial to reverse without a copy of your original MicroSD card image, so it is strongly recommended that you [back up the MicroSD card of your TPCast power box](SDCARD.md) so that it can be restored in the event that something goes wrong during the upgrade, or you want to restore back to the original factory state.
-- Ensure that any TPCast software is **NOT RUNNING** on your local machine during the upgrade.
-
-### Required Hardware
+### Hardware
 - A MicroSD card reader is required to backup and flash images to your MicroSD card on your computer.
+- Your device may come included with a Class 4 MicroSD card.  A Class 10 MicroSD card is recommended to speed up TPCast boot times.
 
-### Required Software
+### Software
+- Ensure that any TPCast software is not running on your local machine during or after the upgrade.
 - Download and extract (using [7-Zip](http://www.7-zip.org/)) the latest [OpenTPCast](https://drive.google.com/uc?export=download&id=1t4KKQDUUPZh_tjGo-6Cu9oZ5H6smWItB) image.
 - Download and install [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) on your local machine, which will be used to back up and restore images to and from a MicroSD card.
 - Download & install [VirtualHere USB Client](https://virtualhere.com/usb_client_software) on your local machine, which will be used to forward the HTC Vive's USB devices over your local network.  Note that a TPCast-optimized licence key must be [purchased](https://www.virtualhere.com/tpcast_purchase) to use with VirtualHere USB Server after the upgrade.
 
 ## Installation
 ### Accessing The TPCast Power Box MicroSD Card
-Work in progress!
-### Backing up
-Work in progress!
-### Flashing
-Work in progress!
+![Removing the MicroSD card from a TPCast power box](../img/tpcast-sdcard-removal.jpg)
+
+Video:
+
+[![Video - Removing the MicroSD card from a TPCast power box](https://img.youtube.com/vi/et4RxKuxeC4/0.jpg)](https://www.youtube.com/watch?v=et4RxKuxeC4)
+
+1. Remove the battery, power cable and USB cable from the power box.
+1. Unscrew the 4 screws from the battery facing side of the power box using a Phillips-head/Crosshead screwdriver.
+1. Remove the grated plastic side of the casing by applying pressure inward and upward on the notch at the bottom of the power box.
+1. Locate the MicroSD card near the bottom of the device and slide the card out of its socket with your finger.
+
+### Backing Up The Stock TPCast MicroSD Card
+![Backing up an image with Win32 Disk Imager](../img/win32diskimager-backup.jpg)
+1. Connect the MicroSD card to your computer using a MicroSD card reader.
+1. Launch Win32 Disk Imager.
+1. In the "Image File" field, select a file path and enter a file name that will become your backup image. (e.g. C:/tpcast-backup.img).
+1. Select the MicroSD drive from the Device drop down list.
+1. Click "Read" to back up the image to your computer.
+1. Store the backed up file somewhere safe, as it will be required to restore your TPCast back to factory settings in the event of software compatibility issues during or after the upgrade.
+
+### Flashing The MicroSD Card With OpenTPCast
+![Restoring an image with Win32 Disk Imager](../img/win32diskimager-restore.jpg)
+1. Connect the MicroSD card to your computer using a MicroSD card reader.
+1. Launch Win32 Disk Imager.
+1. In the "Image File" field, select the OpenTPCast image that was downloaded and extracted. (e.g. C:/opentpcast.img).
+1. Select the MicroSD drive from the Device drop down list.
+1. Click "Write" to flash the image to your MicroSD card.
+
+### Reassembling The TPCast Power Box
+1. To reassemble the TPCast power box, push the MicroSD card back into its socket, clip the two halves of the casing back together, screw the 4 screws back into the device, then reattach the cables and battery.
 
 ## Configuring VirtualHere For TPCast
 1. [Purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by selecting Licence, Enter Licence(s) and copy your licence key from the email received following purchase.
