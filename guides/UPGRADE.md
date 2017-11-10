@@ -55,7 +55,10 @@ Video:
 1. Click "Write" to flash the image to your MicroSD card.
 
 ### Reassembling The TPCast Power Box
-1. To reassemble the TPCast power box, push the MicroSD card back into its socket, clip the two halves of the casing back together, screw the 4 screws back into the device, then reattach the cables and battery.
+1. Push the MicroSD card back into its socket.
+1. Clip the two halves of the plastic casing back together.
+1. Screw the 4 screws back into the device.
+1. Attach the USB cable, power cable and battery.
 
 ## Configuring VirtualHere For TPCast
 1. [Purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by selecting Licence, Enter Licence(s) and copy your licence key from the email received following purchase.
