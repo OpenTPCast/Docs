@@ -33,10 +33,8 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 
 ## Tinkering
 
+- [Upgrading The TPCast To OpenTPCast](guides/UPGRADE.md)
 - [Backing Up & Restoring A TPCast Power Box MicroSD Card](guides/SDCARD.md)
-- [Upgrading TPCast For Raspbian Stretch & VirtualHere](guides/UPGRADE.md)
-- [VirtualHere](guides/VIRTUALHERE.md)
-- [Unbricking your TPCast](guides/UNBRICKING.md)
 - [Preparing A OpenTPCast Image (Maintainer's Guide)](guides/PREPAREIMAGE.md)
 
 ## Misc
