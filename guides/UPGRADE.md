@@ -28,7 +28,7 @@ This upgrade requires opening up your TPCast power box to remove and flash the i
 
 Video:
 
-[![Video - Removing the MicroSD card from a TPCast power box](https://img.youtube.com/vi/et4RxKuxeC4/0.jpg)](https://www.youtube.com/watch?v=et4RxKuxeC4)
+[![Video - Removing the MicroSD card from a TPCast power box](../img/sdcardremoval-video.jpg)](https://www.youtube.com/watch?v=et4RxKuxeC4)
 
 1. Remove the battery, power cable and USB cable from the power box.
 1. Unscrew the 4 screws from the battery facing side of the power box using a Phillips-head/Crosshead screwdriver.
