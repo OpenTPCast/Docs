@@ -16,5 +16,7 @@ If you continue to experience tracking issues, you may have to select a differen
 1. Click Save to apply the changes.
 
 ## Using A Different Router
-Alternatively, using a more reliable router to overcome poor connection or bandwidth issues exhibited by the stock TPCast router may be an option.  The following routers have been tested with the OpenTPCast upgrade and have shown to provide substantial improvements to tracking reliability over the stock TPCast router:
+Alternatively, using a more reliable router to overcome poor connection or bandwidth issues exhibited by the stock TPCast router may be an option.  The following routers have been tested by community members with the OpenTPCast upgrade and have shown to work as suitable replacements to the TPCast router:
 - Asus RT-AC68U
+- D-Link AC1750
+- Linksys WRT1900ACS
