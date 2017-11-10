@@ -37,6 +37,7 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 - [Upgrading TPCast For Raspbian Stretch & VirtualHere](guides/UPGRADE.md)
 - [VirtualHere](guides/VIRTUALHERE.md)
 - [Unbricking your TPCast](guides/UNBRICKING.md)
+- [Preparing A OpenTPCast Image (Maintainer's Guide)](guides/PREPAREIMAGE.md)
 
 ## Misc
 
