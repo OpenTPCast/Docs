@@ -56,7 +56,7 @@ Video:
 
 ### Reassembling The TPCast Power Box
 1. Push the MicroSD card back into its socket.
-1. Clip the two halves of the plastic casing back together.
+1. Clip both halves of the plastic casing back together.
 1. Screw the 4 screws back into the device.
 1. Attach the USB cable, power cable and battery.
 
