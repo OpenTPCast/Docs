@@ -14,6 +14,7 @@ This upgrade requires opening up your TPCast power box to remove and flash the i
 ## Preparation
 ### Hardware
 - A MicroSD card reader is required to backup and flash images to your MicroSD card on your computer.
+- A small phillips/crossheaded screwdriver is required to open the TPCast power box.
 - Your device may come included with a Class 4 MicroSD card.  A Class 10 MicroSD card is recommended to speed up TPCast boot times.
 
 ### Software
