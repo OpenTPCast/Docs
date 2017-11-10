@@ -42,6 +42,7 @@ sudo wget -e check_certificate=off https://rawgit.com/OpenTPCast/Docs/master/fil
 1. Remove the upgraded MicroSD card from the TPCast power box.
 
 ## Shrinking the OpenTPCast image
+![GParted running in Linux Mint virtual machine](../img/prepareimage-gparted.jpg)
 1. Connect the OpenTPCast flashed MicroSD card to your computer using a MicroSD card reader.
 1. Launch VirtualBox and load the Linux Mint virtual machine.
 1. On the virtual machine window, navigate to Devices > USB and select the MicroSD card reader.
