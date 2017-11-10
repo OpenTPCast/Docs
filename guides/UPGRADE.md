@@ -60,8 +60,10 @@ Video:
 1. Attach the USB cable, power cable and battery.
 
 ## Configuring VirtualHere For TPCast
-1. [Purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by selecting Licence, Enter Licence(s) and copy your licence key from the email received following purchase.
-1. In VirtualHere USB Client, expand USB Hubs, expand TPCast, then right click and select "Auto-Use Device/Port" for each of the following devices:
+1. Once the TPCast device is listed in VirtualHere, you can then [purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by right clicking on USB Hubs > Licence, select Enter Licence(s) and copy your licence key from the email received following purchase.
+    - Note That you cannot purchase a licence until you have a hardware code which won't appear until TPCast shows up under USB Hubs.
+1. Right click on USB Hubs then select "Install Client as a Service" and click OK.
+1. Relaunch VirtualHere USB Client, expand USB Hubs, expand TPCast, then right click and select "Auto-Use Device/Port" for each of the following devices:
     - HTC Vive
     - Lighthouse FPGA RX
     - Watchman Dongle
@@ -70,7 +72,6 @@ Video:
         - This should be used if available to enable microphone support for older revisions of HTC Vive.
     - Vive Camera
         - This should only be used when "USB Audio Device" is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled while running SteamVR to avoid stability issues.
-1. Right click on USB Hubs then select Install Client Service.
 
 ## Using Your TPCast After Upgrading
 To load up your TPCast on future play sessions, plug in the TPCast, wait a few minutes (checking VirtualHere USB Client if nessecary to see if the TPCast is ready), then launch SteamVR.
