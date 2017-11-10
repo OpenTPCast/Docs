@@ -18,7 +18,7 @@ This upgrade requires opening up your TPCast power box to remove and flash the i
 
 ### Software
 - Ensure that any TPCast software is not running on your local machine during or after the upgrade.
-- Download and extract (using [7-Zip](http://www.7-zip.org/)) the latest [OpenTPCast](https://drive.google.com/uc?export=download&id=1t4KKQDUUPZh_tjGo-6Cu9oZ5H6smWItB) image.
+- Download and extract (using [7-Zip](http://www.7-zip.org/)) the latest [OpenTPCast](https://github.com/OpenTPCast/Docs/releases) image.
 - Download and install [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) on your local machine, which will be used to back up and restore images to and from a MicroSD card.
 - Download & install [VirtualHere USB Client](https://virtualhere.com/usb_client_software) on your local machine, which will be used to forward the HTC Vive's USB devices over your local network.  Note that a TPCast-optimized licence key must be [purchased](https://www.virtualhere.com/tpcast_purchase) to use with VirtualHere USB Server after the upgrade.
 
