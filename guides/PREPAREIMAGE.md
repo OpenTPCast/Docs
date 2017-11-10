@@ -1,9 +1,9 @@
 # Preparing A OpenTPCast Image (Maintainer's Guide)
 
+**This guide is not intended for end users, who should download and flash officially released OpenTPCast images from https://github.com/OpenTPCast/Docs/releases**
+
 ## Overview
 This guide provides instructions for OpenTPCast image maintainers on how to upgrade a Raspbian Stretch Lite image to an OpenTPCast image, and how to prepare the image for distribution to end users.
-
-**This guide is not intended for end users, who should download and flash officially released OpenTPCast images from https://github.com/OpenTPCast/Docs/releases**
 
 ## Preparation
 ### Hardware
