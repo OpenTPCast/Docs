@@ -31,11 +31,14 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 - [Specs](SPECS.md)
 - [Software](SOFTWARE.md)
 
-## Tinkering
+## OpenTPCast Upgrade
 
 - [Upgrading The TPCast To OpenTPCast](guides/UPGRADE.md)
-- [Backing Up & Restoring A TPCast Power Box MicroSD Card](guides/SDCARD.md)
 - [Preparing A OpenTPCast Image (Maintainer's Guide)](guides/PREPAREIMAGE.md)
+
+## Tinkering
+- [Backing Up & Restoring A TPCast Power Box MicroSD Card](guides/SDCARD.md)
+- [Optimizing The TPCast Router For Tracking Performance](guides/ROUTER.md)
 
 ## Misc
 

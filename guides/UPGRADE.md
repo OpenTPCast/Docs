@@ -76,15 +76,4 @@ To load up your TPCast on future play sessions, plug in the TPCast, wait a few m
 
 Any installed TPCast software should be left disabled or uninstalled while using VirtualHere USB Client.
 
-## Optimizing Your TPCast Router For Tracking Performance
-If you experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
-1. Connect to the router at http://192.168.144.1 (CE) or http://192.168.1.1 (PRE)
-    - Username: tproot (if prompted)
-    - Password: 8427531 (CE) or 12345678 (PRE)
-1. Navigate to WLAN Settings > Basic Settings > 5G and change Network Mode from "11vht AC/AN/A" to "11a only".
-1. Click Save to apply the changes.
-
-If you continue to experience tracking issues, you may have to select a different Channel by navigating to WLAN Settings > Basic Settings > 5G, and change Channel from "AutoSelect" to a different option.  The channel you select will vary based on region, outside interference and network configuration so try each channel until one works well for your setup.
-
-Alternatively, using a more reliable router to overcome poor connection or bandwidth issues exhibited by the stock TPCast router may be an option.  The following routers have been tested with the TPCast upgrade and have shown to provide substantial improvements to tracking reliability over the stock TPCast router:
-- Asus RT-AC68U
+If you experience tracking issues after upgrading, try [switching Wi-Fi channels](ROUTER.md) or [network mode](ROUTER.md) in your TPCast router.
