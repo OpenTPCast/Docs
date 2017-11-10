@@ -61,7 +61,7 @@ Video:
 
 ## Configuring VirtualHere For TPCast
 1. Once the TPCast device is listed in VirtualHere, you can then [purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by right clicking on USB Hubs > Licence, select Enter Licence(s) and copy your licence key from the email received following purchase.
-    - Note That you cannot purchase a licence until you have a hardware code which won't appear until TPCast shows up under USB Hubs.
+    - Note That you cannot purchase a licence until you have a serial number which won't appear in Licences until TPCast shows up under USB Hubs.
 1. Right click on USB Hubs then select "Install Client as a Service" and click OK.
 1. Relaunch VirtualHere USB Client, expand USB Hubs, expand TPCast, then right click and select "Auto-Use Device/Port" for each of the following devices:
     - HTC Vive
