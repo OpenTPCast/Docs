@@ -22,7 +22,7 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 
 <sup><a name="f1">[1]</a></sup> *Newer revisions of the HTC Vive should disable the camera in SteamVR first, and use the device "Vive Camera" in VirtualHere to enable microphone support.  Older revisions should use the device "USB Audio Device" in VirtualHere to enable microphone support.*
 
-<sup><a name="f2">[2]</a></sup> *Progress has been made in getting camera support to work with newer revisions of the HTC Vive with an experimental setup, but for now it should be considered as not working.*
+<sup><a name="f2">[2]</a></sup> *Progress has been made in getting HTC Vive camera to function with an experimental software setup, but for now it should be considered as not working.*
 
 # Table of Contents
 
