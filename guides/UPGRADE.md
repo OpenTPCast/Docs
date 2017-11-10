@@ -50,7 +50,7 @@ Video:
 ![Restoring an image with Win32 Disk Imager](../img/win32diskimager-restore.jpg)
 1. Connect the MicroSD card to your computer using a MicroSD card reader.
 1. Launch Win32 Disk Imager.
-1. In the "Image File" field, select the OpenTPCast image that was downloaded and extracted. (e.g. C:/opentpcast.img).
+1. In the "Image File" field, select the OpenTPCast image that was downloaded and extracted (e.g. C:/opentpcast.img).
 1. Select the MicroSD drive from the Device drop down list.
 1. Click "Write" to flash the image to your MicroSD card.
 
