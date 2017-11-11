@@ -19,6 +19,7 @@ This upgrade requires opening up your TPCast power box to remove and flash the i
 
 ### Software
 - Ensure that any TPCast software is not running on your local machine during or after the upgrade.
+- Ensure that you have at least 8GB of free space on your local machine during the upgrade to back up the TPCast MicroSD card.
 - Download and extract (using [7-Zip](http://www.7-zip.org/)) the latest [OpenTPCast](https://github.com/OpenTPCast/Docs/releases) image.
 - Download and install [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) on your local machine, which will be used to back up and restore images to and from a MicroSD card.
 - Download & install [VirtualHere USB Client](https://virtualhere.com/usb_client_software) on your local machine, which will be used to forward the HTC Vive's USB devices over your local network.  Note that a TPCast-optimized licence key must be [purchased](https://www.virtualhere.com/tpcast_purchase) to use with VirtualHere USB Server after the upgrade.
@@ -43,7 +44,7 @@ Video:
 1. Launch Win32 Disk Imager.
 1. In the "Image File" field, select a file path and enter a file name that will become your backup image. (e.g. C:/tpcast-backup.img).
 1. Select the MicroSD drive from the Device drop down list.
-1. Click "Read" to back up the image to your computer.
+1. Click "Read" to back up the image to your computer.  This will produce a file approximately 8GB in size.
 1. Store the backed up file somewhere safe, as it will be required to restore your TPCast back to factory settings in the event of software compatibility issues during or after the upgrade.
 
 ### Flashing The MicroSD Card With OpenTPCast
