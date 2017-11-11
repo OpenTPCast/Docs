@@ -53,7 +53,7 @@ sudo sed -i 's/rootwait/rootwait quiet/g' /boot/cmdline.txt
 
 # Configure WLAN interface
 logger "Configuring WLAN interface"
-git clone https://github.com/NGenesis/opentpcast_wpa_supplicant.git
+git clone https://github.com/OpenTPCast/opentpcast_wpa_supplicant.git
 sudo make -C ./opentpcast_wpa_supplicant
 sudo cp opentpcast_wpa_supplicant/opentpcast_wpa_supplicant /usr/sbin
 sudo rm -rf opentpcast_wpa_supplicant
@@ -64,7 +64,7 @@ sudo update-rc.d opentpcast-initwlan defaults > /dev/null 2>&1 || true
 # Upgrade WLAN driver
 logger "Installing WLAN driver and firmware for rtl8192du"
 echo "Installing WLAN driver and firmware for rtl8192du"
-git clone https://github.com/NGenesis/rtl8192du.git rtl8192du
+git clone https://github.com/OpenTPCast/rtl8192du.git rtl8192du
 sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
 sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8192du
 sudo cp rtl8192du/8192du.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
@@ -74,7 +74,7 @@ sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
 logger "Installing WLAN driver and firmware for rtl8812au"
 echo "Installing WLAN driver and firmware for rtl8812au"
-git clone https://github.com/NGenesis/rtl8812AU_8821AU_linux.git rtl8812au
+git clone https://github.com/OpenTPCast/rtl8812AU_8821AU_linux.git rtl8812au
 sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
 sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8812au
 sudo cp rtl8812au/rtl8812au.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
