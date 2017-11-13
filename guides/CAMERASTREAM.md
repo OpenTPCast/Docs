@@ -3,7 +3,7 @@
 ## Overview
 This process will install mjpg-streamer on a TPCast power box that has already been upgraded with an OpenTPCast image to automatically stream the HTC Vive on-board camera over HTTP, which can then be displayed in VR using third party VR overlay software (e.g. OVRDrop).
 
-*This functionality should be considerered experimental and should not be attempted unless you know what you are doing.*
+**This functionality should be considerered experimental and should not be attempted unless you know what you are doing.**
 
 It is planned to streamline this solution to enable it to be included in official OpenTPCast images by default with minimal configuration required on the end user's side.
 
