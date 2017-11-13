@@ -20,3 +20,4 @@ Alternatively, using a more reliable router to overcome poor connection or bandw
 - Asus RT-AC68U
 - D-Link AC1750
 - Linksys WRT1900ACS
+- Netgear WNDR3700
