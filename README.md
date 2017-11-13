@@ -35,6 +35,7 @@ Welcome to the Open TPCast documentation repo. If you're here, you probably want
 
 - [Upgrading The TPCast To OpenTPCast](guides/UPGRADE.md)
 - [Preparing A OpenTPCast Image (Maintainer's Guide)](guides/PREPAREIMAGE.md)
+- [Streaming the HTC Vive Camera (Experimental!)](guides/CAMERASTREAM.md)
 
 ## Tinkering
 - [Backing Up & Restoring A TPCast Power Box MicroSD Card](guides/SDCARD.md)

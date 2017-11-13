@@ -1,0 +1,14 @@
+#! /bin/bash
+# Installs mjpg-streamer to automatically stream the HTC Vive on-board camera over HTTP, which can then be displayed in VR using alternative VR overlay software (e.g. OVRDrop).
+# An installation guide on how to use this script can be found at https://github.com/OpenTPCast/Docs/blob/master/guides/CAMERASTREAM.md
+
+# Author: Genesis (https://github.com/NGenesis), OpenTPCast (https://github.com/OpenTPCast)
+
+git clone https://github.com/NGenesis/mjpg-streamer
+sudo apt-get install -y cmake libjpeg8-dev
+sudo make -C ./mjpg-streamer/mjpg-streamer-experimental && sudo make -C ./mjpg-streamer/mjpg-streamer-experimental install
+sudo rm -rf mjpg-streamer
+
+echo -e "#! /bin/bash\n### BEGIN INIT INFO\n# Provides:          vivecamstream\n# Required-Start:    $all\n# Required-Stop:\n# Default-Start:     2 3 4 5\n# Default-Stop:\n# Short-Description: Initialize HTC Vive Camera stream over HTTP\n### END INIT INFO\n\nmjpg_streamer -o \"output_http.so -p 10088\" -i \"input_uvc.so -r 480x360\" &" | sudo tee -a /home/mint/vivecamstream
+sudo chmod +x /etc/init.d/vivecamstream
+sudo update-rc.d vivecamstream defaults
