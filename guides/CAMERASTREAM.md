@@ -6,7 +6,7 @@ This process will install mjpg-streamer on a TPCast power box that has already b
 It is planned to streamline this solution to enable it to be included in official OpenTPCast images by default with minimal configuration required on the end user's side.
 
 ## Disclaimer
-**This upgrade is performed at you own risk! OpenTPCast and its contributers will not be held responsible for any physical damage, data loss or voided manufacturer warranties incurred due to modification or tampering of your TPCast hardware or software.**
+**This upgrade is performed at your own risk! OpenTPCast and its contributers will not be held responsible for any physical damage, data loss or voided manufacturer warranties incurred due to modification or tampering of your TPCast hardware or software.**
 
 ## Preparation
 - Download and install [Putty SSH client](http://www.putty.org/) on your local machine, which will be used to connect to your TPCast power box.

@@ -7,7 +7,7 @@ This guide provides instructions on how to upgrade a stock TPCast device to Open
 - The HTC Vive camera currently does not function correctly with VirtualHere.
 
 ## Disclaimer
-**This upgrade is performed at you own risk! OpenTPCast and its contributers will not be held responsible for any physical damage, data loss or voided manufacturer warranties incurred due to modification or tampering of your TPCast hardware or software.**
+**This upgrade is performed at your own risk! OpenTPCast and its contributers will not be held responsible for any physical damage, data loss or voided manufacturer warranties incurred due to modification or tampering of your TPCast hardware or software.**
 
 This upgrade requires opening up your TPCast power box to remove and flash the internal MicroSD card with an OpenTPCast image.  We do not recommend performing this upgrade without [backing up the MicroSD card of your TPCast power box](SDCARD.md) to ensure that your TPCast device can be [restored](SDCARD.md#restoring-an-image-to-a-microsd-card) back to factory settings in the event of software compatibility issues during or after the upgrade.
 
