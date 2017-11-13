@@ -27,7 +27,7 @@ sudo wget -e check_certificate=off https://rawgit.com/OpenTPCast/Docs/master/fil
 1. Locate the IP address of the TPCast power box by checking your router's connected client list (e.g. 192.168.XXX.XXX).
 1. Navigate to http://192.168.XXX.XXX:10088/?action=stream in a web browser, substituing the IP address with your TPCast power box IP address.
 
-## Uninstalling The Camera Service
+## Enabling/Disabling The Camera Service
 To disable the camera streaming service, run the following command in the Putty terminal, then reboot the TPCast power box:
 ```bash
 sudo update-rc.d -f vivecamstream remove
