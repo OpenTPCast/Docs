@@ -1,4 +1,4 @@
-### Streaming the HTC Vive Camera (Experimental!)
+# Streaming the HTC Vive Camera (Experimental!)
 
 ## Overview
 This process will install mjpg-streamer on a TPCast power box that has already been upgraded with an OpenTPCast image to automatically stream the HTC Vive on-board camera over HTTP, which can then be displayed in VR using third party VR overlay software (e.g. OVRDrop).  This functionality should be considerered experimental and should not be attempted unless you know what you are doing.
