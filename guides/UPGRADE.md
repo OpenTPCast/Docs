@@ -43,9 +43,9 @@ Video:
 1. Connect the MicroSD card to your computer using a MicroSD card reader.
     - Ignore any warnings about the MicroSD card being corrupt or unreadable - this is normal due to Windows being unable to read Linux partitions natively.
 1. Launch Win32 Disk Imager.
-1. In the "Image File" field, select a file path and enter a file name that will become your backup image. (e.g. C:/tpcast-backup.img).
-1. Select the MicroSD drive from the Device drop down list.
-1. Click "Read" to back up the image to your computer.  This will produce a file approximately 8GB in size.
+1. In the `Image File` field, select a file path and enter a file name that will become your backup image. (e.g. C:/tpcast-backup.img).
+1. Select the MicroSD drive from the `Device` drop down list.
+1. Click `Read` to back up the image to your computer.  This will produce a file approximately 8GB in size.
 1. Store the backed up file somewhere safe, as it will be required to restore your TPCast back to factory settings in the event of software compatibility issues during or after the upgrade.
 
 ### Flashing The MicroSD Card With OpenTPCast
@@ -53,9 +53,9 @@ Video:
 1. Connect the MicroSD card to your computer using a MicroSD card reader.
     - Ignore any warnings about the MicroSD card being corrupt or unreadable - this is normal due to Windows being unable to read Linux partitions natively.
 1. Launch Win32 Disk Imager.
-1. In the "Image File" field, select the OpenTPCast image that was downloaded and extracted (e.g. C:/opentpcast.img).
-1. Select the MicroSD drive from the Device drop down list.
-1. Click "Write" to flash the image to your MicroSD card.
+1. In the `Image File` field, select the OpenTPCast image that was downloaded and extracted (e.g. C:/opentpcast.img).
+1. Select the MicroSD drive from the `Device` drop down list.
+1. Click `Write` to flash the image to your MicroSD card.
 
 ### Reassembling The TPCast Power Box
 1. Push the MicroSD card back into its socket.
@@ -65,10 +65,10 @@ Video:
 
 ## Configuring VirtualHere For TPCast
 ![Applying licence to VirtualHere USB Client](../img/virtualhere-licence.jpg)
-1. Once the TPCast device is listed in VirtualHere, you can then [purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by right clicking on USB Hubs > Licence, select Enter Licence(s) and copy your licence key from the email received following purchase.
+1. Once the TPCast device is listed in VirtualHere, you can then [purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by right clicking on `USB Hubs` > `Licence`, select `Enter Licence(s)` and copy your licence key from the email received following purchase.
     - Note That you cannot purchase a licence until you have a serial number which won't appear in Licences until TPCast shows up under USB Hubs.
-1. Right click on USB Hubs then select "Install Client as a Service" and click OK.
-1. Relaunch VirtualHere USB Client, expand USB Hubs, expand TPCast, then right click and select "Auto-Use Device/Port" for each of the following devices:
+1. Right click on `USB Hubs` then select `Install Client as a Service` and click `OK`.
+1. Relaunch `VirtualHere USB Client`, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
     - HTC Vive
     - Lighthouse FPGA RX
     - Watchman Dongle
@@ -79,8 +79,8 @@ Video:
         - This should only be used when "USB Audio Device" is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled while running SteamVR to avoid stability issues.
 
 If you would prefer SteamVR to launch automatically when the TPCast power box is turned on, follow these steps:
-1. In VirtualHere USB Client, expand "USB Hubs", then expand "TPCast".
-1. Right click "Lighthouse FPGA RX", select "Custom Event Handler..." and enter the following command:
+1. In VirtualHere USB Client, expand `USB Hubs`, then expand `TPCast`.
+1. Right click `Lighthouse FPGA RX`, select `Custom Event Handler...` and enter the following command:
 ```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=for /F "Tokens=1,2*" %A in ('Reg Query HKCU\SOFTWARE\Valve\Steam') do (if "%A" equ "SteamPath" (start "" "%C\steamapps\common\SteamVR\bin\win64\vrstartup.exe"))```
 
 ## Using Your TPCast After Upgrading
