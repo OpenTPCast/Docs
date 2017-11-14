@@ -19,7 +19,7 @@ It is planned to streamline this solution to enable it to be included in officia
 	- Hostname: Locate the IP address of the TPCast power box by checking your router's connected client list (e.g. 192.168.XXX.XXX).
 	- Port: 22
 	- Username: pi
-	- Password: raspberry
+	- Password: 1qaz2wsx3edc4rfv
 1. In the Putty terminal, run the following command to install the camera streaming service:
 ```bash
 sudo wget -e check_certificate=off https://rawgit.com/OpenTPCast/Docs/master/files/camerastream/opentpcast-camerastream && sudo chmod +x ./opentpcast-camerastream && sudo ./opentpcast-camerastream
