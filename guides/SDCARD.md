@@ -18,14 +18,14 @@ Video:
 ![Backing up an image with Win32 Disk Imager](../img/win32diskimager-backup.jpg)
 1. Connect the MicroSD card to your computer using a MicroSD card reader.
 1. Launch Win32 Disk Imager.
-1. In the "Image File" field, select a file path and enter a file name that will become your backup image. (e.g. C:/tpcast-backup.img).
-1. Select the MicroSD drive from the Device drop down list.
-1. Click "Read" to back up the image to your computer.
+1. In the `Image File` field, select a file path and enter a file name that will become your backup image. (e.g. C:/tpcast-backup.img).
+1. Select the MicroSD drive from the `Device` drop down list.
+1. Click `Read` to back up the image to your computer.
 
 ## Restoring An Image To A MicroSD Card
 ![Restoring an image with Win32 Disk Imager](../img/win32diskimager-restore.jpg)
 1. Connect the MicroSD card to your computer using a MicroSD card reader.
 1. Launch Win32 Disk Imager.
-1. In the "Image File" field, select the file that you orignally backed up that you will be restoring to the MicroSD. (e.g. C:/tpcast-backup.img).
-1. Select the MicroSD drive from the Device drop down list.
-1. Click "Write" to restore the image to your MicroSD card.
+1. In the `Image File` field, select the file that you orignally backed up that you will be restoring to the MicroSD. (e.g. C:/tpcast-backup.img).
+1. Select the MicroSD drive from the `Device` drop down list.
+1. Click `Write` to restore the image to your MicroSD card.
