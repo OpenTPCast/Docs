@@ -22,10 +22,10 @@ This guide provides instructions for OpenTPCast image maintainers on how to upgr
 ## Flashing a stock Raspbian Stretch image to MicroSD card
 1. Connect the MicroSD card to your computer using a MicroSD card reader.
 1. Launch Win32 Disk Imager.
-1. In the "Image File" field, select the Raspbian Stretch Lite image file.
-1. Select the MicroSD drive from the Device drop down list.
-1. Click "Write" to flash the image to your MicroSD card.
-1. In Windows Explorer, navigate to the MicroSD card's boot partition, and create an empty file called "ssh".
+1. In the `Image File` field, select the Raspbian Stretch Lite image file.
+1. Select the MicroSD drive from the `Device` drop down list.
+1. Click `Write` to flash the image to your MicroSD card.
+1. In Windows Explorer, navigate to the MicroSD card's boot partition, and create an empty file called `ssh`.
 
 ## Upgrading the Raspbian Stretch image to OpenTPCast
 1. Insert the Raspbian Stretch flashed MicroSD card into the TPCast power box.
@@ -45,25 +45,25 @@ sudo wget -e check_certificate=off https://rawgit.com/OpenTPCast/Docs/master/fil
 ![GParted running in Linux Mint virtual machine](../img/prepareimage-gparted.jpg)
 1. Connect the OpenTPCast flashed MicroSD card to your computer using a MicroSD card reader.
 1. Launch VirtualBox and load the Linux Mint virtual machine.
-1. On the virtual machine window, navigate to Devices > USB and select the MicroSD card reader.
+1. On the virtual machine window, navigate to `Devices` > `USB` and select the MicroSD card reader.
 1. Inside the Linux Mint virtual machine, launch GParted from the Menu.
 1. In GParted, select the MicroSD card (e.g. /dev/sdb) from the device drop down list.
-1. Right click the ext4 partition and select "Unmount".
-1. Right click the ext4 partition and select "Resize/Move".
-1. Drag the slider bar or adjust the "New Size (MiB)" field to an appropriate size (e.g. 2600), then click "Resize/Move" to apply the change.
-1. Select Edit > Apply All Operations to finalize the changes.
-1. Close GParted, and on the virtual machine window, navigate to Devices > USB and deselect the MicroSD card reader to eject it from the virtual machine.
+1. Right click the ext4 partition and select `Unmount`.
+1. Right click the ext4 partition and select `Resize/Move`.
+1. Drag the slider bar or adjust the `New Size (MiB)` field to an appropriate size (e.g. 2600), then click `Resize/Move` to apply the change.
+1. Select `Edit` > `Apply All Operations` to finalize the changes.
+1. Close GParted, and on the virtual machine window, navigate to `Devices` > `USB` and deselect the MicroSD card reader to eject it from the virtual machine.
 
 ## Saving the OpenTPCast image to an image file for distribution
 1. Connect the OpenTPCast flashed MicroSD card to your computer using a MicroSD card reader.
 1. Launch Win32 Disk Imager.
-1. In the "Image File" field, select a file path and enter a file name that will become your backup image. (e.g. C:/opentpcast.img).
-1. Select the MicroSD drive from the Device drop down list.
-1. Click "Read" to back up the image to your computer.
+1. In the `Image File` field, select a file path and enter a file name that will become your backup image. (e.g. C:/opentpcast.img).
+1. Select the MicroSD drive from the `Device` drop down list.
+1. Click `Read` to back up the image to your computer.
 
 ## Compressing the OpenTPCast image for distribution
-1. Right click the OpenTPCast image file and navigate to 7-Zip > Add to archive...
+1. Right click the OpenTPCast image file and navigate to `7-Zip` > `Add to archive...`
 1. Use the following settings to compress the image:
 	- Archive format: 7z
 	- Compression level: Ultra
-1. Click OK to compress the image.
+1. Click `OK` to compress the image.
