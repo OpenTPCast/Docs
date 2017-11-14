@@ -78,6 +78,11 @@ Video:
     - Vive Camera
         - This should only be used when "USB Audio Device" is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled while running SteamVR to avoid stability issues.
 
+If you would prefer SteamVR to launch automatically when the TPCast power box is turned on, follow these steps:
+1. In VirtualHere USB Client, expand "USB Hubs", then expand "TPCast".
+1. Right click "Lighthouse FPGA RX", select "Custom Event Handler..." and enter the following command:
+```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=for /F "Tokens=1,2*" %A in ('Reg Query HKCU\SOFTWARE\Valve\Steam') do (if "%A" equ "SteamPath" (start "" "%C\steamapps\common\SteamVR\bin\win64\vrstartup.exe"))```
+
 ## Using Your TPCast After Upgrading
 To load up your TPCast on future play sessions, plug in the TPCast, wait a few minutes (checking VirtualHere USB Client if nessecary to see if the TPCast is ready), then launch SteamVR.
 
