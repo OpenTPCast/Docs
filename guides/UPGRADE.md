@@ -76,7 +76,7 @@ Video:
     - USB Audio Device
         - This should be used if available to enable microphone support for older revisions of HTC Vive.
     - Vive Camera
-        - This should only be used when "USB Audio Device" is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled while running SteamVR to avoid stability issues.
+        - This should only be used when `USB Audio Device` is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled while running SteamVR to avoid stability issues.
 
 If you would prefer SteamVR to launch automatically when the TPCast power box is turned on, follow these steps:
 1. In VirtualHere USB Client, expand `USB Hubs`, then expand `TPCast`.
