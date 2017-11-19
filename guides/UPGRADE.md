@@ -41,7 +41,7 @@ Video:
 ### Backing Up The Stock TPCast MicroSD Card
 ![Backing up an image with Win32 Disk Imager](../img/win32diskimager-backup.jpg)
 1. Connect the MicroSD card to your computer using a MicroSD card reader.
-    - Ignore any warnings about the MicroSD card being corrupt or unreadable - this is normal due to Windows being unable to read Linux partitions natively.
+    - Ignore any warnings about the MicroSD card being corrupt, unreadable or reporting a small partition size - this is normal due to Windows being unable to read Linux partitions natively.
 1. Launch Win32 Disk Imager.
 1. In the `Image File` field, select a file path and enter a file name that will become your backup image. (e.g. C:/tpcast-backup.img).
 1. Select the MicroSD drive from the `Device` drop down list.
@@ -51,7 +51,7 @@ Video:
 ### Flashing The MicroSD Card With OpenTPCast
 ![Restoring an image with Win32 Disk Imager](../img/win32diskimager-flash.jpg)
 1. Connect the MicroSD card to your computer using a MicroSD card reader.
-    - Ignore any warnings about the MicroSD card being corrupt or unreadable - this is normal due to Windows being unable to read Linux partitions natively.
+    - Ignore any warnings about the MicroSD card being corrupt, unreadable or reporting a small partition size - this is normal due to Windows being unable to read Linux partitions natively.
 1. Launch Win32 Disk Imager.
 1. In the `Image File` field, select the OpenTPCast image that was downloaded and extracted (e.g. C:/opentpcast.img).
 1. Select the MicroSD drive from the `Device` drop down list.
