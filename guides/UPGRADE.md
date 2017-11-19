@@ -70,11 +70,17 @@ Video:
 1. Attach the USB cable, power cable and battery.
 
 ## Configuring VirtualHere For TPCast
+### Applying A TPCast VirtualHere Licence
 ![Applying licence to VirtualHere USB Client](../img/virtualhere-licence.jpg)
-1. Once the TPCast device is listed in VirtualHere, you can then [purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client by right clicking on `USB Hubs` > `Licence`, select `Enter Licence(s)` and copy your licence key from the email received following purchase.
-    - Note That you cannot purchase a licence until you have a serial number which won't appear in Licences until TPCast shows up under USB Hubs.
-1. Right click on `USB Hubs` then select `Install Client as a Service` and click `OK`.
-1. Relaunch `VirtualHere USB Client`, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
+Once the TPCast device is listed in VirtualHere USB Client, you can then [purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client.  Note That you cannot purchase a licence until you have a serial number which won't appear in Licences until TPCast shows up under USB Hubs.
+
+To apply a purchased licence:
+1. Launch VirtualHere USB Client.
+1. In VirtualHere USB Client, right click on `USB Hubs` and select `Licence`.
+1. Select `Enter Licence(s)` and copy your licence key from the email received following purchase.
+
+### Connecting The HTC Vive USB Devices
+1. In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
     - Lighthouse FPGA RX
     - HTC Vive
     - Watchman Dongle
@@ -84,14 +90,18 @@ Video:
     - Vive Camera
         - This should only be used when `USB Audio Device` is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled in SteamVR settings to avoid stability issues.
 
-If you would prefer SteamVR to launch automatically when the TPCast power box is turned on, follow these steps:
+### Launching SteamVR Automatically
+To launch SteamVR automatically when the TPCast power box is turned on:
 1. In VirtualHere USB Client, expand `USB Hubs`, then expand `TPCast`.
 1. Right click `Lighthouse FPGA RX`, select `Custom Event Handler...` and enter the following command:
 ```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=for /F "Tokens=1,2*" %A in ('Reg Query HKCU\SOFTWARE\Valve\Steam') do (if "%A" equ "SteamPath" (start "" "%C\steamapps\common\SteamVR\bin\win64\vrstartup.exe"))```
 
 ## Using Your TPCast After Upgrading
-To load up your TPCast on future play sessions, plug in the TPCast, wait a few minutes (checking VirtualHere USB Client if nessecary to see if the TPCast is ready), then launch SteamVR.
-
 Any installed TPCast software should be left disabled or uninstalled while using VirtualHere USB Client.
 
+1. Launch VirtualHere USB Client.
+1. Insert the battery into the TPCast power box and wait for it to boot up.
+1. Once the TPCast device shows up in VirtualHere USB Client under USB Hubs, launch SteamVR if it is not already configured to run automatically.
+
+## Troubleshooting
 If you experience tracking issues after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-channel-frequency) or [network mode](ROUTER.md#switching-to-another-network-mode) in your TPCast router.
