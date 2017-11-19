@@ -72,6 +72,7 @@ Video:
 ## Configuring VirtualHere For TPCast
 ### Applying A TPCast VirtualHere Licence
 ![Applying licence to VirtualHere USB Client](../img/virtualhere-licence.jpg)
+
 Once the TPCast device is listed in VirtualHere USB Client, you can then [purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client.  Note That you cannot purchase a licence until you have a serial number which won't appear in Licences until TPCast shows up under USB Hubs.
 
 To apply a purchased licence:
