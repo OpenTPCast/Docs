@@ -90,4 +90,4 @@ To load up your TPCast on future play sessions, plug in the TPCast, wait a few m
 
 Any installed TPCast software should be left disabled or uninstalled while using VirtualHere USB Client.
 
-If you experience tracking issues after upgrading, try [switching Wi-Fi channels](ROUTER.md) or [network mode](ROUTER.md) in your TPCast router.
+If you experience tracking issues after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-channel-frequency) or [network mode](ROUTER.md#switching-to-another-network-mode) in your TPCast router.
