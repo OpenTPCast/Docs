@@ -16,7 +16,7 @@ It is planned to streamline this solution to enable it to be included in officia
 
 ## Installation
 1. Power up the TPCast power box by plugging in the battery and wait a few minutes, then launch Putty and connect with the following details:
-	- Hostname: Locate the IP address of the TPCast power box by checking your router's connected client list (e.g. 192.168.XXX.XXX).
+	- Hostname: tpcast.local (or locate the IP address of the TPCast power box by checking your router's connected client list - e.g. 192.168.XXX.XXX)
 	- Port: 22
 	- Username: pi
 	- Password: 1qaz2wsx3edc4rfv
@@ -26,8 +26,9 @@ sudo wget -e check_certificate=off https://rawgit.com/OpenTPCast/Docs/master/fil
 ```
 
 ## Accessing The Camera Stream
-1. Locate the IP address of the TPCast power box by checking your router's connected client list (e.g. 192.168.XXX.XXX).
-1. Navigate to http://192.168.XXX.XXX:10088/?action=stream in a web browser, substituting the IP address with your TPCast power box IP address.
+![HTC Vive camera stream preview in browser](../img/vivecamstream.jpg)
+
+Navigate to `http://tpcast.local:10088/?action=stream` to view the HTC Vive camera stream.  This stream can then be displayed in VR using third party overlay software (e.g. [OVRDrop](http://store.steampowered.com/app/586210/OVRdrop/)).
 
 ## Enabling/Disabling The Camera Stream
 To disable the camera streaming service, run the following command in the Putty terminal, then reboot the TPCast power box:
