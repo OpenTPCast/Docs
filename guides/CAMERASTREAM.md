@@ -28,7 +28,7 @@ sudo wget -e check_certificate=off https://rawgit.com/OpenTPCast/Docs/master/fil
 ## Accessing The Camera Stream
 ![HTC Vive camera stream preview in browser](../img/vivecamstream.jpg)
 
-Navigate to `http://tpcast.local:10088/?action=stream` to view the HTC Vive camera stream.  This stream can then be displayed in VR using third party overlay software (e.g. [OVRDrop](http://store.steampowered.com/app/586210/OVRdrop/)).
+Navigate to http://tpcast.local:10088/?action=stream to view the HTC Vive camera stream.  This stream can then be displayed in VR using third party overlay software (e.g. [OVRDrop](http://store.steampowered.com/app/586210/OVRdrop/)).
 
 ## Enabling/Disabling The Camera Stream
 To disable the camera streaming service, run the following command in the Putty terminal, then reboot the TPCast power box:
