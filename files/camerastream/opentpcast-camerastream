@@ -11,7 +11,7 @@ sudo make -C ./mjpg-streamer/mjpg-streamer-experimental && sudo make -C ./mjpg-s
 sudo rm -rf mjpg-streamer
 
 # Configure camera to stream automatically on boot
-echo -e "#! /bin/bash\n### BEGIN INIT INFO\n# Provides:          vivecamstream\n# Required-Start:    $all\n# Required-Stop:\n# Default-Start:     2 3 4 5\n# Default-Stop:\n# Short-Description: Initialize HTC Vive Camera stream over HTTP\n### END INIT INFO\n\nmjpg_streamer -o \"output_http.so -p 10088\" -i \"input_uvc.so -r 480x360\" &" | sudo tee -a /etc/init.d/vivecamstream
+echo -e "#! /bin/bash\n### BEGIN INIT INFO\n# Provides:          vivecamstream\n# Required-Start:    $all\n# Required-Stop:\n# Default-Start:     2 3 4 5\n# Default-Stop:\n# Short-Description: Initialize HTC Vive Camera stream over HTTP\n### END INIT INFO\n\nmjpg_streamer -o \"output_http.so -p 80\" -i \"input_uvc.so -r 480x360\" &" | sudo tee -a /etc/init.d/vivecamstream
 sudo chmod +x /etc/init.d/vivecamstream
 sudo update-rc.d vivecamstream defaults
 
