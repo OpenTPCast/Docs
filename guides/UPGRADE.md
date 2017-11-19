@@ -46,7 +46,7 @@ Video:
 1. In the `Image File` field, select a file path and enter a file name that will become your backup image. (e.g. C:/tpcast-backup.img).
 1. Select the MicroSD drive from the `Device` drop down list.
 1. Click `Read` to back up the image to your computer.  This will produce a file approximately 8GB in size.
-1. Store the backed up file somewhere safe, as it will be required to restore your TPCast back to factory settings in the event of software compatibility issues during or after the upgrade.
+1. Store the backed up file somewhere safe, as it will be required to [restore your TPCast](SDCARD.md#restoring-an-image-to-a-microsd-card) back to factory settings in the event of software compatibility issues during or after the upgrade.
 
 ### Flashing The MicroSD Card With OpenTPCast
 ![Restoring an image with Win32 Disk Imager](../img/win32diskimager-flash.jpg)
