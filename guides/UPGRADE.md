@@ -18,7 +18,7 @@ To use VirtualHere USB Server, a TPCast-optimized licence key must be [purchased
 - Ensure that your TPCast is functioning correctly with the stock router and software before attempting the upgrade.
 - A MicroSD card reader is required to backup and flash images to your MicroSD card on your computer.
 - A small phillips/crossheaded screwdriver is required to open the TPCast power box.
-- Your device may come included with a Class 4 MicroSD card.  A Class 10 MicroSD card is recommended to speed up TPCast boot times.
+- Your device may come included with a Class 4 MicroSD card.  A Class 10 MicroSD card (4GB or higher in capacity) is recommended to speed up TPCast boot times.
 
 ### Software
 - Ensure that any TPCast software is not running on your local machine during or after the upgrade.
