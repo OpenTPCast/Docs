@@ -26,6 +26,10 @@ To use VirtualHere USB Server, a TPCast-optimized licence key must be [purchased
 - Download and extract (using [7-Zip](http://www.7-zip.org/)) the latest [OpenTPCast](https://github.com/OpenTPCast/Docs/releases) image.
 - Download and install [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) on your local machine, which will be used to back up and restore images to and from a MicroSD card.
 - Download & install [VirtualHere USB Client](https://virtualhere.com/usb_client_software) on your local machine, which will be used to forward the HTC Vive's USB devices over your local network.  Note that a TPCast-optimized licence key must be [purchased](https://www.virtualhere.com/tpcast_purchase) to use with VirtualHere USB Server after the upgrade.
+  - If you are prompted at any point to install Bonjour, you must install it to ensure that the TPCast can be discovered by VirtualHere USB Client correctly.
+
+### Miscellaneous
+- Follow the guide as it is laid out without skipping steps otherwise you may run into issues later.
 
 ## Installation
 ### Accessing The TPCast Power Box MicroSD Card
