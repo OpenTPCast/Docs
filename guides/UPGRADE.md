@@ -79,7 +79,7 @@ Once the TPCast device is listed in VirtualHere USB Client, you can then [purcha
 1. Select `TPCast Unlimited Licence` from the `Licence` drop down menu.
 1. In VirtualHere USB Client, right click `USB Hubs`, select `Licence...` and click `Copy to Clipboard`.
 1. Switch back to the web browser, and paste the contents of your clipboard into the `Paste in here` field.
-1. Click `Buy Now with PayPal` to complete the purchase, then check your emails for a confirmation email containing the TPCast licence.
+1. Click `Buy Now with PayPal` to complete the purchase, then check your inbox for a confirmation email containing the TPCast licence.
 
 ### Applying The TPCast VirtualHere Licence
 ![Applying licence to VirtualHere USB Client](../img/virtualhere-licence.jpg)
@@ -102,6 +102,7 @@ In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click 
 To launch SteamVR automatically when the TPCast power box is turned on:
 1. In VirtualHere USB Client, expand `USB Hubs`, then expand `TPCast`.
 1. Right click `Lighthouse FPGA RX`, select `Custom Event Handler...` and enter the following command:
+
 ```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=start "" "steam://rungameid/250820"```
 
 ## Using Your TPCast After Upgrading
