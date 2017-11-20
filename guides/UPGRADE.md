@@ -76,7 +76,7 @@ Once the TPCast device is listed in VirtualHere USB Client, you can then [purcha
 ![Applying licence to VirtualHere USB Client](../img/virtualhere-purchase.jpg)
 1. Launch VirtualHere USB Client and wait for the `TPCast` device to appear under `USB Hubs`.
 1. Navigate to https://www.virtualhere.com/tpcast_purchase in a web brower.
-1. Select `TPCast Unlimited Licence` from the `Licence' drop down menu.
+1. Select `TPCast Unlimited Licence` from the `Licence` drop down menu.
 1. In VirtualHere USB Client, right click `USB Hubs`, select `Licence...` and click `Copy to Clipboard`.
 1. Switch back to the web browser, and paste the contents of your clipboard into the `Paste in here` field.
 1. Click `Buy Now with PayPal` to complete the purchase, then check your emails for a confirmation email containing the TPCast licence.
