@@ -102,7 +102,7 @@ In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click 
 To launch SteamVR automatically when the TPCast power box is turned on:
 1. In VirtualHere USB Client, expand `USB Hubs`, then expand `TPCast`.
 1. Right click `Lighthouse FPGA RX`, select `Custom Event Handler...` and enter the following command:
-```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=for /F "Tokens=1,2*" %A in ('Reg Query HKCU\SOFTWARE\Valve\Steam') do (if "%A" equ "SteamPath" (start "" "%C\steamapps\common\SteamVR\bin\win64\vrstartup.exe"))```
+```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=start "" "steam://rungameid/250820"```
 
 ## Using Your TPCast After Upgrading
 Any installed TPCast software should be left disabled or uninstalled while using VirtualHere USB Client.
