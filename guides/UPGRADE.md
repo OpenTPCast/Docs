@@ -113,4 +113,4 @@ Any installed TPCast software should be left disabled or uninstalled while using
 1. Once the TPCast device shows up in VirtualHere USB Client under USB Hubs, launch SteamVR if it is not already configured to run automatically.
 
 ## Troubleshooting
-If you experience tracking issues or devices being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-channel-frequency) or [network mode](ROUTER.md#switching-to-another-network-mode) in your TPCast router.
+If you experience tracking issues or devices are being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-channel-frequency) or [network mode](ROUTER.md#switching-to-another-network-mode) in your TPCast router.
