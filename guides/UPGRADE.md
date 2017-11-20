@@ -89,14 +89,14 @@ Once the TPCast device is listed in VirtualHere USB Client, you can then [purcha
 
 ### Connecting HTC Vive USB Devices
 In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
-    - Lighthouse FPGA RX
-    - HTC Vive
-    - Watchman Dongle
-    - Watchman Dongle
-    - USB Audio Device
-        - This should be used if available to enable microphone support for older revisions of the HTC Vive.
-    - Vive Camera
-        - This should only be used when `USB Audio Device` is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled in SteamVR settings to avoid stability issues.
+  - Lighthouse FPGA RX
+  - HTC Vive
+  - Watchman Dongle
+  - Watchman Dongle
+  - USB Audio Device
+      - This should be used if available to enable microphone support for older revisions of the HTC Vive.
+  - Vive Camera
+      - This should only be used when `USB Audio Device` is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled in SteamVR settings to avoid stability issues.
 
 ### Launching SteamVR Automatically
 To launch SteamVR automatically when the TPCast power box is turned on:
