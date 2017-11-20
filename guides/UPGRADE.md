@@ -70,18 +70,25 @@ Video:
 1. Attach the USB cable, power cable and battery.
 
 ## Configuring VirtualHere For TPCast
-### Applying A TPCast VirtualHere Licence
-![Applying licence to VirtualHere USB Client](../img/virtualhere-licence.jpg)
-
 Once the TPCast device is listed in VirtualHere USB Client, you can then [purchase](https://www.virtualhere.com/tpcast_purchase) and apply your VirtualHere USB Server unlimited licence key in VirtualHere USB Client.  Note That you cannot purchase a licence until you have a serial number which won't appear in Licences until TPCast shows up under USB Hubs.
 
-To apply a purchased licence:
+### Purchasing A TPCast VirtualHere Licence
+![Applying licence to VirtualHere USB Client](../img/virtualhere-purchase.jpg)
+1. Launch VirtualHere USB Client and wait for the `TPCast` device to appear under `USB Hubs`.
+1. Navigate to https://www.virtualhere.com/tpcast_purchase in a web brower.
+1. Select `TPCast Unlimited Licence` from the `Licence' drop down menu.
+1. In VirtualHere USB Client, right click `USB Hubs`, select `Licence...` and click `Copy to Clipboard`.
+1. Switch back to the web browser, and paste the contents of your clipboard into the `Paste in here` field.
+1. Click `Buy Now with PayPal` to complete the purchase, then check your emails for a confirmation email containing the TPCast licence.
+
+### Applying The TPCast VirtualHere Licence
+![Applying licence to VirtualHere USB Client](../img/virtualhere-licence.jpg)
 1. Launch VirtualHere USB Client.
-1. In VirtualHere USB Client, right click on `USB Hubs` and select `Licence`.
+1. In VirtualHere USB Client, right click on `USB Hubs` and select `Licence...`.
 1. Select `Enter Licence(s)` and copy your licence key from the email received following purchase.
 
-### Connecting The HTC Vive USB Devices
-1. In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
+### Connecting HTC Vive USB Devices
+In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
     - Lighthouse FPGA RX
     - HTC Vive
     - Watchman Dongle
