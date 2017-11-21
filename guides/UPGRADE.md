@@ -105,6 +105,7 @@ To launch SteamVR automatically when the TPCast power box is turned on:
 
 ```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=start steam://rungameid/250820```
 
+
 To stop SteamVR from launching automatically when the TPCast power box is turned on:
 1. In VirtualHere USB Client, expand `USB Hubs`, then expand `TPCast`.
 1. Right click `Lighthouse FPGA RX`, select `Custom Event Handler...` and enter the following command:
