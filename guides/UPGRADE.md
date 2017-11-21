@@ -105,6 +105,12 @@ To launch SteamVR automatically when the TPCast power box is turned on:
 
 ```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=start steam://rungameid/250820```
 
+To stop SteamVR from launching automatically when the TPCast power box is turned on:
+1. In VirtualHere USB Client, expand `USB Hubs`, then expand `TPCast`.
+1. Right click `Lighthouse FPGA RX`, select `Custom Event Handler...` and enter the following command:
+
+```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=REMOVE```
+
 ### Speeding Up TPCast Device Detection
 ![Editing VirtualHere USB Client refresh time in Notepad](../img/virtualhere-refreshtime.jpg)
 You can speed up the rate that VirtualHere USB Client scans for devices by editing the file `%appdata%\vhui.ini` in Notepad, and add or amend `AutoRefreshLookupPeriod=5` under the `[General]` section, then save the file.
