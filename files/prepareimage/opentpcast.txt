@@ -1,4 +1,4 @@
-# Specifies which network to connect the TPCast to.  If left blank, the default configuration will be used.
+# Specifies which network to connect the TPCast to.  If left blank, the default configuration will be used.  An empty file called "initwlan" must be created in the boot folder after updating these settings for the changes to take effect on the next boot.
 # ssid=tpcastXXXX
 # passphrase=12345678
 ssid=
