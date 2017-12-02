@@ -31,7 +31,7 @@ Custom Wi-Fi credentials can be set for additional security.
 
 ### Updating The TPCast Power Box Credentials
 1. [Remove the MicroSD card](https://github.com/OpenTPCast/Docs/blob/master/guides/SDCARD.md#accessing-the-microsd-card) from your TPCast power box, insert the MicroSD card into your computer and locate the boot partition in My Computer/This PC.
-1. In the boot drive, edit the file `opentpcast.txt` in Notepad, uncomment and amend the `ssid` and `passphrase` with the desired credentials, then save the file.
+1. In the boot drive, edit the file `opentpcast.txt` in Notepad, uncomment and amend `ssid` and `passphrase` with the desired credentials, then save the file.
 ```
 ssid=MyHomeNetwork
 passphrase=MySecretPassword
