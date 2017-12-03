@@ -125,7 +125,7 @@ Any installed TPCast software should be left disabled or uninstalled while using
 ## Troubleshooting
 ### VirtualHere Issues
 If VirtualHere USB Client is not detecting the TPCast, ensure that you have Bonjour installed and your firewall is not blocking Bonjour or VirtualHere USB Client so that VirtualHere can detect 
-the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking USB Hubs > Specify Hubs... > Add > 192.168.XXX.XXX:7575 > OK.
+the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
 
 ### Tracking Issues
 If you experience tracking issues or devices are being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-channel-frequency) or [network mode](ROUTER.md#switching-to-another-network-mode) in your TPCast router.
