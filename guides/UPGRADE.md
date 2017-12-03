@@ -131,4 +131,4 @@ the TPCast power box, otherwise you will have to manually specify the IP address
 If you experience tracking issues or devices are being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-channel-frequency) or [network mode](ROUTER.md#switching-to-another-network-mode) in your TPCast router.
 
 ### SteamVR & HMD Display Issues
-If you experience issues with SteamVR not detecting devices, SteamVR displays errors, or the HMD screen appears black, reboot your computer and power cycle all devices including the HTC Vive break-out box, TPCast power box, HDMI transmitter/receiver and router.
+If you experience issues with SteamVR not detecting devices, SteamVR displays errors, or the HMD screen appears black, reboot your computer and power cycle all devices including the HTC Vive break-out box, TPCast power box, HDMI transmitter and router.
