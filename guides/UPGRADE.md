@@ -128,7 +128,7 @@ If VirtualHere USB Client is not detecting the TPCast, ensure that you have Bonj
 the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
 
 ### Tracking Issues
-If you experience tracking issues or devices are being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-channel-frequency) or [network mode](ROUTER.md#switching-to-another-network-mode) in your TPCast router.
+If you experience tracking issues or devices are being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-wi-fi-channel) or [switching Wi-Fi network mode](ROUTER.md#switching-to-another-wi-fi-network-mode) in your TPCast router.
 
 ### SteamVR & HMD Display Issues
 If you experience issues with SteamVR not detecting devices, SteamVR displays errors, or the HMD screen appears black, reboot your computer and power cycle all devices including the HTC Vive break-out box, TPCast power box, HDMI transmitter and router.
