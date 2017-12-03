@@ -124,11 +124,15 @@ Any installed TPCast software should be left disabled or uninstalled while using
 
 ## Troubleshooting
 ### VirtualHere Issues
-If VirtualHere USB Client is not detecting the TPCast, ensure that you have Bonjour installed and your firewall is not blocking Bonjour or VirtualHere USB Client so that VirtualHere can detect 
-the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
+If VirtualHere USB Client is not detecting the TPCast power box:
+* Check the TPCast router's DHCP list while the TPCast power box is turned on to make sure that it is connected to the network, and ping the TPCast power box from your computer to make sure it can be reached.
+* Ensure that you have Bonjour installed and your firewall is not blocking Bonjour or VirtualHere USB Client so that VirtualHere can detect the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
 
 ### Tracking Issues
 If you experience tracking issues or devices are being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-wi-fi-channel) or [switching Wi-Fi network mode](ROUTER.md#switching-to-another-wi-fi-network-mode) in your TPCast router.
 
-### SteamVR & HMD Display Issues
-If you experience issues with SteamVR not detecting devices, SteamVR displays errors, or the HMD screen appears black, reboot your computer and power cycle all devices including the HTC Vive break-out box, TPCast power box, HDMI transmitter and router.
+### SteamVR Issues
+Reboot your computer and power cycle all devices including the HTC Vive break-out box, TPCast power box, HDMI transmitter and router if you experience issues with the following:
+* SteamVR does not detect devices.
+* SteamVR displays errors.
+* HMD screen appears black.
