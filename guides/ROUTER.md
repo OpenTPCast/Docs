@@ -5,12 +5,12 @@ The TPCast router control panel can be accessed from http://192.168.144.1 (CE) o
 - Username: tproot (if prompted)
 - Password: 8427531 (CE) or 12345678 (PRE)
 
-## Switching To Another Network Mode
+## Switching To Another Wi-Fi Network Mode
 If you experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
 1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G` and change `Network Mode` from `11vht AC/AN/A` to `11a only`.
 1. Click `Save` to apply the changes.
 
-## Switching To Another Channel Frequency
+## Switching To Another Wi-Fi Channel
 If you continue to experience tracking issues, you may have to select a different channel.  The channel you select will vary based on region, outside interference and network configuration so try each channel until one works well for your setup.
 1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G`, and change `Channel` from `AutoSelect` to a different option.
 1. Click `Save` to apply the changes.
