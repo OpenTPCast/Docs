@@ -22,8 +22,8 @@ Alternatively, using a more reliable router to overcome poor connection or bandw
 - Linksys WRT1900ACS
 - Netgear WNDR3700
 
-## Customizing Wi-Fi Credentials For OpenTPCast Devices
-Custom Wi-Fi credentials can be set for additional security.
+## Customizing Wi-Fi Credentials
+Devices upgraded to OpenTPCast can be configured to use custom Wi-Fi credentials for additional security, or to connect the TPCast to a different router.
 
 ### Updating The TPCast Router Credentials
 1. In the router control panel, navigate to `WLAN Settings` > `Security Settings` > `5G` and change the `SSID` and `Password` fields to the desired credentials.
