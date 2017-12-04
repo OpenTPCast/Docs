@@ -1,47 +1,42 @@
-Welcome to the Open TPCast documentation repo. If you're here, you probably want to know more about the TPCast, right? Take a look at the table of contents below.
+# OpenTPCast
 
-# Current Status
+This repository provides resources and documentation that are relevant to the TPCast, and OpenTPCast upgrade project.
 
-#### Pre-Release Units
-- :white_check_mark: Upgradable to Kernel 4.9
-- :white_check_mark: Working with VirtualHere
-- :white_check_mark: Microphone Working<sup>[[1]](#f1)</sup>
-- :x: Camera not working<sup>[[2]](#f2)</sup>
+## Official Support Status
+|                   | **Auxiliary USB Port** | **Microphone** | **Camera**  |
+| ----------------- | :--------------------: | :------------: | :---------: |
+| **Pre-Release**   | :x: <sup>[[1]](#f1)    | :x:            | :x:         |
+| **Consumer (CN)** | :x: <sup>[[1]](#f1)    | :x:            | :x:         |
+| **Consumer (US)** | :x: <sup>[[1]](#f1)    | :x:            | :x:         |
+| **Consumer (EU)** | :x: <sup>[[1]](#f1)    | :x:            | :x:         |
 
-#### Consumer Release (China)
-- :white_check_mark: Upgradable to Kernel 4.9
-- :white_check_mark: Working with VirtualHere
-- :white_check_mark: Microphone Working<sup>[[1]](#f1)</sup>
-- :x: Camera not working<sup>[[2]](#f2)</sup>
+<sup><a name="f1">[1]</a></sup> *Provides power to connected devices.*
 
-#### Consumer Release (US/EU)
-- :white_check_mark: Upgradable to Kernel 4.9
-- :white_check_mark: Working with VirtualHere
-- :white_check_mark: Microphone Working<sup>[[1]](#f1)</sup>
-- :x: Camera not working<sup>[[2]](#f2)</sup>
+## OpenTPCast Support Status
+|                   | **Auxiliary USB Port** | **Microphone**     | **Camera**          |
+| ----------------- | :--------------------: | :----------------: | :-----------------: |
+| **Pre-Release**   | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
+| **Consumer (CN)** | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
+| **Consumer (US)** | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
+| **Consumer (EU)** | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
 
-<sup><a name="f1">[1]</a></sup> *Newer revisions of the HTC Vive should disable the camera in SteamVR first, and use the device "Vive Camera" in VirtualHere to enable microphone support.  Older revisions should use the device "USB Audio Device" in VirtualHere to enable microphone support.*
+<sup><a name="f2">[2]</a></sup> *An [experiemental workaround](guides/CAMERASTREAM.md) is available until a more permenent solution can be implemented that works on all revisions of the HTC Vive.*
 
-<sup><a name="f2">[2]</a></sup> *Progress has been made in getting the HTC Vive camera to function with an experimental software setup, but for now it should be considered as not working.*
+## Resources
 
-# Table of Contents
-
-## Information and Specs
-
+### TPCast Information
 - [Specs](SPECS.md)
 - [Software](SOFTWARE.md)
 
-## OpenTPCast Upgrade
-
+### OpenTPCast Guides
 - [Upgrading The TPCast To OpenTPCast](guides/UPGRADE.md)
+- [Streaming the HTC Vive Camera (*Experimental!*)](guides/CAMERASTREAM.md)
 - [Preparing A OpenTPCast Image (Maintainer's Guide)](guides/PREPAREIMAGE.md)
-- [Streaming the HTC Vive Camera (Experimental!)](guides/CAMERASTREAM.md)
 
-## Tinkering
+### Tinkering Guides
 - [Backing Up & Restoring A TPCast Power Box MicroSD Card](guides/SDCARD.md)
-- [Optimizing The TPCast Router For Tracking Performance](guides/ROUTER.md)
+- [Optimizing The TPCast Router](guides/ROUTER.md)
 
-## Misc
-
+### Miscellaneous
 - [Contributing](CONTRIBUTING.md)
 - [Community Discord](https://discord.gg/kAbqRGC)
