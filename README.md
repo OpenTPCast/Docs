@@ -30,7 +30,7 @@ This repository provides resources and documentation that are relevant to the TP
 
 ### OpenTPCast Guides
 - [Upgrading The TPCast To OpenTPCast](guides/UPGRADE.md)
-- [Streaming the HTC Vive Camera (*Experimental!*)](guides/CAMERASTREAM.md)
+- [Streaming the HTC Vive Camera (Experimental!)](guides/CAMERASTREAM.md)
 - [Preparing A OpenTPCast Image (Maintainer's Guide)](guides/PREPAREIMAGE.md)
 
 ### Tinkering Guides
