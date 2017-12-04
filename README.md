@@ -1,6 +1,6 @@
 # TPCast & OpenTPCast Resources
 
-This repository provides resources and documentation that are relevant to the TPCast, and OpenTPCast upgrade project.
+This repository provides resources and documentation that are relevant to the TPCast, and the OpenTPCast upgrade project.
 
 ## Official Support Status
 |                   | **Auxiliary USB Port** | **Microphone** | **Camera**  |
