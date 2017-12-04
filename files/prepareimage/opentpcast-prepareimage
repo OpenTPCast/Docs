@@ -69,17 +69,17 @@ sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/
 sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8192du
 sudo cp rtl8192du/8192du.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
 sudo rm -rf rtl8192du
-echo '8192du' | sudo tee -a /etc/modules > /dev/null
+sudo echo "options 8192du rtw_power_mgnt=0 rtw_enusbss=0" | sudo tee -a /etc/modprobe.d/8192du.conf > /dev/null
 sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
 logger "Installing WLAN driver and firmware for rtl8812au"
 echo "Installing WLAN driver and firmware for rtl8812au"
-git clone https://github.com/OpenTPCast/rtl8812AU_8821AU_linux.git rtl8812au
+git clone https://github.com/OpenTPCast/rtl8812au.git rtl8812au
 sudo ln -s /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/arm /usr/src/linux-headers-$(ls -1 /lib/modules | tail -1)/arch/armv7l > /dev/null 2>&1 || true
 sudo make KVER=$(ls -1 /lib/modules | tail -1) -C ./rtl8812au
-sudo cp rtl8812au/rtl8812au.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
+sudo cp rtl8812au/8812au.ko /lib/modules/$(ls -1 /lib/modules | tail -1)/kernel/drivers/net/wireless
 sudo rm -rf rtl8812au
-echo 'rtl8812au' | sudo tee -a /etc/modules > /dev/null
+sudo echo "options 8812au rtw_power_mgnt=0 rtw_enusbss=0" | sudo tee -a /etc/modprobe.d/8812au.conf > /dev/null
 sudo depmod -a $(ls -1 /lib/modules | tail -1) > /dev/null 2>&1 || true
 
 # Install VirtualHere USB Server (Server licence must be purchased from https://www.virtualhere.com/tpcast_purchase to use)
