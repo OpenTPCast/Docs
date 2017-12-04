@@ -74,7 +74,7 @@ Once the TPCast device is listed in VirtualHere USB Client, you can then [purcha
 
 ### Purchasing A TPCast VirtualHere Licence
 ![Applying licence to VirtualHere USB Client](../img/virtualhere-purchase.jpg)
-If you are reflashing a previously upgraded TPCast and have already purchased a TPCast VirtualHere licence, you do not need to purchase a new licence and can skip this section.
+*Note: If you are reflashing a previously upgraded TPCast device and have already purchased a TPCast VirtualHere licence, you do not need to purchase a new licence and can skip this section.*
 
 1. Launch VirtualHere USB Client and wait for the `TPCast` device to appear under `USB Hubs`.
 1. Navigate to https://www.virtualhere.com/tpcast_purchase in a web browser.
