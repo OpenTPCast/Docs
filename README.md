@@ -1,4 +1,4 @@
-# OpenTPCast
+# TPCast & OpenTPCast Resources
 
 This repository provides resources and documentation that are relevant to the TPCast, and OpenTPCast upgrade project.
 
