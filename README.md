@@ -25,7 +25,7 @@ This repository provides resources and documentation that are relevant to the TP
 ## Resources
 
 ### TPCast Information
-- [Hardware Specifications](SPECS.md)
+- [Hardware Teardown & Specifications](HARDWARE.md)
 - [Software](SOFTWARE.md)
 
 ### OpenTPCast Guides
