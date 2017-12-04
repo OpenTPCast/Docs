@@ -20,7 +20,7 @@ This repository provides resources and documentation that are relevant to the TP
 | **Consumer (US)** | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
 | **Consumer (EU)** | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
 
-<sup><a name="f2">[2]</a></sup> *An [experiemental workaround](guides/CAMERASTREAM.md) is available until a more permenent solution can be implemented that works on all revisions of the HTC Vive.*
+<sup><a name="f2">[2]</a></sup> *An [experiemental workaround](guides/CAMERASTREAM.md) is available until a more permanent solution can be implemented that works on all revisions of the HTC Vive.*
 
 ## Resources
 
