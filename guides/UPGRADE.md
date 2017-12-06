@@ -20,6 +20,7 @@
   * [Launching SteamVR Automatically](#launching-steamvr-automatically)
   * [Speeding Up TPCast Device Detection](#speeding-up-tpcast-device-detection)
 * [Using Your TPCast After Upgrading](#using-your-tpcast-after-upgrading)
+* [Connecting To The TPCast Over SSH](#connecting-to-the-tpcast-over-ssh)
 * [Troubleshooting](#troubleshooting)
   * [VirtualHere Issues](#virtualhere-issues)
   * [Tracking Issues](#tracking-issues)
@@ -148,6 +149,13 @@ Any installed TPCast software should be left disabled or uninstalled while using
 1. Launch VirtualHere USB Client.
 1. Insert the battery into the TPCast power box and wait for it to boot up.
 1. Once the TPCast device shows up in VirtualHere USB Client under USB Hubs, launch SteamVR if it is not already configured to run automatically.
+
+## Connecting To The TPCast Over SSH
+To connect to the TPCast power box to troubleshoot issues or perform further modifications, use the following details:
+* Hostname: tpcast.local
+* Port: 22
+* Username: pi
+* Password: 1qaz2wsx3edc4rfv
 
 ## Troubleshooting
 ### VirtualHere Issues
