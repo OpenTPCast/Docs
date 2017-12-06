@@ -2,6 +2,17 @@
 
 **This guide is not intended for end users, who should download and flash officially released OpenTPCast images from https://github.com/OpenTPCast/Docs/releases**
 
+## Table of Contents
+* [Overview](#overview)
+* [Preparation](#preparation)
+  * [Hardware](#hardware)
+  * [Software](#software)
+* [Flashing a stock Raspbian Stretch image to MicroSD card](#flashing-a-stock-raspbian-stretch-image-to-microsd-card)
+* [Upgrading the Raspbian Stretch image to OpenTPCast](#upgrading-the-raspbian-stretch-image-to-opentpcast)
+* [Shrinking the OpenTPCast image](#shrinking-the-opentpcast-image)
+* [Saving the OpenTPCast image to an image file for distribution](#saving-the-opentpcast-image-to-an-image-file-for-distribution)
+* [Compressing the OpenTPCast image for distribution](#compressing-the-opentpcast-image-for-distribution)
+
 ## Overview
 This guide provides instructions for OpenTPCast image maintainers on how to upgrade a Raspbian Stretch Lite image to an OpenTPCast image, and how to prepare the image for distribution to end users.
 
