@@ -30,6 +30,7 @@ Alternatively, using a more reliable router to overcome poor connection or bandw
 - D-Link AC1750
 - Linksys WRT1900ACS
 - Netgear WNDR3700
+- Ubiquiti UAP-AC-HD
 
 ## Customizing Wi-Fi Credentials
 Devices upgraded to OpenTPCast can be configured to use custom Wi-Fi credentials for additional security, or to connect the TPCast to a different router.
