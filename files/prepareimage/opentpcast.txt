@@ -1,5 +1,15 @@
-# Specifies which network to connect the TPCast to.  If left blank, the default configuration will be used.  An empty file called "initwlan" must be created in the boot folder after updating these settings for the changes to take effect on the next boot.
+# Network Settings
+# Specifies which Wi-Fi network to prioritize connecting the TPCast to.  If left blank, the default configuration will be used.  An empty file called "initwlan" must be created in the boot folder after updating these settings for the changes to take effect on the next boot.
 # ssid=tpcastXXXX
 # passphrase=12345678
 ssid=
 passphrase=
+
+# Camera Settings
+# Specifies the resolution and frame rate that the camera service will stream at.  If left blank, the default configuration will be used. 
+# camerareswidth=480
+# cameraresheight=360
+# cameraframerate=30
+camerareswidth=
+cameraresheight=
+camframerate=
