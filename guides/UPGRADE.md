@@ -1,5 +1,31 @@
 # Upgrading The TPCast To OpenTPCast
 
+## Table Of Contents
+* [Overview](#overview)
+* [Known Issues](#known-issues)
+* [Disclaimer](#disclaimer)
+* [Preparation](#preparation)
+  * [Hardware](#hardware)
+  * [Software](#software)
+  * [Miscellaneous](#miscellaneous)
+* [Installation](#installation)
+  * [Accessing The TPCast Power Box MicroSD Card](#accessing-the-tpcast-power-box-microsd-card)
+  * [Backing Up The Stock TPCast MicroSD Card](#backing-up-the-stock-tpcast-microsd-card)
+  * [Flashing The MicroSD Card With OpenTPCast](#flashing-the-microsd-card-with-opentpcast)
+  * [Reassembling The TPCast Power Box](#reassembling-the-tpcast-power-box)
+* [Configuring VirtualHere For TPCast](#configuring-virtualhere-for-tpcast)
+  * [Purchasing A TPCast VirtualHere Licence](#purchasing-a-tpcast-virtualhere-licence)
+  * [Applying The TPCast VirtualHere Licence](#applying-the-tpcast-virtualhere-licence)
+  * [Connecting HTC Vive USB Devices](#connecting-htc-vive-usb-devices)
+  * [Launching SteamVR Automatically](#launching-steamvr-automatically)
+  * [Speeding Up TPCast Device Detection](#speeding-up-tpcast-device-detection)
+* [Using Your TPCast After Upgrading](#using-your-tpcast-after-upgrading)
+* [Connecting To The TPCast Over SSH](#connecting-to-the-tpcast-over-ssh)
+* [Troubleshooting](#troubleshooting)
+  * [VirtualHere Issues](#virtualhere-issues)
+  * [Tracking Issues](#tracking-issues)
+  * [SteamVR Issues](#steamvr-issues)
+
 ## Overview
 This guide provides instructions on how to upgrade a stock TPCast device to OpenTPCast, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution running on Raspbian Stretch, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
 
@@ -123,6 +149,13 @@ Any installed TPCast software should be left disabled or uninstalled while using
 1. Launch VirtualHere USB Client.
 1. Insert the battery into the TPCast power box and wait for it to boot up.
 1. Once the TPCast device shows up in VirtualHere USB Client under USB Hubs, launch SteamVR if it is not already configured to run automatically.
+
+## Connecting To The TPCast Over SSH
+To connect to the TPCast power box to troubleshoot issues or perform further modifications, use the following details:
+* Hostname: tpcast.local
+* Port: 22
+* Username: pi
+* Password: 1qaz2wsx3edc4rfv
 
 ## Troubleshooting
 ### VirtualHere Issues

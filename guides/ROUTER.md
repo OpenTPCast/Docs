@@ -1,5 +1,14 @@
 # Optimizing The TPCast Router
 
+## Table Of Contents
+* [Connecting To The TPCast Router](#connecting-to-the-tpcast-router)
+* [Switching To Another Wi-Fi Network Mode](#switching-to-another-wi-fi-network-mode)
+* [Switching To Another Wi-Fi Channel](#switching-to-another-wi-fi-channel)
+* [Using A Different Router](#using-a-different-router)
+* [Customizing Wi-Fi Credentials](#customizing-wi-fi-credentials)
+  * [Updating The TPCast Router Credentials](#updating-the-tpcast-router-credentials)
+  * [Updating The TPCast Power Box Credentials](#updating-the-tpcast-power-box-credentials)
+
 ## Connecting To The TPCast Router
 The TPCast router control panel can be accessed from http://192.168.144.1 (CE) or http://192.168.1.1 (PRE) using a web browser and the following credentials:
 - Username: tproot (if prompted)
@@ -21,6 +30,7 @@ Alternatively, using a more reliable router to overcome poor connection or bandw
 - D-Link AC1750
 - Linksys WRT1900ACS
 - Netgear WNDR3700
+- Ubiquiti UAP-AC-HD
 
 ## Customizing Wi-Fi Credentials
 Devices upgraded to OpenTPCast can be configured to use custom Wi-Fi credentials for additional security, or to connect the TPCast to a different router.
@@ -31,7 +41,7 @@ Devices upgraded to OpenTPCast can be configured to use custom Wi-Fi credentials
 
 ### Updating The TPCast Power Box Credentials
 1. [Remove the MicroSD card](https://github.com/OpenTPCast/Docs/blob/master/guides/SDCARD.md#accessing-the-microsd-card) from your TPCast power box, insert the MicroSD card into your computer and locate the boot partition in My Computer/This PC.
-1. In the boot drive, edit the file `opentpcast.txt` in Notepad, amend `ssid` and `passphrase` with the desired credentials, then save the file.
+1. In the boot drive, edit the file `opentpcast.txt` in [Notepad++](https://notepad-plus-plus.org/) (or another text editor that handles Unix line endings), amend `ssid` and `passphrase` with the desired credentials, then save the file.
 ```
 ssid=MyHomeNetwork
 passphrase=MySecretPassword
