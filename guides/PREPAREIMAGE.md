@@ -70,6 +70,7 @@ sudo wget -e check_certificate=off https://rawgit.com/OpenTPCast/Docs/master/fil
 1. Launch Win32 Disk Imager.
 1. In the `Image File` field, select a file path and enter a file name that will become your backup image. (e.g. C:/opentpcast.img).
 1. Select the MicroSD drive from the `Device` drop down list.
+1. Check `Read Only Allocated Partitions`.
 1. Click `Read` to back up the image to your computer.
 
 ## Compressing the OpenTPCast image for distribution
