@@ -32,7 +32,7 @@ sudo apt-get --force-yes -fuy autoremove &&
 sudo apt-get --force-yes clean && 
 sudo apt-get update && 
 sudo apt-get --force-yes -o Dpkg::Options::="--force-confold" --force-yes -o Dpkg::Options::="--force-confdef" -fuy dist-upgrade && 
-sudo apt-get install -y raspberrypi-kernel-headers git && 
+sudo apt-get install -y raspberrypi-kernel-headers git cmake libjpeg8-dev lighttpd php-cgi && 
 sudo apt-get --force-yes -o Dpkg::Options::="--force-confold" --force-yes -o Dpkg::Options::="--force-confdef" --purge -fuy autoremove && 
 sudo apt-get --force-yes clean
 
@@ -107,6 +107,34 @@ sudo sed -i "s/$(cat /etc/hostname)/tpcast/g" /etc/hostname
 # Update password
 logger "Updating password"
 echo "pi:1qaz2wsx3edc4rfv" | sudo chpasswd
+
+# Install mjpg-streamer
+git clone https://github.com/OpenTPCast/mjpg-streamer
+sudo make -C ./mjpg-streamer/mjpg-streamer-experimental && sudo make -C ./mjpg-streamer/mjpg-streamer-experimental install
+sudo rm -rf mjpg-streamer
+
+# Configure Lighthttpd & PHP
+sudo lighty-enable-mod fastcgi fastcgi-php && sudo service lighttpd force-reload && sudo usermod -a -G www-data pi
+
+# Limit web server root script access to OpenTPCast Control Panel
+echo "www-data ALL=(ALL) NOPASSWD: /usr/local/bin/opentpcast-ctrl" | sudo tee /etc/sudoers.d/100_opentpcast-ctrl && sudo chmod 0440 /etc/sudoers.d/100_opentpcast-ctrl
+
+# Download OpenTPCast Control Panel and control scripts
+git clone https://github.com/OpenTPCast/opentpcast_ctrl
+
+# Install OpenTPCast Control Panel root script
+sudo cp opentpcast_ctrl/opentpcast-ctrl /usr/local/bin/opentpcast-ctrl && sudo chown root:www-data /usr/local/bin/opentpcast-ctrl && sudo chmod 750 /usr/local/bin/opentpcast-ctrl
+
+# Install OpenTPCast Camera service
+sudo cp opentpcast_ctrl/opentpcast-camera /etc/init.d/opentpcast-camera && sudo chmod +x /etc/init.d/opentpcast-camera
+
+# Install OpenTPCast Control Panel web interface
+cp opentpcast_ctrl/controlpanel/* /var/www/html/
+sudo rm -rf opentpcast_ctrl
+
+# Configure public web folder
+sudo rm /var/www/html/index.lighttpd.html
+sudo chown -R www-data:www-data /var/www && sudo chmod -R g+rw /var/www
 
 logger "OpenTPCast image preparation has finished, shutting down to finalize changes..."
 echo "--------------------------------------------------------------------------------------"
