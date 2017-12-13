@@ -108,7 +108,7 @@ sudo rm -rf mjpg-streamer
 
 # Configure Lighthttpd & PHP
 logger "Configuring Lighthttpd & PHP"
-sudo lighty-enable-mod fastcgi fastcgi-php && sudo service lighttpd force-reload && sudo usermod -a -G www-data pi
+sudo lighty-enable-mod fastcgi fastcgi-php rewrite && sudo service lighttpd force-reload && sudo usermod -a -G www-data pi
 
 # Limit web server root script access to OpenTPCast Control Panel
 logger "Limiting web server root script access to OpenTPCast Control Panel"
@@ -128,7 +128,7 @@ sudo cp opentpcast_ctrl/opentpcast-camera /etc/init.d/opentpcast-camera && sudo 
 
 # Install OpenTPCast Control Panel web interface
 logger "Installing OpenTPCast Control Panel web interface"
-cp opentpcast_ctrl/controlpanel/* /var/www/html/
+sudo cp opentpcast_ctrl/controlpanel/* /var/www/html/
 sudo rm -rf opentpcast_ctrl
 
 # Configure public web folder
