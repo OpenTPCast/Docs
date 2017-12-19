@@ -13,7 +13,7 @@ A Camera Service is available which enables the on-board camera of the HTC Vive,
 ## Launching The Camera Service Automatically
 1. Navigate to http://tpcast.local (or `http://<tpcast-ip-address>` if not using Bonjour) in your web browser.
 1. Navigate to `Camera` > `Camera Service`, and click `Enable Camera Service`.
-1. Navigate to `http://tpcast.local:8080/?action=stream` in your web browser to access the camera feed.  This URL can be then be displayed in VR using third party VR overlay software.
+1. Navigate to http://tpcast.local:8080/?action=stream in your web browser to access the camera feed.  This URL can be then be displayed in VR using third party VR overlay software.
 
 ## Using The Camera Service Web API
 A JSON web API is provided to be utilized by overlay software to manage and query the state of the Camera Service.  Please note that the Camera Service does not have to be enabled in the OpenTPCast Control Panel to use the web API.
