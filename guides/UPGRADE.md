@@ -18,7 +18,9 @@
 * [Configuring VirtualHere For TPCast](#configuring-virtualhere-for-tpcast)
   * [Purchasing A TPCast VirtualHere Licence](#purchasing-a-tpcast-virtualhere-licence)
   * [Applying The TPCast VirtualHere Licence](#applying-the-tpcast-virtualhere-licence)
-  * [Connecting HTC Vive USB Devices](#connecting-htc-vive-usb-devices)
+  * [Connecting USB Devices](#connecting-usb-devices)
+    * [HTC Vive](#connecting-htc-vive-usb-devices)
+    * [Oculus Rift](#connecting-oculus-rift-usb-devices)
   * [Launching SteamVR Automatically](#launching-steamvr-automatically)
   * [Speeding Up TPCast Device Detection](#speeding-up-tpcast-device-detection)
 * [Using Your TPCast After Upgrading](#using-your-tpcast-after-upgrading)
@@ -29,7 +31,7 @@
   * [SteamVR Issues](#steamvr-issues)
 
 ## Overview
-This guide provides instructions on how to upgrade a stock TPCast device to OpenTPCast, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution running on Raspbian Stretch, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive.
+This guide provides instructions on how to upgrade a stock TPCast device to OpenTPCast, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution running on Raspbian Stretch, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive, and on-board microphone in the Oculus Rift.
 
 ## Known Issues
 - The HTC Vive camera currently does not function correctly with VirtualHere.
@@ -53,7 +55,7 @@ To use VirtualHere USB Server, a TPCast-optimized licence key must be [purchased
 - Ensure that you have at least 8GB of free space on your local machine during the upgrade to back up the TPCast MicroSD card.
 - Download and extract (using [7-Zip](http://www.7-zip.org/)) the latest [OpenTPCast](https://github.com/OpenTPCast/Docs/releases) image.
 - Download and install [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) on your local machine, which will be used to back up and restore images to and from a MicroSD card.
-- Download & install [VirtualHere USB Client](https://virtualhere.com/usb_client_software) on your local machine, which will be used to forward the HTC Vive's USB devices over your local network.  Note that a TPCast-optimized licence key must be [purchased](https://www.virtualhere.com/tpcast_purchase) to use with VirtualHere USB Server after the upgrade.
+- Download & install [VirtualHere USB Client](https://virtualhere.com/usb_client_software) on your local machine, which will be used to forward USB devices associated with your VR device over your local network.  Note that a TPCast-optimized licence key must be [purchased](https://www.virtualhere.com/tpcast_purchase) to use with VirtualHere USB Server after the upgrade.
   - If you are prompted at any point to install Bonjour, you must install it to ensure that the TPCast can be discovered by VirtualHere USB Client correctly.
 
 ### Miscellaneous
@@ -117,8 +119,10 @@ Once the TPCast device is listed in VirtualHere USB Client, you can then [purcha
 1. In VirtualHere USB Client, right click on `USB Hubs` and select `Licence...`.
 1. Select `Enter Licence(s)` and copy your licence key from the email received following purchase.
 
-### Connecting HTC Vive USB Devices
+### Connecting USB Devices
 In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
+
+#### [HTC Vive](#connecting-htc-vive-usb-devices)
   - Lighthouse FPGA RX
   - HTC Vive
   - Watchman Dongle
@@ -127,6 +131,10 @@ In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click 
       - This should be used if available to enable microphone support for older revisions of the HTC Vive.
   - Vive Camera
       - This should only be used when `USB Audio Device` is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled in SteamVR settings to avoid stability issues.
+
+#### [Oculus Rift](#connecting-oculus-rift-usb-devices)
+  - Rift
+  - Rift Audio
 
 ### Launching SteamVR Automatically
 To launch SteamVR automatically when the TPCast power box is turned on:
@@ -169,7 +177,7 @@ If VirtualHere USB Client is not detecting the TPCast power box:
 If you experience tracking issues or devices are being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-wi-fi-channel) or [switching Wi-Fi network mode](ROUTER.md#switching-to-another-wi-fi-network-mode) in your TPCast router.
 
 ### SteamVR Issues
-Reboot your computer and power cycle all devices including the HTC Vive break-out box, TPCast power box, HDMI transmitter and router if you experience issues with the following:
+Reboot your computer and power cycle all devices including the TPCast power box, HDMI transmitter, router and HTC Vive break-out box (if applicable) if you experience issues with the following:
 * SteamVR does not detect devices.
 * SteamVR displays errors.
 * HMD screen appears black.

@@ -16,7 +16,7 @@ This repository provides resources and documentation that are relevant to the TP
 | -------------------- | :--------------------: | :----------------: | :-----------------: |
 | **HTC Vive (CN)**    | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
 | **HTC Vive (US/EU)** | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
-| **Oculus Rift**      |                        | :question:         |                     |
+| **Oculus Rift**      |                        | :white_check_mark: |                     |
 
 <sup><a name="f2">[2]</a></sup> *An [experimental workaround](guides/CAMERASTREAM.md) is available until a more permanent solution can be implemented that works on all revisions of the HTC Vive.*
 
