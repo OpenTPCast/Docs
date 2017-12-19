@@ -45,7 +45,7 @@ Devices upgraded to OpenTPCast can be configured to use custom Wi-Fi credentials
 ![Editing Wi-Fi Credentials in OpenTPCast Control Panel](../img/controlpanel-wificredentials.jpg)
 1. Navigate to http://tpcast.local (or `http://<tpcast-ip-address>` if not using Bonjour) in your web browser.
 1. Navigate to `General` > `Network`, and amend `SSID` and `Passphrase` with the desired credentials.
-1. Click `Save & Reboot` to apply the changes.
+1. Click `Save & Reboot TPCast` to apply the changes.
 
 **Method 2: Configuration File**
 1. [Remove the MicroSD card](https://github.com/OpenTPCast/Docs/blob/master/guides/SDCARD.md#accessing-the-microsd-card) from your TPCast power box, insert the MicroSD card into your computer and locate the boot partition in My Computer/This PC.
