@@ -19,8 +19,6 @@
   * [Purchasing A TPCast VirtualHere Licence](#purchasing-a-tpcast-virtualhere-licence)
   * [Applying The TPCast VirtualHere Licence](#applying-the-tpcast-virtualhere-licence)
   * [Connecting USB Devices](#connecting-usb-devices)
-    * [HTC Vive](#connecting-htc-vive-usb-devices)
-    * [Oculus Rift](#connecting-oculus-rift-usb-devices)
   * [Launching SteamVR Automatically](#launching-steamvr-automatically)
   * [Speeding Up TPCast Device Detection](#speeding-up-tpcast-device-detection)
 * [Using Your TPCast After Upgrading](#using-your-tpcast-after-upgrading)
