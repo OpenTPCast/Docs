@@ -2,7 +2,6 @@
 
 ## Table Of Contents
 * [Overview](#overview)
-* [Known Issues](#known-issues)
 * [Disclaimer](#disclaimer)
 * [Preparation](#preparation)
   * [Hardware](#hardware)
@@ -28,9 +27,6 @@
 
 ## Overview
 This guide provides instructions on how to upgrade a stock TPCast device to OpenTPCast, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution running on Raspbian Stretch, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive, and on-board microphone in the Oculus Rift.
-
-## Known Issues
-- The HTC Vive camera currently does not function correctly with VirtualHere.
 
 ## Disclaimer
 **This upgrade is performed at your own risk! OpenTPCast and its contributers will not be held responsible for any physical damage, data loss or voided manufacturer warranties incurred due to modification or tampering of your TPCast hardware or software.**
@@ -127,6 +123,8 @@ In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click 
       - This should be used if available to enable microphone support for older revisions of the HTC Vive.
   - Vive Camera
       - This should only be used when `USB Audio Device` is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled in SteamVR settings to avoid stability issues.
+
+Note that the HTC Vive camera is not natively supported in VirtualHere, please refer to the [Using The OpenTPCast Camera Service](https://github.com/OpenTPCast/Docs/blob/master/guides/CAMERASTREAM.md) guide for an alternative solution.
 
 **Oculus Rift**<a name="connecting-oculus-rift-usb-devices"></a>
   - Rift
