@@ -122,7 +122,7 @@ Once the TPCast device is listed in VirtualHere USB Client, you can then [purcha
 ### Connecting USB Devices
 In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
 
-#### HTC Vive<a name="connecting-htc-vive-usb-devices"></a>
+**HTC Vive**<a name="connecting-htc-vive-usb-devices"></a>
   - Lighthouse FPGA RX
   - HTC Vive
   - Watchman Dongle
@@ -132,7 +132,7 @@ In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click 
   - Vive Camera
       - This should only be used when `USB Audio Device` is not available to enable microphone support for newer revisions of the HTC Vive, and the camera should be disabled in SteamVR settings to avoid stability issues.
 
-#### Oculus Rift<a name="connecting-oculus-rift-usb-devices"></a>
+**Oculus Rift**<a name="connecting-oculus-rift-usb-devices"></a>
   - Rift
   - Rift Audio
 
