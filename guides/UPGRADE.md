@@ -1,7 +1,5 @@
 # Upgrading The TPCast To OpenTPCast
 
-**This guide is currently untested with the TPCast for Oculus Rift.  There is no guarantee that the upgrade process will work with the TPCast for Oculus Rift until support has been confirmed by OpenTPCast developers.**
-
 ## Table Of Contents
 * [Overview](#overview)
 * [Known Issues](#known-issues)
