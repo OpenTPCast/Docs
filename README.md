@@ -18,7 +18,7 @@ This repository provides resources and documentation that are relevant to the TP
 | **HTC Vive (US/EU)** | :white_check_mark:     | :white_check_mark: | :x: <sup>[[2]](#f2) |
 | **Oculus Rift**      |                        | :white_check_mark: |                     |
 
-<sup><a name="f2">[2]</a></sup> *An [experimental workaround](guides/CAMERASTREAM.md) is available until a more permanent solution can be implemented that works on all revisions of the HTC Vive.*
+<sup><a name="f2">[2]</a></sup> *Not natively supported.  Please refer to [Using The OpenTPCast Camera Service](guides/CAMERASTREAM.md) for more information on how to access the camera with third party software.*
 
 ## Resources
 
@@ -28,7 +28,7 @@ This repository provides resources and documentation that are relevant to the TP
 
 ### OpenTPCast Guides
 - [Upgrading The TPCast To OpenTPCast](guides/UPGRADE.md)
-- [Streaming the HTC Vive Camera (Experimental!)](guides/CAMERASTREAM.md)
+- [Using The OpenTPCast Camera Service](guides/CAMERASTREAM.md)
 - [Preparing A OpenTPCast Image (Maintainer's Guide)](guides/PREPAREIMAGE.md)
 
 ### Tinkering Guides
