@@ -19,5 +19,7 @@ A Camera Service is available which enables the on-board camera of the HTC Vive,
 A JSON web API is provided to be utilized by overlay software to manage and query the state of the Camera Service.  Please note that the Camera Service does not have to be enabled in the OpenTPCast Control Panel to use the web API.
 
 http://tpcast.local/api/camera/start will start the Camera Service if it not running and the camera device is available.
+
 http://tpcast.local/api/camera/stop will stop the Camera Service if it is running.
+
 http://tpcast.local/api/camera/status will return the current running status of the Camera Service.
