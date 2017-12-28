@@ -2,9 +2,10 @@
 
 ## Table Of Contents
 * [Connecting To The TPCast Router](#connecting-to-the-tpcast-router)
-* [Switching To Another Wi-Fi Network Mode](#switching-to-another-wi-fi-network-mode)
 * [Switching To Another Wi-Fi Channel](#switching-to-another-wi-fi-channel)
+* [Switching To Another Wi-Fi Network Mode](#switching-to-another-wi-fi-network-mode)
 * [Using A Different Router](#using-a-different-router)
+* [Running The TPCast Router Independently From Your Home Router](#running-the-tpcast-router-independently-from-your-home-router)
 * [Customizing Wi-Fi Credentials](#customizing-wi-fi-credentials)
   * [Updating The TPCast Router Credentials](#updating-the-tpcast-router-credentials)
   * [Updating The TPCast Power Box Credentials](#updating-the-tpcast-power-box-credentials)
@@ -14,14 +15,14 @@ The TPCast router control panel can be accessed from http://192.168.144.1 (CE) o
 - Username: tproot (if prompted)
 - Password: 8427531 (CE) or 12345678 (PRE)
 
-## Switching To Another Wi-Fi Network Mode
-If you experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
-1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G` and change `Network Mode` from `11vht AC/AN/A` to `11a only`.
+## Switching To Another Wi-Fi Channel
+If you experience tracking issues, you may have to select a different channel.  The channel you select will vary based on region, outside interference and network configuration so try each channel until one works well for your setup.
+1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G`, and change `Channel` from `AutoSelect` to a different option.
 1. Click `Save` to apply the changes.
 
-## Switching To Another Wi-Fi Channel
-If you continue to experience tracking issues, you may have to select a different channel.  The channel you select will vary based on region, outside interference and network configuration so try each channel until one works well for your setup.
-1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G`, and change `Channel` from `AutoSelect` to a different option.
+## Switching To Another Wi-Fi Network Mode
+If you continue to experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
+1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G` and change `Network Mode` from `11vht AC/AN/A` to `11a only`.
 1. Click `Save` to apply the changes.
 
 ## Using A Different Router
@@ -31,6 +32,36 @@ Alternatively, using a more reliable router to overcome poor connection or bandw
 - Linksys WRT1900ACS
 - Netgear WNDR3700
 - Ubiquiti UAP-AC-HD
+
+## Running The TPCast Router Independently From Your Home Router
+*Official configuration: Connect the TPCast Router between PC and Home Router.*
+```
+PC <---> TPCast Router <---> Home Router <---> Internet
+             \
+              -----> TPCast Power Box
+```
+
+*Recommended configuration: Connect the TPCast Router on secondary NIC on PC (either on-board or USB-to-Ethernet adapter).*
+```
+       ---> Home Router <---> Internet
+      /
+PC <--
+      \
+       ---> TPCast Router <---> TPCast Power Box
+```
+The official TPCast documentation instructs you to connect your TPCast router between your computer and home router, however this has shown to cause connectivity issues.  It is recommended to run the TPCast router independently of your home router by connecting the TPCast router to your computer using a secondary ethernet port on your motherboard, a secondary network card, or a USB-to-Ethernet adapter.
+
+Note that when connecting the router in this configuration, it may be nessecary to assign a static IP for your computer on the second ethernet adapter.
+
+1. Navigate to `Control Panel` > `Network and Sharing Center` > `Change adapter settings`.
+1. Right click the network adapter that your TPCast Router is connected to, select `Rename` and rename it as `TPCast Router` for easier identification.
+1. Double click the `TPCast Router` network adapter, double click on `Internet Protocol Version 4 (TCP/IPv4)` and enter the following settings:
+  - Select `Use the following IP Address:`
+  - IP address: `192.168.144.90` (It is recommended to use an address outside of the TPCast router's DHCP range to avoid conflicts.)
+  - Subnet mask: `255.255.255.0`
+  - Default gateway: `192.168.144.1`
+  - Select `Use the following DNS server addresses:`
+  - Preferred DNS server: `192.168.144.1`
 
 ## Customizing Wi-Fi Credentials
 Devices upgraded to OpenTPCast can be configured to use custom Wi-Fi credentials for additional security, or to connect the TPCast to a different router.
