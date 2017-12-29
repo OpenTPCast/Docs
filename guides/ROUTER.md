@@ -57,8 +57,11 @@ Note that when connecting the router in this configuration, it may be nessecary 
 1. Right click the network adapter that your TPCast Router is connected to, select `Rename` and rename it as `TPCast Router` for easier identification.
 1. Double click the `TPCast Router` network adapter, double click on `Internet Protocol Version 4 (TCP/IPv4)` and enter the following settings:
   - Select `Use the following IP Address:`
-  - IP address: `192.168.144.90` (It is recommended to use an address outside of the TPCast router's DHCP range to avoid conflicts.)
-  - Subnet mask: `255.255.255.0`
+    - IP address: `192.168.144.90` (It is recommended to use an address outside of the TPCast router's DHCP range to avoid conflicts.)
+    - Subnet mask: `255.255.255.0`
+    - Default gateway: `192.168.144.1`
+  - Select `Use the following DNS server addresses:`
+    - Preferred DNS server: `192.168.144.1`
 
 ## Customizing Wi-Fi Credentials
 Devices upgraded to OpenTPCast can be configured to use custom Wi-Fi credentials for additional security, or to connect the TPCast to a different router.
