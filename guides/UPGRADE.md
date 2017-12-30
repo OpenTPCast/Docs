@@ -154,6 +154,11 @@ Any installed TPCast software should be left disabled or uninstalled while using
 1. Insert the battery into the TPCast power box and wait for it to boot up.
 1. Once the TPCast device shows up in VirtualHere USB Client under USB Hubs, launch SteamVR if it is not already configured to run automatically.
 
+Once you are done using your TPCast:
+1. Exit SteamVR.
+1. Exit VirtualHere USB Client.
+1. Remove the battery from the TPCast power box.
+
 ## Connecting To The TPCast Over SSH
 To connect to the TPCast power box to troubleshoot issues or perform further modifications, use the following details:
 * Hostname: tpcast.local
