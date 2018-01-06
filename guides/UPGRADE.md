@@ -152,10 +152,10 @@ Any installed TPCast software should be left disabled or uninstalled while using
 
 1. Launch VirtualHere USB Client.
 1. Insert the battery into the TPCast power box and wait for it to boot up.
-1. Once the TPCast device shows up in VirtualHere USB Client under USB Hubs, launch SteamVR if it is not already configured to run automatically.
+1. Once the TPCast device shows up in VirtualHere USB Client under USB Hubs, launch SteamVR / Oculus Home if it is not already configured to run automatically.
 
 Once you are done using your TPCast:
-1. Exit SteamVR.
+1. Exit SteamVR / Oculus Home.
 1. Exit VirtualHere USB Client.
 1. Remove the battery from the TPCast power box.
 
@@ -173,7 +173,7 @@ If VirtualHere USB Client is not detecting the TPCast power box:
 * Ensure that you have Bonjour installed and your firewall is not blocking Bonjour or VirtualHere USB Client so that VirtualHere can detect the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
 
 ### Tracking Issues
-If you experience tracking issues or devices are being dropped in SteamVR after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-wi-fi-channel) or [switching Wi-Fi network mode](ROUTER.md#switching-to-another-wi-fi-network-mode) in your TPCast router.
+If you experience tracking issues or devices are being dropped in SteamVR / Oculus Home after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-wi-fi-channel) or [switching Wi-Fi network mode](ROUTER.md#switching-to-another-wi-fi-network-mode) in your TPCast router.
 
 ### SteamVR Issues
 Reboot your computer and power cycle all devices including the TPCast power box, HDMI transmitter, router and HTC Vive break-out box (if applicable) if you experience issues with the following:
