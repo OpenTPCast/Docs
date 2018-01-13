@@ -24,6 +24,7 @@
   * [VirtualHere Issues](#virtualhere-issues)
   * [Tracking Issues](#tracking-issues)
   * [SteamVR Issues](#steamvr-issues)
+  * [Audio Issues](#audio-issues)
 
 ## Overview
 This guide provides instructions on how to upgrade a stock TPCast device to OpenTPCast, which replaces the stock TPCast Connection Assistant software with a VirtualHere based solution running on Raspbian Stretch, and enables use of the on-board microphone and auxiliary USB port in the HTC Vive, and on-board microphone in the Oculus Rift.
@@ -168,7 +169,7 @@ To connect to the TPCast power box to troubleshoot issues or perform further mod
 
 ## Troubleshooting
 ### VirtualHere Issues
-If VirtualHere USB Client is not detecting the TPCast power box:
+**VirtualHere USB Client is not detecting the TPCast power box.**
 * Check the TPCast router's DHCP list while the TPCast power box is turned on to make sure that it is connected to the network, and ping the TPCast power box from your computer to make sure it can be reached.
 * Ensure that you have Bonjour installed and your firewall is not blocking Bonjour or VirtualHere USB Client so that VirtualHere can detect the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
 
@@ -176,7 +177,12 @@ If VirtualHere USB Client is not detecting the TPCast power box:
 If you experience tracking issues or devices are being dropped in SteamVR / Oculus Home after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-wi-fi-channel) or [switching Wi-Fi network mode](ROUTER.md#switching-to-another-wi-fi-network-mode) in your TPCast router.
 
 ### SteamVR Issues
-Reboot your computer and power cycle all devices including the TPCast power box, HDMI transmitter, router and HTC Vive break-out box (if applicable) if you experience issues with the following:
-* SteamVR does not detect devices.
-* SteamVR displays errors.
-* HMD screen appears black.
+**SteamVR does not detect devices, displays errors or the HMD screen appears black.**
+* Reboot your computer and power cycle all devices including the TPCast power box, HDMI transmitter, router and HTC Vive break-out box (if applicable).
+
+### Audio Issues
+**Audio signal frequently drops out.**
+* Ensure that HDMI audio is selected as the default audio device in SteamVR.  If drop-outs persist, [switch Wi-Fi channels](ROUTER.md#switching-to-another-wi-fi-channel) in your TPCast router.
+
+**Audio signal sounds distorted or crackles.**
+* Adjust the sample rate of the audio device in Windows sound settings by going to `Control Panel` > `Sound` > Right click `HTC-VIVE` or `Rift Audio` > `Properties` > `Advanced` > Change `Default Format` to `44100Hz` or `48000Hz` depending on which option is already selected.
