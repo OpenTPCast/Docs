@@ -17,7 +17,7 @@ The TPCast router control panel can be accessed from http://192.168.144.1 (CE) o
 
 ## Switching To Another Wi-Fi Channel
 If you experience tracking issues, you may have to select a different channel.  The channel you select will vary based on region, outside interference and network configuration so try each channel until one works well for your setup.
-1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G`, and change `Channel` from `AutoSelect` to a different option.
+1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G`, and change `Channel` from `AutoSelect` to a different option.  It is recommended to use channels in the lower end of the spectrum (36 ~ 48) as these have shown to be more reliable for most users.
 1. Click `Save` to apply the changes.
 
 ## Switching To Another Wi-Fi Network Mode
