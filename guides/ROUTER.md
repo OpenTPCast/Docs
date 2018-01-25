@@ -22,7 +22,7 @@ If you experience tracking issues, you may have to select a different channel.  
 
 ## Switching To Another Wi-Fi Network Mode
 If you continue to experience regular tracking issues, it may be nessecary to update the stock TPCast router to operate in "11a only" network mode.
-1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G` and change `Network Mode` from `11vht AC/AN/A` to `11a only`.
+1. In the router control panel, navigate to `WLAN Settings` > `Basic Settings` > `5G` and change `Network Mode` from `11vht AC/AN/A` to `11a only` (recommended for PRE/CN-CE users) or `11vht AC/AN` (recommended for CE-US/CE-EU users).
 1. Click `Save` to apply the changes.
 
 ## Using A Different Router
