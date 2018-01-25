@@ -171,6 +171,10 @@ To connect to the TPCast power box to troubleshoot issues or perform further mod
 ### VirtualHere Issues
 **VirtualHere USB Client is not detecting the TPCast power box.**
 * Check the TPCast router's DHCP list while the TPCast power box is turned on to make sure that it is connected to the network, and ping the TPCast power box from your computer to make sure it can be reached.
+  * The TPCast router control panel can be accessed from http://192.168.144.1 (CE) or http://192.168.1.1 (PRE) using a web browser and the following credentials:
+    - Username: tproot (if prompted)
+    - Password: 8427531 (CE) or 12345678 (PRE)
+  * Navigate to `DHCP Server` > `DHCP Clients List` and look for a client with the host name `TPCAST`, taking note of the associated IP address.
 * Ensure that you have Bonjour installed and your firewall is not blocking Bonjour or VirtualHere USB Client so that VirtualHere can detect the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
 
 ### Tracking Issues
