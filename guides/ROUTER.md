@@ -27,11 +27,11 @@ If you continue to experience regular tracking issues, it may be nessecary to up
 
 ## Using A Different Router
 Alternatively, using a more reliable router to overcome poor connection or bandwidth issues exhibited by the stock TPCast router may be an option.  The following routers have been tested by community members with the OpenTPCast upgrade and have shown to work as suitable replacements to the TPCast router:
+- Ubiquiti UAP-AC-HD
 - Asus RT-AC68U
 - D-Link AC1750
 - Linksys WRT1900ACS
 - Netgear WNDR3700
-- Ubiquiti UAP-AC-HD
 
 ## Running The TPCast Router Independently From Your Home Router
 *Official configuration: Connect the TPCast Router between PC and Home Router.*
