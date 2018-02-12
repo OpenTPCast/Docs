@@ -145,8 +145,7 @@ To stop SteamVR from launching automatically when the TPCast power box is turned
 ```onClientAfterBind.$VENDOR_ID$.$PRODUCT_ID$=REMOVE```
 
 ### Speeding Up TPCast Device Detection
-![Editing VirtualHere USB Client refresh time in Notepad](../img/virtualhere-refreshtime.jpg)
-You can speed up the rate that VirtualHere USB Client scans for devices by editing the file `%appdata%\vhui.ini` in Notepad, and add or amend `AutoRefreshLookupPeriod=5` under the `[General]` section, then save the file.
+You can speed up the rate that VirtualHere USB Client scans for devices by right clicking `USB Hubs`, select `Advanced Settings...` > `Lookup` and set `Look for new servers every [_] sec` to `5`, then click `Save`.
 
 ## Using Your TPCast After Upgrading
 Any installed TPCast software should be left disabled or uninstalled while using VirtualHere USB Client.
