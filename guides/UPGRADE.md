@@ -19,6 +19,7 @@
   * [Launching SteamVR Automatically](#launching-steamvr-automatically)
   * [Speeding Up TPCast Device Detection](#speeding-up-tpcast-device-detection)
 * [Using Your TPCast After Upgrading](#using-your-tpcast-after-upgrading)
+* [Upgrading OpenTPCast To A Newer Release](#upgrading-opentpcast-to-a-newer-release)
 * [Connecting To The TPCast Over SSH](#connecting-to-the-tpcast-over-ssh)
 * [Troubleshooting](#troubleshooting)
   * [VirtualHere Issues](#virtualhere-issues)
@@ -158,6 +159,9 @@ Once you are done using your TPCast:
 1. Exit SteamVR / Oculus Home.
 1. Exit VirtualHere USB Client.
 1. Remove the battery from the TPCast power box.
+
+## Upgrading OpenTPCast To A Newer Release
+To upgrade your TPCast to a future OpenTPCast image release, simply repeat the steps in this upgrade guide.  Note that you will have to reapply your previously purchased VirtualHere USB Server licence after reflashing the SD card with a new OpenTPCast image.
 
 ## Connecting To The TPCast Over SSH
 To connect to the TPCast power box to troubleshoot issues or perform further modifications, use the following details:
