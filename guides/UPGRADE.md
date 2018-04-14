@@ -165,6 +165,7 @@ Once you are done using your TPCast:
 To update your TPCast to a new OpenTPCast release in future, simply repeat the steps in this upgrade guide, flashing the SD card with the [latest OpenTPCast image](https://github.com/OpenTPCast/Docs/releases).  Note that you will have to reapply your previously purchased VirtualHere USB Server licence after reflashing the SD card with a new OpenTPCast image.
 
 ## Updating VirtualHere USB Server
+![Updating VirtualHere USB Server using OpenTPCast Control Panel](../img/updating-virtualhere-usb-server.jpg)
 To update VirtualHere USB Server, navigate to http://tpcast.local (or http://<tpcast-ip-address>) using a web browser, select `VirtualHere USB Server` then click `Install Latest Version`.
 
 ## Connecting To The TPCast Over SSH
