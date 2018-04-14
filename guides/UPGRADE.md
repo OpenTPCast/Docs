@@ -19,7 +19,8 @@
   * [Launching SteamVR Automatically](#launching-steamvr-automatically)
   * [Speeding Up TPCast Device Detection](#speeding-up-tpcast-device-detection)
 * [Using Your TPCast After Upgrading](#using-your-tpcast-after-upgrading)
-* [Upgrading OpenTPCast To A Newer Release](#upgrading-opentpcast-to-a-newer-release)
+* [Updating OpenTPCast](#updating-opentpcast)
+* [Updating VirtualHere USB Server](#updating-virtualhere-usb-server)
 * [Connecting To The TPCast Over SSH](#connecting-to-the-tpcast-over-ssh)
 * [Troubleshooting](#troubleshooting)
   * [VirtualHere Issues](#virtualhere-issues)
@@ -160,8 +161,11 @@ Once you are done using your TPCast:
 1. Exit VirtualHere USB Client.
 1. Remove the battery from the TPCast power box.
 
-## Upgrading OpenTPCast To A Newer Release
-To upgrade your TPCast to a future OpenTPCast image release, simply repeat the steps in this upgrade guide.  Note that you will have to reapply your previously purchased VirtualHere USB Server licence after reflashing the SD card with a new OpenTPCast image.
+## Updating OpenTPCast
+To update your TPCast to a new OpenTPCast release in future, simply repeat the steps in this upgrade guide, flashing the SD card with the [latest OpenTPCast image](https://github.com/OpenTPCast/Docs/releases).  Note that you will have to reapply your previously purchased VirtualHere USB Server licence after reflashing the SD card with a new OpenTPCast image.
+
+## Updating VirtualHere USB Server
+To update VirtualHere USB Server, navigate to http://tpcast.local (or http://<tpcast-ip-address>) using a web browser, select `VirtualHere USB Server` then click `Install Latest Version`.
 
 ## Connecting To The TPCast Over SSH
 To connect to the TPCast power box to troubleshoot issues or perform further modifications, use the following details:
