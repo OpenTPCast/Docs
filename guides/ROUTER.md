@@ -5,6 +5,7 @@
 * [Switching To Another Wi-Fi Channel](#switching-to-another-wi-fi-channel)
 * [Switching To Another Wi-Fi Network Mode](#switching-to-another-wi-fi-network-mode)
 * [Using A Different Router](#using-a-different-router)
+* [Using Ad-Hoc Mode](#using-ad-hoc-mode)
 * [Running The TPCast Router Independently From Your Home Router](#running-the-tpcast-router-independently-from-your-home-router)
 * [Customizing Wi-Fi Credentials](#customizing-wi-fi-credentials)
   * [Updating The TPCast Router Credentials](#updating-the-tpcast-router-credentials)
@@ -32,6 +33,13 @@ Alternatively, using a more reliable router to overcome poor connection or bandw
 - D-Link AC1750
 - Linksys WRT1900ACS
 - Netgear WNDR3700
+
+## Using Ad-Hoc Mode
+If you have a motherboard with built-in Wi-Fi or simply an extra Wi-Fi adapter available to you, it may be possible to avoid the need for any separate router by running in ad-hoc mode. This is a relatively untested approach and may not work for you. To avoid interference, it is best to use an adapter that supports 5 GHz.
+
+1. Configure ad-hoc mode in Windows in `Settings` > `Network & Internet` > `Mobile hotspot`. Set a name and password, and set the band to 5 GHz. Click the slider to On.
+1. Set the TPCast to use the new network with [Customizing Wi-Fi Credentials](#customizing-wi-fi-credentials).
+1. If you encounter periodic dropped tracking and audio frames, it's possibly due to Windows scanning for networks in the background. You can fix this by running `netsh wlan set autoconfig enable=no interface=*` (or replace `*` with the adapter you're using if you have multiple). Switch `no` to `yes` to turn autoconfig back on.
 
 ## Running The TPCast Router Independently From Your Home Router
 *Official configuration: Connect the TPCast Router between PC and Home Router.*
