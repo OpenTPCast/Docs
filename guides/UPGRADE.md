@@ -166,7 +166,7 @@ To update your TPCast to a new OpenTPCast release in future, simply repeat the s
 
 ## Updating VirtualHere USB Server
 ![Updating VirtualHere USB Server using OpenTPCast Control Panel](../img/updating-virtualhere-usb-server.jpg)
-To update VirtualHere USB Server, navigate to http://tpcast.local (or http://<tpcast-ip-address>) using a web browser, select `VirtualHere USB Server` then click `Install Latest Version`.
+To update VirtualHere USB Server, navigate to http://tpcast.local (or `http://<tpcast-ip-address>`) using a web browser, select `VirtualHere USB Server` then click `Install Latest Version`.
 
 ## Connecting To The TPCast Over SSH
 To connect to the TPCast power box to troubleshoot issues or perform further modifications, use the following details:
