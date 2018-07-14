@@ -96,6 +96,7 @@ echo -e "ServerName=TPCast\nonDeviceIgnore=return 0\nonChangeNickname=return 1\n
 
 # Create default configuration files
 logger "Creating default configuration files"
+sudo wget -e check_certificate=off -q -O /boot/opentpcast.LICENSE https://rawgit.com/OpenTPCast/Docs/master/LICENSE
 sudo wget -e check_certificate=off -q -O /boot/opentpcast.txt https://rawgit.com/OpenTPCast/Docs/master/files/prepareimage/opentpcast.txt
 sudo wget -e check_certificate=off -q -O /boot/opentpcastversion.txt https://rawgit.com/OpenTPCast/Docs/master/files/prepareimage/opentpcastversion.txt
 sudo touch /boot/initwlan
