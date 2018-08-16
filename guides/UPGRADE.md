@@ -193,6 +193,7 @@ If the TPCast power box is not showing up in the DHCP client list on the router,
 * Use a different MicroSD card or MicroSD card reader.
 
 **VirtualHere USB Client is no longer detecting the TPCast power box after a Windows Update.**
+
 If VirtualHere USB Client is no longer able to detect the power box following a Windows Update, reinstall Bonjour to correct the issue as recent Windows 10 updates have been known to break Bonjour installations.
 
 If the TPCast power box is still not being detected, you can add the IP address of the TPCast power box to VirtualHere USB Client manually:
