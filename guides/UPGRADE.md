@@ -115,6 +115,8 @@ Once the TPCast device is listed in VirtualHere USB Client, you can then [purcha
 1. Select `Enter Licence(s)` and copy your licence key from the email received following purchase.
 
 ### Connecting USB Devices
+![Selecting USB devices in VirtualHere USB Client](../img/virtualhere-connectingdevices.jpg)
+
 In VirtualHere USB Client, expand `USB Hubs`, expand `TPCast`, then right click and select `Auto-Use Device/Port` for each of the following devices:
 
 **HTC Vive**<a name="connecting-htc-vive-usb-devices"></a>
@@ -177,13 +179,31 @@ To connect to the TPCast power box to troubleshoot issues or perform further mod
 
 ## Troubleshooting
 ### VirtualHere Issues
-**VirtualHere USB Client is not detecting the TPCast power box.**
+
+**VirtualHere USB Client is not detecting the TPCast power box after flashing the image to the MicroSD card.**
 * Check the TPCast router's DHCP list while the TPCast power box is turned on to make sure that it is connected to the network, and ping the TPCast power box from your computer to make sure it can be reached.
   * The TPCast router control panel can be accessed from http://192.168.144.1 (CE) or http://192.168.1.1 (PRE) using a web browser and the following credentials:
     - Username: tproot (if prompted)
     - Password: 8427531 (CE) or 12345678 (PRE)
   * Navigate to `DHCP Server` > `DHCP Clients List` and look for a client with the host name `TPCAST`, taking note of the associated IP address.
 * Ensure that you have Bonjour installed and your firewall is not blocking Bonjour or VirtualHere USB Client so that VirtualHere can detect the TPCast power box, otherwise you will have to manually specify the IP address of the TPCast power box in VirtualHere USB Client by right clicking `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
+
+If the TPCast power box is not showing up in the DHCP client list on the router, the image did not flash to the MicroSD card correctly.
+* Redownload the image, format the MicroSD card and reflash the image.
+* Use a different MicroSD card or MicroSD card reader.
+
+**VirtualHere USB Client is no longer detecting the TPCast power box after a Windows Update.**
+If VirtualHere USB Client is no longer able to detect the power box following a Windows Update, reinstall Bonjour to correct the issue as recent Windows 10 updates have been known to break Bonjour installations.
+
+If the TPCast power box is still not being detected, you can add the IP address of the TPCast power box to VirtualHere USB Client manually:
+* Check the TPCast router's DHCP list while the TPCast power box is turned on to make sure that it is connected to the network, and ping the TPCast power box from your computer to make sure it can be reached.
+  * The TPCast router control panel can be accessed from http://192.168.144.1 (CE) or http://192.168.1.1 (PRE) using a web browser and the following credentials:
+    - Username: tproot (if prompted)
+    - Password: 8427531 (CE) or 12345678 (PRE)
+  * Navigate to `DHCP Server` > `DHCP Clients List` and look for a client with the host name `TPCAST`, taking note of the associated IP address.
+* In VirtualHere USB Client, right click `USB Hubs` > `Specify Hubs...` > `Add` > `192.168.XXX.XXX:7575` > `OK`.
+
+If the TPCast power box is still not being detected by VirtualHere USB Client and does not show up in the router's DHCP client list, reflash the MicroSD card with a new OpenTPCast image.
 
 ### Tracking Issues
 If you experience tracking issues or devices are being dropped in SteamVR / Oculus Home after upgrading, try [switching Wi-Fi channels](ROUTER.md#switching-to-another-wi-fi-channel) or [switching Wi-Fi network mode](ROUTER.md#switching-to-another-wi-fi-network-mode) in your TPCast router.
