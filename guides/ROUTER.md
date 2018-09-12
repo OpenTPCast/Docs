@@ -9,6 +9,7 @@
 * [Customizing Wi-Fi Credentials](#customizing-wi-fi-credentials)
   * [Updating The TPCast Router Credentials](#updating-the-tpcast-router-credentials)
   * [Updating The TPCast Power Box Credentials](#updating-the-tpcast-power-box-credentials)
+* [Restoring The TPCast Router To Stock Settings](#restoring-the-tpcast-router-to-stock-settings)
 
 ## Connecting To The TPCast Router
 The TPCast router control panel can be accessed from http://192.168.144.1 (CE) or http://192.168.1.1 (PRE) using a web browser and the following credentials:
