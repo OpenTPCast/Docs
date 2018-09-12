@@ -94,7 +94,6 @@ passphrase=MySecretPassword
 1. Navigate to the TPCast router control panel at http://192.168.144.1 (CE) or http://192.168.1.1 (PRE) using a web browser and the following credentials:
   - Username: tproot (if prompted)
   - Password: 8427531 (CE) or 12345678 (PRE)
-
 1. Navigate to `Network Settings` > `LAN Settings` and set `IP address` to `192.168.144.1`.
 1. Navigate to `WLAN Settings` > `Basic Settings` > `2.4G` and uncheck `Enable` for `Wireless`.
 1. Navigate to `WLAN Settings` > `Basic Settings` > `5G`:
