@@ -87,3 +87,28 @@ passphrase=MySecretPassword
 ```
 1. Create an empty file in the boot partition called `initwlan` if the file does not exist, [ensuring that there is no file extension](https://support.microsoft.com/en-gb/help/865219/how-to-show-or-hide-file-name-extensions-in-windows-explorer).
 1. Remove the MicroSD card from the computer and insert the MicroSD back into the TPCast power box.
+
+### Restoring The TPCast Router To Stock Settings
+1. Press the reset button on the back of the TPCast router to restore it to the default factory settings.
+1. Navigate to the TPCast router control panel at http://192.168.144.1 (CE) or http://192.168.1.1 (PRE) using a web browser and the following credentials:
+  - Username: tproot (if prompted)
+  - Password: 8427531 (CE) or 12345678 (PRE)
+1. Navigate to `Network Settings` > `LAN Settings` and set `IP address` to `192.168.144.1`.
+1. Navigate to `WLAN Settings` > `Basic Settings` > `2.4G` and uncheck `Enable` for `Wireless`.
+1. Navigate to `WLAN Settings` > `Basic Settings` > `5G`:
+  1. Check `Enable` for `Wireless`.
+  1. Set `Network Mode` to `11vht AC/AN/A`.
+  1. Set `ssid` to the SSID specified on the TPCast power box label.
+  1. Select `Enable` for `Broadcast(SSID)`.
+  1. Select `AutoSelect` for `Channel`.
+1. Navigate to `WLAN Settings` > `Security Settings` > `2.4G`:
+  1. Set `SSID` to `TPCast_AP`.
+  1. Select `Disable` for `Security Mode`.
+1. Navigate to `WLAN Settings` > `Security Settings` > `5G`:
+  1. Set `SSID` to the SSID specified on the TPCast power box label.
+  1. Set `Password` to the passphrase specified on the TPCast power box label.
+  1. Select `Mixed WPA/WPA2 - Personal(TKIP&AES)` for `Security Mode`.
+1. Navigate to `DHCP Server` > `DHCP Server` > `Check Enable for DHCP Server`:
+  1. Set `Start Address` to `100`.
+  1. Set `End Address` to `200`.
+1. If the router password differs from the stock configuration, navigate to `System Tools` > `Change Password` and set the router password to `8427531` (CE) or `12345678` (PRE).
