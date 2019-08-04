@@ -5,13 +5,13 @@ This repository provides resources and documentation that are relevant to the TP
 ## Official Support Status
 |                      | **Auxiliary USB Port**    | **Microphone**            | **Camera** |
 | -------------------- | :-----------------------: | :-----------------------: | :--------: |
-| **HTC Vive (CN)**    | :x: <sup>[[1]](#f1)</sup> | :x: <sup>[[2]](#f2)</sup> | :x:        |
-| **HTC Vive (US/EU)** | :x: <sup>[[1]](#f1)</sup> | :x: <sup>[[2]](#f2)</sup> | :x:        |
-| **Oculus Rift**      |                           | :x: <sup>[[2]](#f2)</sup> |            |
+| **HTC Vive (CN)**    | :x: <sup>[[1]](#f1)</sup> | :white_check_mark: <sup>[[2]](#f2)</sup> | :x:        |
+| **HTC Vive (US/EU)** | :x: <sup>[[1]](#f1)</sup> | :white_check_mark: <sup>[[2]](#f2)</sup> | :x:        |
+| **Oculus Rift**      |                           | :white_check_mark: <sup>[[2]](#f2)</sup> |            |
 
 <sup><a name="f1">[1]</a></sup> *Provides power to connected devices.*
 
-<sup><a name="f2">[2]</a></sup> *TPCast firmware fixes based on OpenTPCast builds are now available through official TPCast support channels.*
+<sup><a name="f2">[2]</a></sup> *Requires TPCast firmware update which can be obtained through official TPCast support channels.*
 
 ## OpenTPCast Support Status
 |                      | **Auxiliary USB Port** | **Microphone**     | **Camera**                                                                           |
