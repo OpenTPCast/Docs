@@ -37,6 +37,41 @@
 
 </details>
 
+<details><summary>Chip Details</summary>
+
+```
+Lattice Semiconductor
+LFE3-17EA
+8FTN256C
+B5471R20
+```
+Data Sheet: http://www.latticesemi.com/~/media/63B8A13F83A24BBFA14E6DBDCDB20A29.ashx ([Cached](files/datasheets/LatticeECP3EAFamilyDataSheet.pdf))
+
+```
+nuvoton
+NUC123LD4AN0
+2706B114-ZY2
+717GDFA ARM
+```
+Data Sheet: http://www.nuvoton.com/resource-files/DS_NUC123_Series_EN_Rev2.04.pdf ([Cached](files/datasheets/DS_NUC123_Series_EN_Rev2.04.pdf))
+
+```
+Silicon Image
+SII9396CNUC
+N0NT33E
+AH11NP2
+```
+Data Sheet: http://www.latticesemi.com/view_document?document_id=51983 ([Cached](files/datasheets/SiI-DB-02014-A.pdf))
+
+```
+winbond
+25Q16JVSIQ
+1713
+```
+Data Sheet: https://www.winbond.com/resource-files/w25q16jv%20spi%20revd%2008122016.pdf ([Cached](files/datasheets/w25q16jv%20spi%20revd%2008122016.pdf))
+
+</details>
+
 ### HDMI TX
 <details><summary>Teardown images</summary>
 
