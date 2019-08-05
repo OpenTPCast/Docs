@@ -10,7 +10,6 @@
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_202816.jpg)
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_202823.jpg)
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_202847.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_202907.jpg)
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_202925.jpg)
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_203552.jpg)
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_204553.jpg)
