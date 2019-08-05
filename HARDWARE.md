@@ -5,7 +5,7 @@
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/20171216_124816.jpg)
 
 ### Powerbox
-<details><summary>Teardown images</summary>
+<details><summary>Teardown Images</summary>
 
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_202816.jpg)
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/powerbox/20171222_202823.jpg)
@@ -19,7 +19,7 @@
 </details>
 
 ### HDMI RX
-<details><summary>Teardown images</summary>
+<details><summary>Teardown Images</summary>
 
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002228.jpg)
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002247.jpg)
@@ -63,7 +63,7 @@ Data Sheet: https://www.winbond.com/resource-files/w25q16jv%20spi%20revd%2008122
 </details>
 
 ### HDMI TX
-<details><summary>Teardown images</summary>
+<details><summary>Teardown Images</summary>
 
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133535.jpg)
 ![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133635.jpg)
