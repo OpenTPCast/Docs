@@ -39,29 +39,26 @@
 
 <details><summary>Chip Details</summary>
 
-```
-Lattice Semiconductor
-LFE3-17EA
-8FTN256C
-```
+Lattice Semiconductor<br>
+LFE3-17EA-8FTN256C<br>
 Data Sheet: http://www.latticesemi.com/~/media/63B8A13F83A24BBFA14E6DBDCDB20A29.ashx ([Cached](files/datasheets/LatticeECP3EAFamilyDataSheet.pdf))
 
-```
-nuvoton
-NUC123LD4AN0
-```
+---
+
+nuvoton<br>
+NUC123LD4AN0<br>
 Data Sheet: http://www.nuvoton.com/resource-files/DS_NUC123_Series_EN_Rev2.04.pdf ([Cached](files/datasheets/DS_NUC123_Series_EN_Rev2.04.pdf))
 
-```
-Silicon Image
-SII9396CNUC
-```
+---
+
+Silicon Image (Note: acquired by Lattice Semiconductor)<br>
+SII9396CNUC<br>
 Data Sheet: http://www.latticesemi.com/view_document?document_id=51983 ([Cached](files/datasheets/SiI-DB-02014-A.pdf))
 
-```
-winbond
-25Q16JVSIQ
-```
+---
+
+winbond<br>
+25Q16JVSIQ<br>
 Data Sheet: https://www.winbond.com/resource-files/w25q16jv%20spi%20revd%2008122016.pdf ([Cached](files/datasheets/w25q16jv%20spi%20revd%2008122016.pdf))
 
 </details>
