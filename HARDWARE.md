@@ -131,6 +131,8 @@ Data Sheet: https://www.winbond.com/resource-files/w25q16jv%20spi%20revd%2008122
 
 ## TPCast for HTC Vive (CN)
 
+![Teardown for TPCast for Rift](img/teardown/vive-cn/IMG_20170725_125556.jpg)
+
 ### Powerbox
 <details><summary>Teardown Images</summary>
 
