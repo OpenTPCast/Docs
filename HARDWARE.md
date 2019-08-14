@@ -2,7 +2,7 @@
 
 ## TPCast for Oculus Rift
 
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/20171216_124816.jpg)
+![Teardown for TPCast for Rift](img/teardown/rift/20171216_124816.jpg)
 
 ### Powerbox
 <details><summary>Teardown Images</summary>
@@ -21,18 +21,18 @@
 ### HDMI RX
 <details><summary>Teardown Images</summary>
 
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002228.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002247.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002359.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002400.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002709.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002719.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002756.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002811.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002843.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002950.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_003124.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_003146.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002228.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002247.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002359.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002400.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002709.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002719.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002756.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002811.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002843.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_002950.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_003124.jpg)
+![HDMI RX teardown for TPCast for Rift](img/teardown/rift/hdmi-rx/20190805_003146.jpg)
 
 </details>
 
@@ -65,17 +65,17 @@ Data Sheet: https://www.winbond.com/resource-files/w25q16jv%20spi%20revd%2008122
 ### HDMI TX
 <details><summary>Teardown Images</summary>
 
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133535.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133635.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230508.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230515.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230522.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230556.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_231837.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230531.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_231849.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133502.jpg)
-![Powerbox teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133551.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133535.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133635.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230508.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230515.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230522.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230556.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_231837.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_230531.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_231849.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133502.jpg)
+![HDMI TX teardown for TPCast for Rift](img/teardown/rift/hdmi-tx/20171223_133551.jpg)
 
 </details>
 
@@ -126,5 +126,23 @@ winbond<br>
 Data Sheet: https://www.winbond.com/resource-files/w25q16jv%20spi%20revd%2008122016.pdf ([Cached](files/datasheets/w25q16jv%20spi%20revd%2008122016.pdf))
 
 
+
+</details>
+
+## TPCast for HTC Vive (CN)
+
+### Powerbox
+<details><summary>Teardown Images</summary>
+
+![Powerbox teardown for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171017_170713.jpg)
+![Powerbox teardown for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171017_170743.jpg)
+![Powerbox teardown for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171017_171842.jpg)
+![Powerbox teardown for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171017_171849.jpg)
+![Powerbox teardown for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171017_173127.jpg)
+![Powerbox teardown for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171017_173139.jpg)
+![Powerbox teardown for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171017_173210.jpg)
+![Powerbox teardown for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171017_175424.jpg)
+![Powerbox voltage test for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171114_001619.jpg)
+![Power draw test for TPCast for HTC Vive (CN)](img/teardown/vive-cn/powerbox/20171208_060623.jpg)
 
 </details>
